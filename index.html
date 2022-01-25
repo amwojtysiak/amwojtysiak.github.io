@@ -1,1 +1,29 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loot Generator</title>
+    <link rel="stylesheet" href="./lootGeneratorStyle.css">
+</head>
+<body>
+        <h1 id="webName">Loot Generator DM Tool</h1>    
+
+        <h2 class="generatorHeading" id="randomHeading">General use Money Generator</h2>
+        <div class="button" id="randomMoneyButton">Generate</div>
+        <div class="displayField" id="ranMonGen">Amount of money</div>
+  
+        <h2 class="generatorHeading" id="tierHeading">Tiered Money Generator</h2>
+    
+        <div class="button" data-size="tiny">Tiny</div>
+        <div class="button" data-size="small">Small</div>
+        <div class="button" data-size="medium">Medium</div>
+        <div class="button" data-size="large">Large</div>
+        <div class="button" data-size="hoard">Hoard</div>
+        
+        <div class="displayField" id="tierMonGen">Amount of money</div>
+
+    <script src= ./script.js></script>
+</body>
+</html>
