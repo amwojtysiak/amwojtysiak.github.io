@@ -22,8 +22,8 @@ function randomMoneyType() {
 }
 
 
-function randomMoneyGenerate(x) {
-    let monAmount = randomNum(x);
+function randomMoneyGenerate(maxNum) {
+    let monAmount = randomNum(maxNum);
     let monTypeString = randomMoneyType();
     let finalString = monAmount + " " + monTypeString;
 
