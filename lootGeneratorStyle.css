@@ -20,8 +20,8 @@
 }
 
 #randomNpcButton{
-    top: 7.5em;
-    left: 15em;
+    top: 21em;
+    left: 2em;
     background-color: rgb(86, 158, 13);
 }
 
@@ -31,32 +31,32 @@
 
 #randomMoneyButton{
     top: 7.5em;
-    left: 1.5em;
+    left: 1em;
 }
 
 [data-size="tiny"] {
-    top: 12em;
-    left: 1em;
+    top: 7.5em;
+    left: 8em;
 }
 
 [data-size="small"] {
     top: 12em;
-    left: 8em;
+    left: 1em;
 }
 
 [data-size="medium"] {
-    top: 16.5em;
-    left: 1em;
+    top: 12em;
+    left: 7em;
 }
 
 [data-size="large"] {
     top: 16.5em;
-    left: 8em;
+    left: 1em;
 }
 
 [data-size="hoard"] {
-    top: 21em;
-    left: 4em;
+    top: 16.5em;
+    left: 7em;
 }
 
 .displayField{
@@ -77,7 +77,7 @@
 
 #ranNpcGen{
     bottom: .5em;
-    margin-left: 11em;
+    margin-left: 10em;
     text-align: left;
 }
 
@@ -89,10 +89,10 @@
 h1{
     border-width: 8em;
     border-style: solid;
-    border-width: 25px;
+    border-width: 15px;
     background: rgb(239 125 27);
     text-align: center;
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: bolder;
     width:fit-content;
     padding: .75em;
