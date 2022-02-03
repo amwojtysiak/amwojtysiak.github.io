@@ -1,0 +1,78 @@
+img {
+    width: 185px;
+    height: 240px;
+    float: right;
+    margin-right: 40%;
+    border: 10px solid black;
+}
+
+table {
+    width: 100%;
+   
+}
+
+html {
+    background: teal;
+    /* background-image: url("C:/Users/kadam/Learn to Code/Media/shire_background.png");
+    background-size: cover;
+    background-attachment: scroll; */
+}
+
+#campaign-title {
+    font-style: italic;
+}
+
+#clock-lead-in {
+    text-decoration: underline black;
+}
+
+.menu {
+    border: 10px solid black;
+    border-radius: 15px;
+    height: 60px;
+    background-color: rgb(221, 52, 52);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px;
+}
+
+.menu-items {
+    background-color: teal;
+    width: 200px;
+    height: 30px;
+    border: 3px solid black;
+    border-radius: 15px;
+    margin: 10px;
+    padding: 5px;
+    padding-bottom: 3px;
+    text-align: center;
+    font-weight: bolder;
+    user-select: none;
+    cursor: pointer;
+}
+
+.menu-items:hover {
+    background: cornsilk;
+}
+
+/* .container {
+    background-color: white;
+    margin: 10px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-items: stretch;
+}
+
+.container-item {
+    background-color: green;
+    width: 90px;
+    height: 60px;
+    border: 5px solid black;
+    margin: 10px;
+    text-align: center;
+} */

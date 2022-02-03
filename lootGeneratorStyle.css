@@ -1,3 +1,34 @@
+
+.menu {
+    border: 10px solid black;
+    border-radius: 15px;
+    height: 60px;
+    background-color: rgb(221, 52, 52);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px;
+}
+
+.menu-items {
+    background-color: teal;
+    width: 200px;
+    height: 30px;
+    border: 3px solid black;
+    border-radius: 15px;
+    margin: 10px;
+    padding: 5px;
+    padding-bottom: 3px;
+    text-align: center;
+    font-weight: bolder;
+    user-select: none;
+    cursor: pointer;
+}
+
+.menu-items:hover {
+    background: cornsilk;
+}
+
 .button{
     position: absolute;
     height: 1.5em;
@@ -89,17 +120,19 @@
 h1{
     border-width: 8em;
     border-style: solid;
-    border-width: 15px;
+    border-width: 10px;
     background: rgb(239 125 27);
     text-align: center;
     font-size: 1.5em;
     font-weight: bolder;
     width:fit-content;
-    padding: .75em;
+    padding: 10px;
     border-color: rgb(12, 12, 12);
     /* transform: translateX(120%); */
-    left: 2em;
     border-radius: .25em;
+   
+    
+    
 
 }
 

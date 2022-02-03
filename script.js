@@ -133,4 +133,10 @@ function populateNpcField() {
 
 npcButton.addEventListener('click', populateNpcField);
 
+//Menu Navigation
+var menuHome = document.querySelector("#go-to-home");
+var menuNpc = document.querySelector("#go-to-npcgen");
+var menuMap = document.querySelector("#go-to-map");
 
+
+menuHome.addEventListener("click", () => window.open("./home.html", "_self" ));
