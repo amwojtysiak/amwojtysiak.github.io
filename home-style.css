@@ -12,14 +12,36 @@ table {
 }
 
 html {
-    background: teal;
-    /* background-image: url("C:/Users/kadam/Learn to Code/Media/shire_background.png");
+    background-image: url("./parchment background.png");
     background-size: cover;
-    background-attachment: scroll; */
+    background-attachment: scroll;
+}
+
+.header {
+    margin-top: 3%;
+}
+
+#campaign-num {
+    text-align: center;
+    font-size: 50px;
+}
+
+#dm {
+    text-align: center;
+    font-size: 25px;
 }
 
 #campaign-title {
     font-style: italic;
+   
+}
+
+#content-beginning {
+    margin-top: 5%;
+}
+
+#current-adventures {
+    margin-top: 5%;
 }
 
 #clock-lead-in {
@@ -28,13 +50,19 @@ html {
 
 .menu {
     border: 10px solid black;
-    border-radius: 15px;
+    /* border-radius: 15px; */
     height: 60px;
     background-color: rgb(221, 52, 52);
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin: 10px;
+    position: fixed;
+    /* top: 0; */
+    left: 0;
+    right: 0;
+    margin: 0px;
+    position: sticky;
+    top: 0;
 }
 
 .menu-items {
@@ -52,8 +80,12 @@ html {
     cursor: pointer;
 }
 
-.menu-items:hover {
+.menu-items:hover:not(.active) {
     background: cornsilk;
+}
+
+.active.menu-items {
+    background-color: rgb(100, 204, 204);
 }
 
 /* .container {

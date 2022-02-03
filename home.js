@@ -1,9 +1,10 @@
+var menuHome = document.querySelector("#go-to-home");
 var menuLoot = document.querySelector("#go-to-lootgen");
 var menuNpc = document.querySelector("#go-to-npcgen");
 var menuMap = document.querySelector("#go-to-map");
 
-
-menuLoot.addEventListener("click", () => window.open("./lootGenerator.html", "_self" ));
+menuHome.addEventListener("click", () => window.open("./index.html", "_self"));
+menuLoot.addEventListener("click", () => window.open("./lootGenerator.html", "_self"));
 
 
 

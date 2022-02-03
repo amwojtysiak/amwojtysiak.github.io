@@ -25,8 +25,12 @@
     cursor: pointer;
 }
 
-.menu-items:hover {
+.menu-items:hover:not(.active) {
     background: cornsilk;
+}
+
+.active.menu-items {
+    background-color: rgb(100, 204, 204);
 }
 
 .button{
