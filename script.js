@@ -139,4 +139,4 @@ var menuNpc = document.querySelector("#go-to-npcgen");
 var menuMap = document.querySelector("#go-to-map");
 
 
-menuHome.addEventListener("click", () => window.open("./home.html", "_self" ));
+menuHome.addEventListener("click", () => window.open("./index.html", "_self" ));

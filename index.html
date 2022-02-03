@@ -4,33 +4,89 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Generator Tool </title>
-    <link rel="stylesheet" href="./lootGeneratorStyle.css">
+    <title> The Fella's DND </title>
+    <link rel="stylesheet" href="./home-style.css">
 </head>
 <body>
-
     <div class="menu">
-        <div class="menu-items" id="go-to-home">Home</div>
+        <div class="menu-items" id="go-to-lootgen">Loot Generator</div>
         <div class="menu-items" id="go-to-npcgen">NPC Generator</div>
         <div class="menu-items" id="go-to-islandmap">Island Map</div>
     </div> 
 
-        <h1 id="webName"> DM Generator Tool</h1>    
+    <h1 class="page-title">The Fellas's DND: <br>
+        CAMPAIGN 1: <span id="campaign-title">Dreams of Madness and Salvation</span>  
+    </h1>
 
+    <h3>Dungeon Master: Josh Wojtysiak</h3>
+
+    <h2>Current Campaign Details</h2>
+    <ul>
+        <li>Setting: SeaScape Port</li>
+        <li>Date began: 11/06/21</li>
+        <li>Date of next Chapter: <span id="next-chapter-date">2/4/22</span> </li>
+            <h3 id="countdownClock">
+                <span id="clock-lead-in">Next Chapter in:</span>                
+                <span class="days"></span> Days
+                <span class="hours"></span> Hours
+                <span class="minutes"></span> Minutes
+                <span class="seconds"></span> Seconds
+            </h3>
         
-        <div class="button" id="randomMoneyButton">Random $</div>    
+    </ul>
     
-        <div class="button" data-size="tiny">Tiny</div>
-        <div class="button" data-size="small">Small</div>
-        <div class="button" data-size="medium">Medium</div>
-        <div class="button" data-size="large">Large</div>
-        <div class="button" data-size="hoard">Hoard</div>
-        
-        <div class="displayField" id="tierMonGen">Money</div>
+    <h2>Current Adventurers</h2>    
+    <table>
+        <tr>
+            <th>Byron Blackford</th>
+            <th>Rhünedâr (unknown)</th>
+            <th>Gabriel Kamban</th>
+        </tr>
+        <tr>
+            <td>
+                <ul>
+                    <li>Race: Half Elf/Human</li>
+                    <li>Class: Bard</li>
+                    <li>Level: 2</li>
+                    <li>Primary Weapon: Bow</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>Race: Dwarf</li>
+                    <li>Class: Barbarian</li>
+                    <li>Level: 2</li>
+                    <li>Primary Weapon: Warhammer</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>Race: Human</li>
+                    <li>Class: Rogue</li>
+                    <li>Level: 2</li>
+                    <li>Primary Weapon: Dual Daggers</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td> <img src="./Byron_Blackford.jpg"></td>
+            <td> <img src="./Rhunedar.jpg"></td>
+            <td> <img src="./Gabriel_Kamban.jpg"></td>
+        </tr>
 
-        <div class="button" id="randomNpcButton">Random NPC</div>
-        <div class="displayField" id="ranNpcGen">NPC</div>
+    </table>
 
-    <script src= ./script.js></script>
+    <!-- <div class="container">
+        <div class="container-item">A</div>
+        <div class="container-item">B</div>
+        <div class="container-item">C</div>
+        <div class="container-item">D</div>
+        <div class="container-item">E</div>
+
+
+    </div> -->
+
+
+    <script src= ./home.js></script>
 </body>
 </html>
