@@ -1,28 +1,33 @@
 
 .menu {
-    border: 10px solid black;
-    border-radius: 15px;
+    border-top: 5px solid black;
+    border-bottom: 5px solid black;
     height: 60px;
-    background-color: rgb(221, 52, 52);
+    background-color: rgb(221, 52, 52, 0);
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin: 10px;
+    left: 0;
+    right: 0;
+   
+    position: sticky;
+    top: 0;
 }
 
 .menu-items {
     background-color: teal;
     width: 200px;
-    height: 30px;
+    height: 2.5em;
     border: 3px solid black;
     border-radius: 15px;
     margin: 10px;
-    padding: 5px;
-    padding-bottom: 3px;
+    padding: 3px;
+    /* padding-bottom: 3px; */
     text-align: center;
     font-weight: bolder;
     user-select: none;
     cursor: pointer;
+    align-content: center;
 }
 
 .menu-items:hover:not(.active) {
@@ -33,19 +38,23 @@
     background-color: rgb(100, 204, 204);
 }
 
+.button-panel {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
 .button{
-    position: absolute;
     height: 1.5em;
-    border-width: 15px;
-    border-style: solid;
-    border-radius: 0.25em;
-    background: rgb(90, 90, 253);
+    border: .25em solid black;
+    border-radius: 5.25em;
+    background: rgb(233 150 91);
     text-align: center;
     font-size: 1.5em;
     font-weight: bolder;
-    width:fit-content;
+    width: 5em;
     padding: .5em;
-    border-color: rgb(129, 129, 129);
     user-select: none;
     cursor: pointer;
 }
@@ -54,21 +63,22 @@
     background: rgb(239 214 76);
 }
 
-#randomNpcButton{
-    top: 21em;
-    left: 2em;
-    background-color: rgb(86, 158, 13);
+#randomNpcButton {
+    background-color: rgb(233 150 91);
+    height: fit-content;
 }
 
 #randomNpcButton:hover {
-    background: chartreuse;
+    background: rgb(239 214 76);
 }
 
-#randomMoneyButton{
-    top: 7.5em;
-    left: 1em;
+#randomMoneyButton {
+    background-color: rgb(172 191 143);
 }
 
+#randomMoneyButton:hover {
+    background: rgb(239 214 76);
+}    
 [data-size="tiny"] {
     top: 7.5em;
     left: 8em;
@@ -95,25 +105,23 @@
 }
 
 .displayField{
-    position: absolute;
     height: fit-content;
-    border-width: 15px;
     border-style: solid;
-    background: rgb(240 141 119);
     text-align: center;
     font-size: 2em;
     font-weight: bolder;
-    width:fit-content;
     padding: .5em;
-    border-color: rgb(129, 129, 129);
     border-radius: .25em;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    align-content: center;
+    margin-top: 1em;
 
 }
 
-#ranNpcGen{
-    bottom: .5em;
-    margin-left: 10em;
-    text-align: left;
+.pageTitle {
+    font-family: "papyrus";
 }
 
 #tierMonGen{
@@ -122,18 +130,15 @@
 }
 
 h1{
-    border-width: 8em;
-    border-style: solid;
-    border-width: 10px;
-    background: rgb(239 125 27);
     text-align: center;
-    font-size: 1.5em;
+    font-size: 3em;
     font-weight: bolder;
-    width:fit-content;
     padding: 10px;
-    border-color: rgb(12, 12, 12);
-    /* transform: translateX(120%); */
-    border-radius: .25em;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    align-items: center;
    
     
     
@@ -168,12 +173,15 @@ html{
     background-image: url("./parchment background.png");
     background-size: cover;
     background-attachment: scroll;
+    z-index: 0;
     
     
 }
 
-.header {
-    background-image: url("./smaug_background_centered.png");
+.header {   
+    max-width: 100%;
+    height: 15em;
+    
 }
 
 
