@@ -38,8 +38,6 @@ function getTimeRemaining(nextChapterDate){
     var hours = Math.floor( (total/(1000*60*60)) % 24 );
     var days = Math.floor( total/(1000*60*60*24) );
 
-    console.log(seconds)
-
     return{
         total,
         days,
@@ -67,7 +65,6 @@ function initializeClock(id="countdownClock", nextChapterDate) {
             clearInterval(timeinterval);
             document.querySelector("#countdownClock").innerHTML = "Let's Play!! (unless the Wojos are late)"
         }
-        console.log("refresh");
     }
     
     updateClock();

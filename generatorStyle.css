@@ -164,12 +164,16 @@ h2{
 }
 
 html{
-    text-align: center;
-    background-image: url("./smaug_background_centered.png");
+    /* text-align: center; */
+    background-image: url("./parchment background.png");
     background-size: cover;
     background-attachment: scroll;
     
     
+}
+
+.header {
+    background-image: url("./smaug_background_centered.png");
 }
 
 
