@@ -10,7 +10,7 @@ menuLoot.addEventListener("click", () => window.open("./lootGenerator.html", "_s
 
 
 //Countdown Clock
-let mo = 2, dat = 4, hr = 20, mins = 0; 
+let mo = 2, dat = 18, hr = 20, mins = 0; 
 //Enter next chapter date above
 
 document.querySelector("#next-chapter-date").innerHTML = mo + "/" + dat + "/22" 
