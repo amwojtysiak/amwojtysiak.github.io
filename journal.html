@@ -4,15 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> The Fella's DND </title>
+    <title> Journal </title>
     <link rel="stylesheet" href="./journalStyle.css">
 </head>
 <body>
    
     <div class="header">
-        <h1 id="campaign-num">CAMPAIGN 1: <span id="campaign-title">Dreams of Madness and Salvation</span> </h1> 
-    
-        <h3 id="dm">Dungeon Master: Josh Wojtysiak</h3>
+        
     </div>
     
     <div class="menu">
@@ -24,12 +22,40 @@
         <div class="menu-items" id="go-to-lore">Lore</div>
     </div> 
 
-    
+    <h1 class="pageTitle"> The Fella's Adventure Journal </h1>
    
+    <div class="navigator">
+        <div class="navigation-button">Back</div>
+        
+        <label for="campaignSelect">Select Campaign:</label>
+        <select id="campaignSelect" name="campaignSelect" style="visibility: hidden;">
+            <option value="1">Campaign 1</option> 
+        </select>
+
+        <label for="partSelect">Select Part:</label>
+        <select id="partSelect" name="partSelect" style="visibility: hidden;">
+            
+        </select>
+
+        <label for="chapterSelect">Select Chapter:</label>
+        <select id="chapterSelect" name="chapterSelect" style="visibility: hidden;">
+            
+        </select>
+        <input type="submit" id="selectButton"  style="visibility: hidden;">
+    </div>
 
     
 
+    <div class="journal-display">
+        <button id="testButton">Search Journal</button>
+    </div>
+
+    <div id="journal-entry-display">
+
+    </div>
+   
 
     <script src= ./journal.js></script>
 </body>
 </html>
+

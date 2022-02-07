@@ -7,9 +7,6 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    left: 0;
-    right: 0;
-   
     position: sticky;
     top: 0;
 }
@@ -22,7 +19,6 @@
     border-radius: 15px;
     margin: 10px;
     padding: 3px;
-    /* padding-bottom: 3px; */
     text-align: center;
     font-weight: bolder;
     user-select: none;
@@ -169,7 +165,6 @@ h2{
 }
 
 html{
-    /* text-align: center; */
     background-image: url("./parchment background.png");
     background-size: cover;
     background-attachment: scroll;
