@@ -6,9 +6,9 @@ var menuJournal = document.querySelector("#go-to-journal");
 var menuLore = document.querySelector("#go-to-lore");
 
 menuHome.addEventListener("click", () => window.open("./index.html", "_self"));
-menuLoot.addEventListener("click", () => window.open("./lootGenerator.html", "_self"));
-menuNpc.addEventListener("click", () => window.open("./npcGenerator.html", "_self"));
-menuJournal.addEventListener("click", () => window.open("./journal.html", "_self"));
+menuLoot.addEventListener("click", () => window.open("generators/loot/lootGenerator.html", "_self"));
+menuNpc.addEventListener("click", () => window.open("generators/npc/npcGenerator.html", "_self"));
+menuJournal.addEventListener("click", () => window.open("journal/journal.html", "_self"));
 
 
 

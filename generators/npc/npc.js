@@ -70,7 +70,7 @@ var menuMap = document.querySelector("#go-to-map");
 var menuJournal = document.querySelector("#go-to-journal");
 var menuLore = document.querySelector("#go-to-lore");
 
-menuHome.addEventListener("click", () => window.open("./index.html", "_self"));
-menuLoot.addEventListener("click", () => window.open("./lootGenerator.html", "_self"));
+menuHome.addEventListener("click", () => window.open("../../index.html", "_self"));
+menuLoot.addEventListener("click", () => window.open("../loot/lootGenerator.html", "_self"));
 menuNpc.addEventListener("click", () => window.open("./npcGenerator.html", "_self"));
-menuJournal.addEventListener("click", () => window.open("./journal.html", "_self"));
+menuJournal.addEventListener("click", () => window.open("../../journal/journal.html", "_self"));

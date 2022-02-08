@@ -6,9 +6,9 @@ var menuMap = document.querySelector("#go-to-map");
 var menuJournal = document.querySelector("#go-to-journal");
 var menuLore = document.querySelector("#go-to-lore");
 
-menuHome.addEventListener("click", () => window.open("./index.html", "_self"));
-menuLoot.addEventListener("click", () => window.open("./lootGenerator.html", "_self"));
-menuNpc.addEventListener("click", () => window.open("./npcGenerator.html", "_self"));
+menuHome.addEventListener("click", () => window.open("../index.html", "_self"));
+menuLoot.addEventListener("click", () => window.open("../generators/loot/lootGenerator.html", "_self"));
+menuNpc.addEventListener("click", () => window.open("../generators/npc/npcGenerator.html", "_self"));
 menuJournal.addEventListener("click", () => window.open("./journal.html", "_self"));
 
 //Journal Template
@@ -41,12 +41,13 @@ function filterByCategory(filterCategory, filterByVal, returnCategory) {
 function populateCategoryInSelect(filterCategory, filterByVal, returnCategory, container) {
     let arrOfFilteredItems = filterByCategory(filterCategory, filterByVal, returnCategory);
     let arrOfUniqueItems = [];
+    if (container.innerHTML != 0) container.innerHTML = 0; 
     for (let item of arrOfFilteredItems) {
         if (arrOfUniqueItems.indexOf(item) == -1) {
             arrOfUniqueItems.push(item);
         }
     }
-    console.log(arrOfUniqueItems);
+    console.log(container.innerHTML == 0);
 
     for (let el of arrOfUniqueItems) {
         container.innerHTML += `<option value="${el}">${returnCategory} ${el}</option>`
@@ -54,21 +55,36 @@ function populateCategoryInSelect(filterCategory, filterByVal, returnCategory, c
 
     container.style.visibility = "visible";
     selectButton.style.visibility = "visible";
-    console.log(container.innerHTML);
+    console.log(container.innerHTML == 0);
 }
 
-function showSelectionElements() {
-    campaignSelect.style.visibility = "visible";
-    populateCategoryInSelect("campaign", 1, "part", partSelect);
-    populateCategoryInSelect("part", 1, "chapter", chapterSelect);
+function toggleSelectionElements() {
+    if (searchButton.innerHTML == "Search Journal") {
+        campaignSelect.style.visibility = "visible";
+        camLabel.style.visibility = "visible";
+        parLabel.style.visibility = "visible";
+        chaLabel.style.visibility = "visible";
+        searchButton.innerHTML = "Hide Search";
+        populateCategoryInSelect("campaign", 1, "part", partSelect);
+        populateCategoryInSelect("part", 1, "chapter", chapterSelect);
+        
+    } else if (searchButton.innerHTML == "Hide Search") {
+        campaignSelect.style.visibility = "hidden";
+        partSelect.style.visibility = "hidden";
+        chapterSelect.style.visibility = "hidden";
+        camLabel.style.visibility = "hidden";
+        parLabel.style.visibility = "hidden";
+        chaLabel.style.visibility = "hidden";
+        searchButton.innerHTML = "Search Journal";
+        selectButton.style.visibility = "hidden";
+        
+    }
+    
 }
 
 function displaySelectedEntry() {
     let journalArr = journal();
     journalArr = journalArr.slice().reverse();
-    console.log(campaignSelect.value);
-    console.log(partSelect.value);
-    console.log(chapterSelect.value);
 
     for (let entry of journalArr) {
         if (
@@ -85,12 +101,16 @@ function displaySelectedEntry() {
 }
 
 let selectButton = document.getElementById("selectButton");
+let searchButton = document.getElementById("searchButton")
 let campaignSelect = document.getElementById("campaignSelect");
 let partSelect = document.getElementById("partSelect"); 
 let chapterSelect = document.getElementById("chapterSelect");
 let entryDisplay = document.getElementById("journal-entry-display")
+let camLabel = document.getElementById("selectLabelsCam");
+let parLabel = document.getElementById("selectLabelsPar");
+let chaLabel = document.getElementById("selectLabelsCha");
 
-document.getElementById("testButton").addEventListener("click", showSelectionElements);
+searchButton.addEventListener("click", toggleSelectionElements);
 
 selectButton.addEventListener("click", displaySelectedEntry);
 
@@ -129,7 +149,9 @@ function journal() {
             chapterTitle: "A Gathering Of Storms & Strangers & Lost Rangers",
             date: "12/10/21",
             guests: 0,
-            summary: "this is the summary of the second chapter"
+            summary: "After saving the lives of bride and groom and subduing the assailant, Alpin, our three adventurers were promptly taken into custody. The Captain of the guard, Tierna Jantis Trysil, a man equal parts overwhelmed by the storms and suspicious, questioned them at length, seemingly bent on proving their involvement. However, they were soon cleared by witness testimony, and now free men, headed for the Water of Life tavern for a drink. While sharing an ale, a hooded, shadowy figure arrived, and appeared to be sleeping on the bench. With the storms wreaking havoc upon the town, the mood was low, until Byron Blackford raised spirits with a rousing performance. As the night wore on and the Tavern emptied, the hooded man at last revealed himself. His name was Ronan, one of the Diasuile Rangers," +
+                "and he had for them a proposition. After witnessing their handiwork at the wedding, he hired the three men to infiltrate the prison, and locate his partner Andreé, a Tiefling woman with raven black hair and midnight purple skin. The party accepted the offer. The following morning they made their way to the prison, where they ran into Rory who had been denied entry to see Alpin. He thanked them and invited them to dinner that evening. Following this, they snuck into the lower dungeons. After battling a small group of Drowners, it quickly became clear that Andreé was not here, though in their investigation, they also discovered a hidden door, seemingly leading to a secret lower dungeon. The door was sealed shut however, and required a special key." +
+                "Their exit from the dungeons was covered as the bell tower of the keep caught fire from an errant bolt of lightning, and the party helped extinguish it. So with smoke rising into the air, and leaving chaos in their wake, Byron, Rhünedâr and Kambam left in search of Ronan to deliver the bad news..."
         },
         
         {

@@ -10,7 +10,7 @@
 <body>
    
     <div class="header">
-        
+        <img src="../images/quill_banner.png" style="object-fit: cover; height: 100%; width: 100%;">
     </div>
     
     <div class="menu">
@@ -27,31 +27,33 @@
     <div class="navigator">
         <div class="navigation-button">Back</div>
         
-        <label for="campaignSelect">Select Campaign:</label>
+        <label id="selectLabelsCam" for="campaignSelect" style="visibility: hidden;">Select Campaign:</label>
         <select id="campaignSelect" name="campaignSelect" style="visibility: hidden;">
             <option value="1">Campaign 1</option> 
         </select>
 
-        <label for="partSelect">Select Part:</label>
-        <select id="partSelect" name="partSelect" style="visibility: hidden;">
-            
-        </select>
+        <label id="selectLabelsPar" for="partSelect" style="visibility: hidden;">Select Part:</label>
+        <select id="partSelect" name="partSelect" style="visibility: hidden;">0</select>
 
-        <label for="chapterSelect">Select Chapter:</label>
-        <select id="chapterSelect" name="chapterSelect" style="visibility: hidden;">
-            
-        </select>
+        <label id="selectLabelsCha" for="chapterSelect" style="visibility: hidden;">Select Chapter:</label>
+        <select id="chapterSelect" name="chapterSelect" style="visibility: hidden;">0</select>
+       
         <input type="submit" id="selectButton"  style="visibility: hidden;">
     </div>
 
     
 
     <div class="journal-display">
-        <button id="testButton">Search Journal</button>
+        <button id="searchButton">Search Journal</button>
     </div>
 
     <div id="journal-entry-display">
 
+    </div>
+
+    <div class="journal">
+        <img id="journal-cover" src="../images/journal-cover.jpg">
+        <div class="journal-text">The <br> Fella's <br> Adventure</div>
     </div>
    
 

@@ -165,7 +165,7 @@ h2{
 }
 
 html{
-    background-image: url("./parchment background.png");
+    background-image: url("../images/parchment background.png");
     background-size: cover;
     background-attachment: scroll;
     z-index: 0;
