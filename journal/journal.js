@@ -11,17 +11,7 @@ menuLoot.addEventListener("click", () => window.open("../generators/loot/lootGen
 menuNpc.addEventListener("click", () => window.open("../generators/npc/npcGenerator.html", "_self"));
 menuJournal.addEventListener("click", () => window.open("./journal.html", "_self"));
 
-//Journal Template
-let journalObjTemplate = {
-    campaign: 1,
-    part: 1,
-    chapter: 4,
-    chapterTitle: "Shadows Buried Beneath The Prison",
-    date: "02/04/22",
-    guests: 0,
-    summary: "this is the summary of the fourth chapter"
-}
-// End Journal Template
+
 
 //journal.length - chapter
 
@@ -53,30 +43,30 @@ function populateCategoryInSelect(filterCategory, filterByVal, returnCategory, c
         container.innerHTML += `<option value="${el}">${returnCategory} ${el}</option>`
     }
 
-    container.style.visibility = "visible";
-    selectButton.style.visibility = "visible";
+    container.style.display = "inline-block";
+    selectButton.style.display = "inline-block";
     console.log(container.innerHTML == 0);
 }
 
 function toggleSelectionElements() {
     if (searchButton.innerHTML == "Search Journal") {
-        campaignSelect.style.visibility = "visible";
-        camLabel.style.visibility = "visible";
-        parLabel.style.visibility = "visible";
-        chaLabel.style.visibility = "visible";
+        campaignSelect.style.display = "inline-block";
+        camLabel.style.display = "inline-block";
+        parLabel.style.display = "inline-block";
+        chaLabel.style.display = "inline-block";
         searchButton.innerHTML = "Hide Search";
         populateCategoryInSelect("campaign", 1, "part", partSelect);
         populateCategoryInSelect("part", 1, "chapter", chapterSelect);
         
     } else if (searchButton.innerHTML == "Hide Search") {
-        campaignSelect.style.visibility = "hidden";
-        partSelect.style.visibility = "hidden";
-        chapterSelect.style.visibility = "hidden";
-        camLabel.style.visibility = "hidden";
-        parLabel.style.visibility = "hidden";
-        chaLabel.style.visibility = "hidden";
+        campaignSelect.style.display = "none";
+        partSelect.style.display = "none";
+        chapterSelect.style.display = "none";
+        camLabel.style.display = "none";
+        parLabel.style.display = "none";
+        chaLabel.style.display = "none";
         searchButton.innerHTML = "Search Journal";
-        selectButton.style.visibility = "hidden";
+        selectButton.style.display = "none";
         
     }
     
@@ -114,8 +104,106 @@ searchButton.addEventListener("click", toggleSelectionElements);
 
 selectButton.addEventListener("click", displaySelectedEntry);
 
+//Visual content selector
+
+let campaignContent = document.getElementById("campaign-content");
+let partContent = document.getElementById("part-content");
+let journalClosed = document.querySelector(".journal-closed");
+let journalOpen = document.querySelector(".journal-open");
+let leftPage = document.getElementById("left-page");
+let rightPage = document.getElementById("right-page");
+
+//For campaign and parts
+function populateContentVisual(filterCategory, filterByVal, returnCategory, container) {
+    let arrOfFilteredItems = filterByCategory(filterCategory, filterByVal, returnCategory);
+    let arrOfUniqueItems = [];
+    // if (container.innerHTML != 0) container.innerHTML = 0; 
+    for (let item of arrOfFilteredItems) {
+        if (arrOfUniqueItems.indexOf(item) == -1) {
+            arrOfUniqueItems.push(item);
+        }
+    }
+
+    for (let el of arrOfUniqueItems) {
+        if (container.innerHTML == 0){
+            container.innerHTML = `<div class="contents-item" id="con${returnCategory}${el}">${returnCategory} ${el}</div>`
+        }else {
+            container.innerHTML += `<div class="contents-item" id="con${returnCategory}${el}">${returnCategory} ${el}</div>`
+        }
+    }
+}
+
+//For chapters
+function populateChaptersVisual(filterCategory, filterByVal, returnCategory, container) {
+    let arrOfFilteredItems = filterByCategory(filterCategory, filterByVal, returnCategory);
+    let arrOfUniqueItems = [];
+    // if (container.innerHTML != 0) container.innerHTML = 0; 
+    for (let item of arrOfFilteredItems) {
+        if (arrOfUniqueItems.indexOf(item) == -1) {
+            arrOfUniqueItems.push(item);
+        }
+    }
+
+    for (let el of arrOfUniqueItems) {
+        if (container.innerHTML == 0) {
+            container.innerHTML = `<div class="left-item" id="LItem${returnCategory}${el}">${returnCategory} ${el}</div>`
+        }else {
+            container.innerHTML += `<div class="left-item" id="LItem${returnCategory}${el}">${returnCategory} ${el}</div>`
+        }
+        
+    }
+}
+
+function showCampaignChoices() {
+    journalClosed.style.display = "none";
+    campaignContent.style.display = "flex";
+}
+
+function showPartChoices() {
+    populateContentVisual("campaign", 1, "part", partContent);
+
+    campaignContent.style.display = "none";
+    partContent.style.display = "flex";
+}
+
+function showChapterChoices() {
+    populateChaptersVisual("part", 1, "chapter", leftPage);
+
+    partContent.style.display = "none";
+    journalOpen.style.display = "flex";
+    console.log("chapters shown");
+}
 
 
+
+async function useJournal() {
+    journalClosed.addEventListener("click", showCampaignChoices);
+    document.getElementById("conCamp1").addEventListener("click", showPartChoices);
+    let myPromise = new Promise(function(resolve) {
+        if (partContent.innerHTML != 0) {
+            resolve("test");
+        }
+    });
+    console.log(await myPromise);
+    //document.getElementById("conpart1").addEventListener("click", check);
+}
+
+useJournal();
+
+
+
+
+//Journal Template
+let journalObjTemplate = {
+    campaign: 1,
+    part: 1,
+    chapter: 4,
+    chapterTitle: "Shadows Buried Beneath The Prison",
+    date: "02/04/22",
+    guests: 0,
+    summary: "this is the summary of the fourth chapter"
+}
+// End Journal Template
 
 //Journal Array- add to top
 
@@ -123,7 +211,7 @@ function journal() {
     let journalArray = [
         {
             campaign: 1,
-            part: 1,
+            part: 2,
             chapter: 4,
             chapterTitle: "Shadows Buried Beneath The Prison",
             date: "02/04/22",
