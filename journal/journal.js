@@ -201,7 +201,7 @@ let journalObjTemplate = {
     chapterTitle: "Shadows Buried Beneath The Prison",
     date: "02/04/22",
     guests: 0,
-    summary: "this is the summary of the fourth chapter"
+    summary: "   Chapter 5 summary coming soon"
 }
 // End Journal Template
 
@@ -211,12 +211,22 @@ function journal() {
     let journalArray = [
         {
             campaign: 1,
+            part: 1,
+            chapter: 5,
+            chapterTitle: "Into The Cursed Black Maw Of The Sea",
+            date: "02/25/22",
+            guests: 0,
+            summary: "Chapter 5 summary coming soon"
+        },
+        
+        {
+            campaign: 1,
             part: 2,
             chapter: 4,
             chapterTitle: "Shadows Buried Beneath The Prison",
             date: "02/04/22",
             guests: 0,
-            summary: "this is the summary of the fourth chapter"
+            summary: "Chapter 4 summary coming soon"
 
         },
 
@@ -227,7 +237,10 @@ function journal() {
             chapterTitle: "Sins Of The Father, Secrets Of A Son",
             date: "01/14/22",
             guests: 0,
-            summary: "this is the summary of the third chapter"
+            summary: "   With smoke and storms swirling overhead, the party began making its way in search of Ronan, to update him on their findings in the black dungeon. Suddenly, Jantis came storming down the hill, flagging them down, his intentions unclear. Our nervous heroes decided to wait and see what he had to say. To their surprise, he brought before them a heartfelt apology, sincere gratitude for saving Rory and Raine and a small insight into the suffering of Seascape Port and his own personal struggles. After casting a bleak outlook on the future of the town, he advised the party to leave. <br>" + 
+                "   As they left, Kambam felt what seemed to be an attempted pickpocket. It turned out to be a message from Ronan, bidding them meet him at the Fish Oil tavern in an hour. However, he never arrived, so after waiting an extra hour, the party left for the Ard Tierna's manor. Upon arriving, they were greeted by Raine, Rory and his father Tierna Dedrick. He greeted them, before departing the feast. The party spoke with Rory and Raine late into the night. Many drinks and courses in, Rory revealed that he and Raine, wary of Jantis's suspicious behavior, followed him at dawn one morning. He went down to the sea, and received something from a bird flitting over the waves. After persuading him, he offered up the additional information that whatever Jantis received, he had likely stowed it away in his room.<br>" + 
+                "   After dinner, Byron pulled out the lute, and put on a rousing performance that had Rory and Raine dancing on the table, enthralled by the music. During the performance, Kambam snuck out and made his way into Jantis' room. Inside, on the desk, he discovered a letter with a time and a place,along with a small map to a nearby island. He copied the letter, and returned to dinner. <br>" + 
+                "   As the evening wound down, and sleep crept into the thoughts of the party guests, they were shocked from their peaceful gathering by screams and clashes of battle. As the party investigated the cries on the rain soaked winds, they were met with peasants scaling the Manor walls, who sought the deaths of the Ard Tierna, blaming them for the misfortune befalling the port town. Springing into action, the party's night of merriment ended in horror, as they defended Rory and Raine. Exhausted, the party returned rain-soaked and demoralized to the moon-watch inn. Before retiring for much needed sleep, they sat for a while in the moon bath on the roof, cleansing themselves of blood, and pondering, each within his own mind, the events of the past two days."
         },
 
         {
