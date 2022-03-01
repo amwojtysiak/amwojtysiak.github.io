@@ -47,6 +47,17 @@ html{
     z-index: 0;    
 }
 
+.text-display {
+    font-weight: bolder;
+    font-size: 1.25em;
+    word-spacing: .29em;
+    font-family: "papyrus";
+    margin: 3%;
+    text-align: left;
+}
+.p {
+    text-indent: 3px;
+}
 
 .journal-open {
     display: none;
@@ -104,7 +115,7 @@ h1{
     height: 15em;
 }
 
-#searchButton {
+.controlButton {
     height: fit-content;
     border: .25em solid black;
     border-radius: 5.25em;
@@ -118,8 +129,16 @@ h1{
     cursor: pointer;
 }
 
+.journal-container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+}
+
 .journal-closed {
     display: flex;
+    width:fit-content;
     justify-content: center;
     align-content: center;
     position: relative;
@@ -165,5 +184,12 @@ h1{
 
 .contents-item:hover {
     color: darkred;
+}
+
+footer {
+    background-color: teal;
+    width: 120%;
+    height: 50px;
+    margin-top: 50px;
 }
 

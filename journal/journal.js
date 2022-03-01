@@ -83,7 +83,7 @@ function displaySelectedEntry() {
             entry.chapter == chapterSelect.value 
             ) {
                 
-             entryDisplay.innerHTML = entry.summary;
+             entryDisplay.innerHTML = "Chapter " + entry.chapter + ": " + "\"" + entry.chapterTitle + "\"" + "<br>" + entry.summary;
              break;
         }
     }
@@ -91,7 +91,8 @@ function displaySelectedEntry() {
 }
 
 let selectButton = document.getElementById("selectButton");
-let searchButton = document.getElementById("searchButton")
+let searchButton = document.getElementById("searchButton");
+let backButton = document.getElementById("backButton");
 let campaignSelect = document.getElementById("campaignSelect");
 let partSelect = document.getElementById("partSelect"); 
 let chapterSelect = document.getElementById("chapterSelect");
@@ -99,6 +100,8 @@ let entryDisplay = document.getElementById("journal-entry-display")
 let camLabel = document.getElementById("selectLabelsCam");
 let parLabel = document.getElementById("selectLabelsPar");
 let chaLabel = document.getElementById("selectLabelsCha");
+
+backButton.addEventListener("click", () => window.open("./journal.html", "_self"));
 
 searchButton.addEventListener("click", toggleSelectionElements);
 
@@ -221,7 +224,7 @@ function journal() {
         
         {
             campaign: 1,
-            part: 2,
+            part: 1,
             chapter: 4,
             chapterTitle: "Shadows Buried Beneath The Prison",
             date: "02/04/22",
@@ -237,10 +240,10 @@ function journal() {
             chapterTitle: "Sins Of The Father, Secrets Of A Son",
             date: "01/14/22",
             guests: 0,
-            summary: "   With smoke and storms swirling overhead, the party began making its way in search of Ronan, to update him on their findings in the black dungeon. Suddenly, Jantis came storming down the hill, flagging them down, his intentions unclear. Our nervous heroes decided to wait and see what he had to say. To their surprise, he brought before them a heartfelt apology, sincere gratitude for saving Rory and Raine and a small insight into the suffering of Seascape Port and his own personal struggles. After casting a bleak outlook on the future of the town, he advised the party to leave. <br>" + 
-                "   As they left, Kambam felt what seemed to be an attempted pickpocket. It turned out to be a message from Ronan, bidding them meet him at the Fish Oil tavern in an hour. However, he never arrived, so after waiting an extra hour, the party left for the Ard Tierna's manor. Upon arriving, they were greeted by Raine, Rory and his father Tierna Dedrick. He greeted them, before departing the feast. The party spoke with Rory and Raine late into the night. Many drinks and courses in, Rory revealed that he and Raine, wary of Jantis's suspicious behavior, followed him at dawn one morning. He went down to the sea, and received something from a bird flitting over the waves. After persuading him, he offered up the additional information that whatever Jantis received, he had likely stowed it away in his room.<br>" + 
-                "   After dinner, Byron pulled out the lute, and put on a rousing performance that had Rory and Raine dancing on the table, enthralled by the music. During the performance, Kambam snuck out and made his way into Jantis' room. Inside, on the desk, he discovered a letter with a time and a place,along with a small map to a nearby island. He copied the letter, and returned to dinner. <br>" + 
-                "   As the evening wound down, and sleep crept into the thoughts of the party guests, they were shocked from their peaceful gathering by screams and clashes of battle. As the party investigated the cries on the rain soaked winds, they were met with peasants scaling the Manor walls, who sought the deaths of the Ard Tierna, blaming them for the misfortune befalling the port town. Springing into action, the party's night of merriment ended in horror, as they defended Rory and Raine. Exhausted, the party returned rain-soaked and demoralized to the moon-watch inn. Before retiring for much needed sleep, they sat for a while in the moon bath on the roof, cleansing themselves of blood, and pondering, each within his own mind, the events of the past two days."
+            summary: "With smoke and storms swirling overhead, the party began making its way in search of Ronan, to update him on their findings in the black dungeon. Suddenly, Jantis came storming down the hill, flagging them down, his intentions unclear. Our nervous heroes decided to wait and see what he had to say. To their surprise, he brought before them a heartfelt apology, sincere gratitude for saving Rory and Raine and a small insight into the suffering of Seascape Port and his own personal struggles. After casting a bleak outlook on the future of the town, he advised the party to leave. <br>" + 
+                "As they left, Kambam felt what seemed to be an attempted pickpocket. It turned out to be a message from Ronan, bidding them meet him at the Fish Oil tavern in an hour. However, he never arrived, so after waiting an extra hour, the party left for the Ard Tierna's manor. Upon arriving, they were greeted by Raine, Rory and his father Tierna Dedrick. He greeted them, before departing the feast. The party spoke with Rory and Raine late into the night. Many drinks and courses in, Rory revealed that he and Raine, wary of Jantis's suspicious behavior, followed him at dawn one morning. He went down to the sea, and received something from a bird flitting over the waves. After persuading him, he offered up the additional information that whatever Jantis received, he had likely stowed it away in his room.<br>" + 
+                "After dinner, Byron pulled out the lute, and put on a rousing performance that had Rory and Raine dancing on the table, enthralled by the music. During the performance, Kambam snuck out and made his way into Jantis' room. Inside, on the desk, he discovered a letter with a time and a place,along with a small map to a nearby island. He copied the letter, and returned to dinner. <br>" + 
+                "As the evening wound down, and sleep crept into the thoughts of the party guests, they were shocked from their peaceful gathering by screams and clashes of battle. As the party investigated the cries on the rain soaked winds, they were met with peasants scaling the Manor walls, who sought the deaths of the Ard Tierna, blaming them for the misfortune befalling the port town. Springing into action, the party's night of merriment ended in horror, as they defended Rory and Raine. Exhausted, the party returned rain-soaked and demoralized to the moon-watch inn. Before retiring for much needed sleep, they sat for a while in the moon bath on the roof, cleansing themselves of blood, and pondering, each within his own mind, the events of the past two days."
         },
 
         {
@@ -251,8 +254,8 @@ function journal() {
             date: "12/10/21",
             guests: 0,
             summary: "After saving the lives of bride and groom and subduing the assailant, Alpin, our three adventurers were promptly taken into custody. The Captain of the guard, Tierna Jantis Trysil, a man equal parts overwhelmed by the storms and suspicious, questioned them at length, seemingly bent on proving their involvement. However, they were soon cleared by witness testimony, and now free men, headed for the Water of Life tavern for a drink. While sharing an ale, a hooded, shadowy figure arrived, and appeared to be sleeping on the bench. With the storms wreaking havoc upon the town, the mood was low, until Byron Blackford raised spirits with a rousing performance. As the night wore on and the Tavern emptied, the hooded man at last revealed himself. His name was Ronan, one of the Diasuile Rangers," +
-                "and he had for them a proposition. After witnessing their handiwork at the wedding, he hired the three men to infiltrate the prison, and locate his partner Andreé, a Tiefling woman with raven black hair and midnight purple skin. The party accepted the offer. The following morning they made their way to the prison, where they ran into Rory who had been denied entry to see Alpin. He thanked them and invited them to dinner that evening. Following this, they snuck into the lower dungeons. After battling a small group of Drowners, it quickly became clear that Andreé was not here, though in their investigation, they also discovered a hidden door, seemingly leading to a secret lower dungeon. The door was sealed shut however, and required a special key." +
-                "Their exit from the dungeons was covered as the bell tower of the keep caught fire from an errant bolt of lightning, and the party helped extinguish it. So with smoke rising into the air, and leaving chaos in their wake, Byron, Rhünedâr and Kambam left in search of Ronan to deliver the bad news..."
+            "and he had for them a proposition. After witnessing their handiwork at the wedding, he hired the three men to infiltrate the prison, and locate his partner Andreé, a Tiefling woman with raven black hair and midnight purple skin. The party accepted the offer. The following morning they made their way to the prison, where they ran into Rory who had been denied entry to see Alpin. He thanked them and invited them to dinner that evening. Following this, they snuck into the lower dungeons. After battling a small group of Drowners, it quickly became clear that Andreé was not here, though in their investigation, they also discovered a hidden door, seemingly leading to a secret lower dungeon. The door was sealed shut however, and required a special key." +
+            "Their exit from the dungeons was covered as the bell tower of the keep caught fire from an errant bolt of lightning, and the party helped extinguish it. So with smoke rising into the air, and leaving chaos in their wake, Byron, Rhünedâr and Kambam left in search of Ronan to deliver the bad news..."
         },
         
         {

@@ -25,7 +25,7 @@
     <h1 class="pageTitle"> The Fella's Adventure Journal </h1>
    
     <div class="navigator">
-        <div class="navigation-button">Back</div>
+        <div class="controlButton" id="backButton">Back</div>
         
         <label id="selectLabelsCam" for="campaignSelect" style="display: none;">Select Campaign:</label>
         <select id="campaignSelect" name="campaignSelect" style="display: none;">
@@ -44,16 +44,18 @@
     
 
     <div class="journal-display">
-        <button id="searchButton">Search Journal</button>
+        <button class="controlButton" id="searchButton">Search Journal</button>
     </div>
 
-    <div id="journal-entry-display">
+    <div class="text-display" id="journal-entry-display">
 
     </div>
 
-    <div class="journal-closed">
-        <img id="journal-cover" src="../images/journal-cover.jpg">
-        <div class="journal-text">The <br> Fella's <br> Adventure</div>
+    <div class="journal-container">
+        <div class="journal-closed">
+            <img id="journal-cover" src="../images/journal-cover.jpg">
+            <div class="journal-text">The <br> Fella's <br> Adventure</div>
+        </div>
     </div>
 
     <div class="journal-contents" id="campaign-content" style="display: none;">
@@ -76,6 +78,9 @@
         </div>
     </div>
    
+    <footer>
+
+    </footer>
 
     <script src= ./journal.js></script>
 </body>
