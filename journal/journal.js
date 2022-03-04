@@ -129,9 +129,9 @@ function populateContentVisual(filterCategory, filterByVal, returnCategory, cont
 
     for (let el of arrOfUniqueItems) {
         if (container.innerHTML == 0){
-            container.innerHTML = `<div class="contents-item" id="con${returnCategory}${el}">${returnCategory} ${el}</div>`
+            container.innerHTML = `<div class="contents-item" id="con${returnCategory}${el}">~ ${returnCategory} ${el} ~</div>`
         }else {
-            container.innerHTML += `<div class="contents-item" id="con${returnCategory}${el}">${returnCategory} ${el}</div>`
+            container.innerHTML += `<div class="contents-item" id="con${returnCategory}${el}">~ ${returnCategory} ${el} ~</div>`
         }
     }
 }
@@ -149,28 +149,70 @@ function populateChaptersVisual(filterCategory, filterByVal, returnCategory, con
 
     for (let el of arrOfUniqueItems) {
         if (container.innerHTML == 0) {
-            container.innerHTML = `<div class="left-item" id="LItem${returnCategory}${el}">${returnCategory} ${el}</div>`
+            container.innerHTML = `<div class="left-item" id="LItem${returnCategory}${el}">~ ${returnCategory} ${el} </div>`
         }else {
-            container.innerHTML += `<div class="left-item" id="LItem${returnCategory}${el}">${returnCategory} ${el}</div>`
+            container.innerHTML += `<div class="left-item" id="LItem${returnCategory}${el}">~ ${returnCategory} ${el} </div>`
         }
         
     }
 }
 
-function showCampaignChoices() {
-    journalClosed.style.display = "none";
-    campaignContent.style.display = "flex";
+function findNumberOf_In_(subcontent, content, contentNum) {
+    let arrOfFilteredItems = filterByCategory(content, contentNum, subcontent);
+    let arrOfUniqueItems = [];
+    // if (container.innerHTML != 0) container.innerHTML = 0; 
+    for (let item of arrOfFilteredItems) {
+        if (arrOfUniqueItems.indexOf(item) == -1) {
+            arrOfUniqueItems.push(item);
+        }
+    }
+    
+    let resultArr = [];
+    let startingItemNum = arrOfUniqueItems[arrOfUniqueItems.length - 1];
+    let endingItemNum = arrOfUniqueItems[0];
+    resultArr.push(endingItemNum);
+    resultArr.push(startingItemNum);
+    console.log(resultArr);
+    return resultArr;
 }
 
-function showPartChoices() {
-    populateContentVisual("campaign", 1, "part", partContent);
+function populateSummary(chosenCampaign, chosenPart, chosenChapter) {
+    let journalArr = journal();
+    journalArr = journalArr.slice().reverse();
+
+    for (let entry of journalArr) {
+        if (chosenCampaign == entry.campaign && chosenPart == entry.part && chosenChapter == entry.chapter) {
+            rightPage.innerHTML = '<div class="right-item">' + "Chapter " + entry.chapter + ": " + "\"" + entry.chapterTitle + "\"" + "<br>" + entry.summary; '</div>'
+           
+        } else '<div class="right-item">' + 'Entry Not Found' + '</div>'
+    }
+}
+
+
+function useJournal() {
+    journalClosed.addEventListener("click", chooseJournalSelection);
+}
+
+useJournal();
+
+function showCampaignChoices() {
+    chosenCampaign = 1;  
+    journalClosed.style.display = "none";
+    campaignContent.style.display = "flex";
+    return chosenCampaign;  
+}
+
+function showPartChoices(chosenCampaign) {
+    console.log("CCam: " + chosenCampaign);
+    populateContentVisual("campaign", chosenCampaign, "part", partContent);
 
     campaignContent.style.display = "none";
     partContent.style.display = "flex";
 }
 
-function showChapterChoices() {
-    populateChaptersVisual("part", 1, "chapter", leftPage);
+function choosePartShowChapters(chosenPart) {
+    console.log("CP: " + chosenPart)
+    populateChaptersVisual("part", chosenPart, "chapter", leftPage);
 
     partContent.style.display = "none";
     journalOpen.style.display = "flex";
@@ -179,20 +221,42 @@ function showChapterChoices() {
 
 
 
-async function useJournal() {
-    journalClosed.addEventListener("click", showCampaignChoices);
-    document.getElementById("conCamp1").addEventListener("click", showPartChoices);
-    let myPromise = new Promise(function(resolve) {
-        if (partContent.innerHTML != 0) {
-            resolve("test");
+function chooseJournalSelection() {
+    console.log("calling");
+    let chosenCampaign = showCampaignChoices();
+    
+    document.getElementById("conCamp" + chosenCampaign).addEventListener("click", () => {
+        chosenCampaign = idStringToNumber(event.target.id);
+        showPartChoices(chosenCampaign);
+        //Fn to loop over parts list and add event listeners to each one
+        let numOfParts = findNumberOf_In_("part", "campaign", chosenCampaign);
+        
+        for (let i = numOfParts[0]; i <= numOfParts[1]; i++) {
+            document.getElementById("conpart" + i).addEventListener("click", () => {
+                chosenPart = idStringToNumber(event.target.id);
+                choosePartShowChapters(chosenPart);
+                //Fn to loop over chapter list and add event listeners
+                let numOfChapters = findNumberOf_In_("chapter", "part", chosenPart);
+                
+                for (let i = numOfChapters[0]; i <= numOfChapters[1]; i++) {
+                    document.getElementById("LItemchapter" + i).addEventListener("click", () => {
+                        chosenChapter = idStringToNumber(event.target.id);
+                        populateSummary(chosenCampaign, chosenPart, chosenChapter);
+                    })
+                }
+            });
         }
+        
     });
-    console.log(await myPromise);
-    //document.getElementById("conpart1").addEventListener("click", check);
+    
+
 }
 
-useJournal();
-
+//Helper Functions
+function idStringToNumber(elementID) {
+   result = Number(elementID.match(/\d+/)[0]);
+   return result;
+}
 
 
 
@@ -219,7 +283,7 @@ function journal() {
             chapterTitle: "Into The Cursed Black Maw Of The Sea",
             date: "02/25/22",
             guests: 0,
-            summary: "Chapter 5 summary coming soon"
+            summary: "~SUMMARY COMING SOON~ <br> (Talk to your DM)"
         },
         
         {
