@@ -133,8 +133,10 @@ h1{
 
 .journal-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-content: center;
+    align-items: center;
 
 }
 
@@ -147,6 +149,12 @@ h1{
     text-align: center;
     user-select: none;
     cursor: pointer;
+}
+
+#journal-open-instructions {
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
 
 .journal-text {

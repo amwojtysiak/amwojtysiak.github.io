@@ -112,6 +112,7 @@ selectButton.addEventListener("click", displaySelectedEntry);
 let campaignContent = document.getElementById("campaign-content");
 let partContent = document.getElementById("part-content");
 let journalClosed = document.querySelector(".journal-closed");
+let journalInstructions = document.getElementById('journal-open-instructions');
 let journalOpen = document.querySelector(".journal-open");
 let leftPage = document.getElementById("left-page");
 let rightPage = document.getElementById("right-page");
@@ -198,6 +199,7 @@ useJournal();
 function showCampaignChoices() {
     chosenCampaign = 1;  
     journalClosed.style.display = "none";
+    journalInstructions.style.display = "none";
     campaignContent.style.display = "flex";
     return chosenCampaign;  
 }
@@ -268,7 +270,7 @@ let journalObjTemplate = {
     chapterTitle: "Shadows Buried Beneath The Prison",
     date: "02/04/22",
     guests: 0,
-    summary: "   Chapter 5 summary coming soon"
+    summary: "~SUMMARY COMING SOON~ <br> (Talk to your DM)"
 }
 // End Journal Template
 
@@ -276,6 +278,27 @@ let journalObjTemplate = {
 
 function journal() {
     let journalArray = [
+       
+        {
+            campaign: 1,
+            part: 1,
+            chapter: 7,
+            chapterTitle: "Dawn March Part II",
+            date: "03/06/22",
+            guests: 0,
+            summary: "~SUMMARY COMING SOON~ <br> (Talk to your DM)"
+        },
+        
+        {
+            campaign: 1,
+            part: 1,
+            chapter: 6,
+            chapterTitle: "Dawn March Part I",
+            date: "03/04/22",
+            guests: 0,
+            summary: "~SUMMARY COMING SOON~ <br> (Talk to your DM)"
+        },
+        
         {
             campaign: 1,
             part: 1,
