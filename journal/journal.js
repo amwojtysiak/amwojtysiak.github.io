@@ -67,6 +67,7 @@ function toggleSelectionElements() {
         chaLabel.style.display = "none";
         searchButton.innerHTML = "Search Journal";
         selectButton.style.display = "none";
+        entryDisplay.style.display = "none"
         
     }
     
@@ -82,9 +83,9 @@ function displaySelectedEntry() {
             entry.part == partSelect.value &&
             entry.chapter == chapterSelect.value 
             ) {
-                
-             entryDisplay.innerHTML = "Chapter " + entry.chapter + ": " + "\"" + entry.chapterTitle + "\"" + "<br>" + entry.summary;
-             break;
+                entryDisplay.style.display = "block";
+                entryDisplay.innerHTML = "Chapter " + entry.chapter + ": " + "\"" + entry.chapterTitle + "\"" + "<br>" + entry.summary;
+                break;
         }
     }
     // entryDisplay.innerHTML = "SELECTION NOT FOUND";
@@ -225,6 +226,7 @@ function choosePartShowChapters(chosenPart) {
 
 function chooseJournalSelection() {
     console.log("calling");
+    entryDisplay.style.display = "none"
     let chosenCampaign = showCampaignChoices();
     
     document.getElementById("conCamp" + chosenCampaign).addEventListener("click", () => {
@@ -306,7 +308,13 @@ function journal() {
             chapterTitle: "Into The Cursed Black Maw Of The Sea",
             date: "02/25/22",
             guests: 0,
-            summary: "~SUMMARY COMING SOON~ <br> (Talk to your DM)"
+            summary: "It was a chill wind that blew over the party, exhausted from the events of the morning. They lay against the Western gate, dark clouds spiraling and coiling overhead, as Byron plucked on his lute slowly and lowly. Before long they were passing back into town as folk were passing out of it, hope in restoration of an old way now failing.  They briefly met with Raine, who told them the brothers Jantis and Rory had gone out hunting for those who attacked the Manor. She also informed them that her and Rory's timeline of departure had been moved to that very week." + 
+            "The party continued on to the docks, seeking the family of Oganta, in search of a ship. They met with Aonghaus and his sons, Mandel and Walten. He agreed to lend them one of his fishing vessels, in exchange for a favor. A man left changed by war, the Oganta patriarch was convinced that the rival Fisheries family, the Marin's, were involved with the Rohyarzhe. The night before a ship of theirs had gone out, not to return. Oganta believed it to be a smuggling ship for Elven loyalists, and so tasked our party with finding this vessel and confirming his suspicion." + 
+            "Taking his youngest son to guide them, the party set out on the high sea in search of the lost ship. A sudden powerful storm assailed them, sending Rhünedâr overboard with the crash of a mighty wave. Unable to swim, Kamban leapt in after him as Byron threw them a line, hauling them back aboard." + 
+            "They at last reached their destination, discovering the wayward ship to be beached and besieged by Baribantis, small sea predators attacking in hordes. The party stormed ashore and fended off the beasts, the battle ending in a small cabin at the back of the island's woods. Inside, they discovered that Marin was running a secret brothel, sending out ships to peddle this illegal trade in secret. The party and Walten were left with a difficult choice: reveal this crime and likely get all involved arrested and killed, or conceal it, and affront the laws of gods and men. The party decided to let Walten make the ultimate decision, though Byron heavily encouraged the boy to let them go free. He at last decided he would not immediately reveal this, but all involved had one week to leave, or be convicted when at last he does reveal Marins crime in the future." +
+            "The party at last sailed back, those lost returning to Marin, who greeted them on the docks, having suffered great anxiety. Walten felt a burden of guilt about his decision. The party then met with Oganta, informing him it had simply been a night fishing vessel that had beached. Disappointed that there were no Rohyarzhe involved, he kept his side of the deal, and the party were now free to use the ship on the morrow." +
+            "The party retired to the moonwatch, but saw in the distance Jantis and Rory returning with their line of prisoners. Kamban and Byron retired inside, while Rhünedâr chose to go and speak briefly with the brothers. The night ended with a quiet dinner with Mairi and Conran and the children. At last, the party adjourned for bed. However, before turning in, Rhünedâr paid a quick visit to Byron's room. He made it clear to his new companion that he didn't approve of his meddling in the lawful and moral affairs of Walten and the people of Seascape. The conversation ended friendly enough. At last, our party drifted with heavy eyes and limbs into a deep and dreamless sleep."
+            
         },
         
         {

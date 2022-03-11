@@ -44,7 +44,9 @@ html{
     background-image: url("../images/parchment background.png");
     background-size: cover;
     background-attachment: scroll;
-    z-index: 0;    
+    z-index: 0;  
+    font-family: "papyrus";
+    font-weight: bolder;  
 }
 
 .text-display {
@@ -55,6 +57,7 @@ html{
     margin: 3%;
     text-align: left;
 }
+
 .p {
     text-indent: 3px;
 }
@@ -63,12 +66,9 @@ html{
     display: none;
     width: 100%;
     height:fit-content;
-    /* background-color: blueviolet; */
     font-family: "papyrus";
     align-items: center;
     justify-content: space-around;
-    
-    
 }
 
 #left-page {
@@ -80,9 +80,7 @@ html{
     align-items: stretch;
     font-size: 2.75em;
     font-weight: bolder;
-    text-transform: capitalize;
-    /* background-color: cadetblue; */
-    
+    text-transform: capitalize;    
 }
 
 #right-page {
@@ -93,12 +91,10 @@ html{
     font-weight: bolder;
     font-size: 1.5em;
     word-spacing: .29em;
-    /* background-color: crimson; */
 }
 
-
-
 h1{
+    
     text-align: center;
     font-size: 3em;
     font-weight: bolder;
@@ -115,20 +111,33 @@ h1{
     height: 15em;
 }
 
+.navigator {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
 .controlButton {
-    height: fit-content;
-    border: .25em solid black;
-    border-radius: 5.25em;
-    background: rgb(233 150 91);
-    text-align: center;
-    font-size: 1em;
+    font-size: 2em;
     font-weight: bolder;
-    width: 150px;
-    padding: .5em;
     user-select: none;
     cursor: pointer;
     margin: 10px;
+    user-select: none;
+    cursor: pointer;
+    font-family: "papyrus";
+    text-transform: capitalize;
+    text-decoration: underline;
+    color: #624132;
     
+}
+
+.controlButton:hover {
+    font-size: 2.25em;
+    color: black;
+    margin: 0px;
+
 }
 
 .journal-container {

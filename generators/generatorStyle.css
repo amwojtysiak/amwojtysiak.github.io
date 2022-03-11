@@ -49,7 +49,7 @@
     text-align: center;
     font-size: 1.5em;
     font-weight: bolder;
-    width: 5em;
+    width: 5.6em;
     padding: .5em;
     user-select: none;
     cursor: pointer;
@@ -169,6 +169,8 @@ html{
     background-size: cover;
     background-attachment: scroll;
     z-index: 0;
+    font-family: "papyrus";
+    font-weight: bolder;
     
     
 }

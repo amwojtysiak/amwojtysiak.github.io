@@ -26,33 +26,30 @@
    
     <div class="navigator">
         <div class="controlButton" id="backButton">Back</div>
-        
-        <label id="selectLabelsCam" for="campaignSelect" style="display: none;">Select Campaign:</label>
-        <select id="campaignSelect" name="campaignSelect" style="display: none;">
-            <option value="1">Campaign 1</option> 
-        </select>
-
-        <label id="selectLabelsPar" for="partSelect" style="display: none;">Select Part:</label>
-        <select id="partSelect" name="partSelect" style="display: none;">0</select>
-
-        <label id="selectLabelsCha" for="chapterSelect" style="display: none;">Select Chapter:</label>
-        <select id="chapterSelect" name="chapterSelect" style="display: none;">0</select>
        
-        <input type="submit" id="selectButton"  style="display: none;">
+       <div id="searchTool">
+            <label id="selectLabelsCam" for="campaignSelect" style="display: none;">Select Campaign:</label>
+            <select id="campaignSelect" name="campaignSelect" style="display: none;">
+                <option value="1">Campaign 1</option> 
+            </select>
+
+            <label id="selectLabelsPar" for="partSelect" style="display: none;">Select Part:</label>
+            <select id="partSelect" name="partSelect" style="display: none;">0</select>
+
+            <label id="selectLabelsCha" for="chapterSelect" style="display: none;">Select Chapter:</label>
+            <select id="chapterSelect" name="chapterSelect" style="display: none;">0</select>
+       
+            <input type="submit" id="selectButton"  style="display: none;">
+       </div> 
+        
+       <div class="controlButton" id="searchButton">Search Journal</div>
+
     </div>
 
-    
-
-    <div class="journal-display">
-        <div class="controlButton" id="searchButton">Search Journal</div>
-    </div>
-
-    <div class="text-display" id="journal-entry-display">
-
-    </div>
+    <div class="text-display" id="journal-entry-display" style="display: none;"></div>
 
     <div class="journal-container">
-        <div class="text-display" id="journal-open-instructions">Click the journal to read...</div>
+        <div class="text-display" id="journal-open-instructions">Click the journal to enter the dream...</div>
         <div class="journal-closed">
             <img id="journal-cover" src="../images/journal-cover.jpg">
             <div class="journal-text">The <br> Fella's <br> Adventure</div>

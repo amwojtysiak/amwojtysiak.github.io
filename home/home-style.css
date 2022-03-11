@@ -15,6 +15,8 @@ html {
     background-image: url("../images/parchment background.png");
     background-size: cover;
     background-attachment: scroll;
+    font-family: "papyrus";
+    font-weight: bolder;
 }
 
 .header {
