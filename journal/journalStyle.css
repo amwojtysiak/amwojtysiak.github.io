@@ -67,7 +67,7 @@ html{
     width: 100%;
     height:fit-content;
     font-family: "papyrus";
-    align-items: center;
+    /* align-items: center; */
     justify-content: space-around;
 }
 
@@ -76,8 +76,9 @@ html{
     flex-wrap: wrap;
     flex-direction: column;
     width: 18%;
+    height: 100%;
     justify-content: center;
-    align-items: stretch;
+    align-items: flex-start;
     font-size: 2.75em;
     font-weight: bolder;
     text-transform: capitalize;    
@@ -87,7 +88,7 @@ html{
     display: flex;
     width: 70%;
     justify-content:left;
-    align-items: center;
+    align-items: flex-start;
     font-weight: bolder;
     font-size: 1.5em;
     word-spacing: .29em;
@@ -225,10 +226,18 @@ h1{
     color: darkred;
 }
 
+.active.left-item {
+    color: darkred;
+}
+
 footer {
     background-color: teal;
     width: 120%;
     height: 50px;
     margin-top: 50px;
+}
+
+.chapter-title-text {
+    font-size: 1.3em;
 }
 
