@@ -47,6 +47,13 @@ html{
     z-index: 0;  
     font-family: "papyrus";
     font-weight: bolder;  
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
 }
 
 .text-display {
@@ -81,7 +88,9 @@ html{
     align-items: flex-start;
     font-size: 2.75em;
     font-weight: bolder;
-    text-transform: capitalize;    
+    text-transform: capitalize;  
+    position: sticky;
+    top: 80px;  
 }
 
 #right-page {
