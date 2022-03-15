@@ -183,6 +183,10 @@ function populateSummary(chosenCampaign, chosenPart, chosenChapter) {
     journalArr = journalArr.slice().reverse();
 
     for (let entry of journalArr) {
+        if (chosenCampaign == entry.campaign && chosenPart == entry.part) {
+            document.getElementById("LItemchapter" + entry.chapter).setAttribute('class', "left-item")
+        }
+        
         if (chosenCampaign == entry.campaign && chosenPart == entry.part && chosenChapter == entry.chapter) {
             rightPage.innerHTML = '<div class="right-item">' + '<span class="chapter-title-text">' + "Chapter " + entry.chapter + ": " + "\"" + entry.chapterTitle + "\"" + '</span>' + "<br><br>" + entry.summary; '</div>'
             document.getElementById("LItemchapter" + entry.chapter).setAttribute('class', "active left-item");
@@ -245,7 +249,7 @@ function chooseJournalSelection() {
                 
                 for (let i = numOfChapters[0]; i <= numOfChapters[1]; i++) {
                     document.getElementById("LItemchapter" + i).addEventListener("click", () => {
-                        chosenChapter = idStringToNumber(event.target.id);
+                        chosenChapter = idStringToNumber(event.target.id);                        
                         populateSummary(chosenCampaign, chosenPart, chosenChapter);
                         //TODO: Add code to remove previous active tag before running populateSummary
                     })
