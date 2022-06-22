@@ -81,9 +81,9 @@ a {
 }
 
 .map-image {
-    /* border-width: 50px 100px;
+    border-width: 50px 100px;
     border-style: solid;
-    border-color: #071846; */
+    border-color: #071846;
     display: flex;
     border-radius: 18px;
     height: 80%;
