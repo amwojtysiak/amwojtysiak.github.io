@@ -5,15 +5,15 @@ var menuMap = document.querySelector("#go-to-map");
 var menuJournal = document.querySelector("#go-to-journal");
 var menuLore = document.querySelector("#go-to-lore");
 
-menuHome.addEventListener("click", () => window.open("./index.html", "_self"));
-menuLoot.addEventListener("click", () => window.open("generators/loot/lootGenerator.html", "_self"));
-menuNpc.addEventListener("click", () => window.open("generators/npc/npcGenerator.html", "_self"));
-menuJournal.addEventListener("click", () => window.open("journal/journal.html", "_self"));
+// menuHome.addEventListener("click", () => window.open("./index.html", "_self"));
+// menuLoot.addEventListener("click", () => window.open("generators/loot/lootGenerator.html", "_self"));
+// menuNpc.addEventListener("click", () => window.open("generators/npc/npcGenerator.html", "_self"));
+// menuJournal.addEventListener("click", () => window.open("journal/journal.html", "_self"));
 
 
 
 //Countdown Clock
-let mo = 3, dat = 18, hr = 20, mins = 0; 
+let mo = 6, dat = 24, hr = 20, mins = 0; 
 //Enter next chapter date above
 
 document.querySelector("#next-chapter-date").innerHTML = mo + "/" + dat + "/22" 
