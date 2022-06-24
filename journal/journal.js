@@ -1,17 +1,3 @@
-//Menu
-var menuHome = document.querySelector("#go-to-home");
-var menuLoot = document.querySelector("#go-to-lootgen");
-var menuNpc = document.querySelector("#go-to-npcgen");
-var menuMap = document.querySelector("#go-to-map");
-var menuJournal = document.querySelector("#go-to-journal");
-var menuLore = document.querySelector("#go-to-lore");
-
-menuHome.addEventListener("click", () => window.open("../index.html", "_self"));
-menuLoot.addEventListener("click", () => window.open("../generators/loot/lootGenerator.html", "_self"));
-menuNpc.addEventListener("click", () => window.open("../generators/npc/npcGenerator.html", "_self"));
-menuJournal.addEventListener("click", () => window.open("./journal.html", "_self"));
-
-
 
 //journal.length - chapter
 
@@ -287,6 +273,36 @@ let journalObjTemplate = {
 function journal() {
     let journalArray = [
        
+        {
+            campaign: 1,
+            part: 2,
+            chapter: 10,
+            chapterTitle: "MacMillan's Endless Hare Hunt",
+            date: "06/17/22",
+            guests: 0,
+            summary: "~SUMMARY COMING SOON~ <br> (Talk to your DM)"
+        },
+
+        {
+            campaign: 1,
+            part: 2,
+            chapter: 9,
+            chapterTitle: "The Hills of Granemore",
+            date: "05/27/22",
+            guests: 0,
+            summary: "~SUMMARY COMING SOON~ <br> (Talk to your DM)"
+        },
+
+        {
+            campaign: 1,
+            part: 1,
+            chapter: 8,
+            chapterTitle: "The World to Come",
+            date: "03/18/22",
+            guests: 0,
+            summary: "~SUMMARY COMING SOON~ <br> (Talk to your DM)"
+        },
+
         {
             campaign: 1,
             part: 1,

@@ -1,44 +1,4 @@
 
-body {
-    margin: 0;
-    padding: 0;
-}
-
-.menu {
-    border-top: 5px solid black;
-    border-bottom: 5px solid black;
-    height: 60px;
-    background-color: rgb(221, 52, 52, 0);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    position: sticky;
-    top: 0;
-}
-
-.menu-items {
-    background-color: teal;
-    width: 200px;
-    height: 2.5em;
-    border: 3px solid black;
-    border-radius: 15px;
-    margin: 10px;
-    padding: 3px;
-    text-align: center;
-    font-weight: bolder;
-    user-select: none;
-    cursor: pointer;
-    align-content: center;
-}
-
-.menu-items:hover:not(.active) {
-    background: cornsilk;
-}
-
-.active.menu-items {
-    background-color: rgb(100, 204, 204);
-}
-
 .button-panel {
     display: flex;
     justify-content: space-around;
@@ -167,17 +127,6 @@ h2{
 #tierHeading{
     background: rgb(92 150 72);
     margin-top: 6em;
-}
-
-html{
-    background-image: url("../images/parchment background.png");
-    background-size: cover;
-    background-attachment: scroll;
-    z-index: 0;
-    font-family: "papyrus";
-    font-weight: bolder;
-    
-    
 }
 
 .header {   

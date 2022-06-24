@@ -75,16 +75,3 @@ sizes.forEach(function(size) {
     document.querySelector('[data-size="'+size+'"]').addEventListener('click', callRandomNumFromSize);
 })
 
-
-//Menu Navigation
-var menuHome = document.querySelector("#go-to-home");
-var menuLoot = document.querySelector("#go-to-lootgen");
-var menuNpc = document.querySelector("#go-to-npcgen");
-var menuMap = document.querySelector("#go-to-map");
-var menuJournal = document.querySelector("#go-to-journal");
-var menuLore = document.querySelector("#go-to-lore");
-
-menuHome.addEventListener("click", () => window.open("../../index.html", "_self"));
-menuLoot.addEventListener("click", () => window.open("./lootGenerator.html", "_self"));
-menuNpc.addEventListener("click", () => window.open("../npc/npcGenerator.html", "_self"));
-menuJournal.addEventListener("click", () => window.open("../../journal/journal.html", "_self"));

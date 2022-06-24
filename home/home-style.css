@@ -6,23 +6,23 @@ img {
     border: 10px solid black;
 }
 
-a {
+/* a {
     text-decoration: none;
     color: black;
-}
+} */
 
 table {
     width: 100%;
    
 }
 
-html {
+/* html {
     background-image: url("../images/parchment background.png");
     background-size: cover;
     background-attachment: scroll;
     font-family: "papyrus";
     font-weight: bolder;
-}
+} */
 
 .header {
     margin-top: 3%;
@@ -55,7 +55,7 @@ html {
     text-decoration: underline black;
 }
 
-.menu {
+/* .menu {
     border-bottom: 5px solid black;
     border-top: 5px solid black;
     height: 60px;
@@ -91,7 +91,7 @@ html {
 
 .active.menu-items {
     background-color: rgb(100, 204, 204);
-}
+} */
 
 /* .container {
     background-color: white;
