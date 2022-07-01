@@ -55,7 +55,7 @@ table {
     text-decoration: underline black;
 }
 
-/* .menu {
+.menu {
     border-bottom: 5px solid black;
     border-top: 5px solid black;
     height: 60px;
@@ -112,4 +112,4 @@ table {
     border: 5px solid black;
     margin: 10px;
     text-align: center;
-} */
+}
