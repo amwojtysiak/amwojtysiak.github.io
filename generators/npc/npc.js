@@ -6,6 +6,11 @@ const weightArr = ['Skeletal', 'Skinny', 'Skinny', 'Skinny', 'Slim', 'Slim', 'Sl
 const hairArr = ['Short', 'Medium', 'Long'];
 const facialHairArr = ['Clean-Shaven', 'Clean-Shaven', 'Clean-Shaven', 'Stubble', 'Stubble', 'Stubble', 'Trimmed', 'Trimmed', 'Trimmed', 'Full-Beard', 'Full-Beard', 'Full-Beard', 'Thick-Beard', 'Thick-Beard', 'Huge-Beard'];
 const clothesArr = ['Dirt-Poor', 'Dirt-Poor', 'Dirt-Poor', 'Poor', 'Poor', 'Poor', 'Average', 'Average', 'Average', 'Middle-Class', 'Middle-Class', 'Middle-Class', 'Wealthy', 'Wealthy', 'Rich'];
+const fNameMaleArr = ['Austi', 'Bragi', 'Braka', 'Brobek', 'Brulin', 'Coalak', 'Dagurt', 'Digroi', 'Eiki', 'Eilivur', 'Floki', 'Frostar', 'Fundar', 'Gogu', 'Gremin', 'Gusak', 'Heptin', 'Horar', 'Hungus', 'Ingivald', 'Jodis', 'Killin', 'Lipith', 'Lofar', 'Malok', 'Noi', 'Oddfinnur', 'Prodos', 'Ragriel', 'Randil', 'Rotnam', 'Salvor', 'Slyvek', 'Throar', 'Toki', 'Virfi', 'Voggur', 'Withil', 'Zazfa'
+];
+const fNameFemaleArr = ['Amerstal', 'Aqrilla', 'Bellesta', 'Bonnwynn', 'Brilbelle', 'Chalia', 'Daernip', 'Devella', 'Dimlinn', 'Edmyla', 'Erthel', 'Fada', 'Gembelle', 'Ithi', 'Jaderyn', 'Jinvia', 'Kezda', 'Kystal', 'Lija', 'Minelle', 'Misi', 'Misma', 'Mistmael', 'Mysris', 'Nalra', 'Narvari', 'Pondral', 'Ragna', 'Saphil', 'Sola', 'Soldelle', 'Tazlen', 'Tisnip', 'Tisthel', 'Tiznys', 'Vinelle', 'Wiska', 'Wispmaral', 'Yrsa', 'Ygritte', 'Zika'];
+const lNameMaleArr = [''];
+const lNameFemaleArr = [''];
 
 //TODO: Add First and last name, make last name delete from array when used, make alert if last name arr is low
 
@@ -14,6 +19,8 @@ let npcDisplayField = document.querySelector("#ranNpcGen");
 let npcButton = document.querySelector("#randomNpcButton");
 
 let npcDescriptorObj = {
+    fName: "Bilbo",
+    lName: "Baggins",
     gender: "Male",
     race: "Human",
     height: "Average",
@@ -38,6 +45,7 @@ function generateRandomDescriptor(descriptorArr) {
 }
 
 function fillDescriptorObj() {
+    
     this.gender = generateRandomDescriptor(genderArr).toUpperCase();
     this.race = generateRandomDescriptor(raceArr).toUpperCase();
     this.height = generateRandomDescriptor(heightArr).toUpperCase();
@@ -50,11 +58,20 @@ function fillDescriptorObj() {
     } else {
         this.facialHair = 'NONE'
     }
+//Gender Specific
+    if (npcDescriptorObj.gender === "FEMALE") {
+        this.fName = generateRandomDescriptor(fNameFemaleArr).toUpperCase();
+    } else {
+        this.fName = generateRandomDescriptor(fNameMaleArr).toUpperCase();
+    }
+
+    this.lName = generateRandomDescriptor(lNameMaleArr).toUpperCase();
+    
 }
 
 function populateNpcField() {
     npcDescriptorObj.randomize();
-    npcDisplayField.innerHTML = "Race:  " + npcDescriptorObj.race + "<br>" + "Gender:  " + npcDescriptorObj.gender + "<br>" +
+    npcDisplayField.innerHTML = "Name:  " + npcDescriptorObj.fName + " " + npcDescriptorObj.lName + "<br>" + "Race:  " + npcDescriptorObj.race + "<br>" + "Gender:  " + npcDescriptorObj.gender + "<br>" +
         "Height:  " + npcDescriptorObj.height + "<br>" + "Age:  " + npcDescriptorObj.age + "<br>" +
         "Clothes:  " + npcDescriptorObj.clothes + "<br>" + "Weight:  " + npcDescriptorObj.weight + "<br>" + 
         "Hair:  " + npcDescriptorObj.hair + "<br>" + "FacialHair:  " + npcDescriptorObj.facialHair;
