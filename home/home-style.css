@@ -55,6 +55,28 @@ table {
     text-decoration: underline black;
 }
 
+
+
+
+
+html {
+    background-image: url("../images/parchment_background.png");
+    background-size: cover;
+    background-attachment: scroll;
+    font-family: "papyrus";
+    font-weight: bolder;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
 .menu {
     border-bottom: 5px solid black;
     border-top: 5px solid black;
@@ -91,7 +113,7 @@ table {
 
 .active.menu-items {
     background-color: rgb(100, 204, 204);
-} */
+} 
 
 /* .container {
     background-color: white;

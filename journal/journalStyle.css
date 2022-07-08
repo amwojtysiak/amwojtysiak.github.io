@@ -197,3 +197,60 @@ footer {
     font-size: 1.3em;
 }
 
+
+
+html {
+    background-image: url("../images/parchment_background.png");
+    background-size: cover;
+    background-attachment: scroll;
+    font-family: "papyrus";
+    font-weight: bolder;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.menu {
+    border-bottom: 5px solid black;
+    border-top: 5px solid black;
+    height: 60px;
+    background-color: rgb(221, 52, 52, 0);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    left: 0;
+    right: 0;
+    margin: 0px;
+    position: sticky;
+    top: 0;
+}
+
+.menu-items {
+    background-color: teal;
+    width: 200px;
+    height: 2.5em;
+    border: 3px solid black;
+    border-radius: 15px;
+    margin: 10px;
+    padding: 3px;
+    text-align: center;
+    font-weight: bolder;
+    user-select: none;
+    cursor: pointer;
+    align-content: center;
+}
+
+.menu-items:hover:not(.active) {
+    background: cornsilk;
+}
+
+.active.menu-items {
+    background-color: rgb(100, 204, 204);
+}
