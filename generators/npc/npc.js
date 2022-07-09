@@ -9,8 +9,8 @@ const clothesArr = ['Dirt-Poor', 'Dirt-Poor', 'Dirt-Poor', 'Poor', 'Poor', 'Poor
 const fNameMaleArr = ['Austi', 'Bragi', 'Braka', 'Brobek', 'Brulin', 'Coalak', 'Dagurt', 'Digroi', 'Eiki', 'Eilivur', 'Floki', 'Frostar', 'Fundar', 'Gogu', 'Gremin', 'Gusak', 'Heptin', 'Horar', 'Hungus', 'Ingivald', 'Jodis', 'Killin', 'Lipith', 'Lofar', 'Malok', 'Noi', 'Oddfinnur', 'Prodos', 'Ragriel', 'Randil', 'Rotnam', 'Salvor', 'Slyvek', 'Throar', 'Toki', 'Virfi', 'Voggur', 'Withil', 'Zazfa'
 ];
 const fNameFemaleArr = ['Amerstal', 'Aqrilla', 'Bellesta', 'Bonnwynn', 'Brilbelle', 'Chalia', 'Daernip', 'Devella', 'Dimlinn', 'Edmyla', 'Erthel', 'Fada', 'Gembelle', 'Ithi', 'Jaderyn', 'Jinvia', 'Kezda', 'Kystal', 'Lija', 'Minelle', 'Misi', 'Misma', 'Mistmael', 'Mysris', 'Nalra', 'Narvari', 'Pondral', 'Ragna', 'Saphil', 'Sola', 'Soldelle', 'Tazlen', 'Tisnip', 'Tisthel', 'Tiznys', 'Vinelle', 'Wiska', 'Wispmaral', 'Yrsa', 'Ygritte', 'Zika'];
-const lNameMaleArr = [''];
-const lNameFemaleArr = [''];
+const lNameArr = ['Amana', 'Barlowe', 'Caddel', 'Fox', 'Francis', 'Hart', 'Hendrix', 'Katz', 'Laurier', 'Madden', 'Sai', 'Villarreal', 'Viotto', 'Abraham', 'Ashford', 'Benjamin','Boone', 'Elrod', 'Frederick', 'Hale', 'Langston', 'Levisay', 'McElfresh', 'Trevino', 'Whitlock', 'Yarbrough', 'Amos', 'Beam', 'Dash', 'Duke', 'Fleet', 'Jian', 'Moses', 'Pierce', 'Remington', 'Sharp', 'Singh', 'Stallard', 'West', 'Abernathy', 'Cornelius', 'Crawford', 'Cunningham', 'Driscoll', 'Ellis', 'Finch', 'Menken', 'Ninomae', 'Simmons', 'Undergrove', 'Vandenberg', 'Webb', 'Abednego', 'Cyprus', 'Dagon', 'Damaris', 'Einar', 'Festus', 'Gallio', 'Griffin', 'Kami', 'Lightfoot', 'Luna', 'Priestley', 'Sierra', 'Aberra', 'Agapov', 'Albertine', 'Angelo', 'Cherith', 'Desai', 'Godfrey', 'Greathouse', 'Knight', 'Lozano', 'Luz', 'Prince', 'Rossi', 'Alastair', 'Aphelion', 'Callisto', 'Chrysalis', 'Furi', 'Gibbethon', 'Gregorios', 'Nadir', 'Omega', 'Sapphirus', 'Silvius', 'Umbra', 'Zibia'];
+
 
 //TODO: Add First and last name, make last name delete from array when used, make alert if last name arr is low
 
@@ -65,7 +65,7 @@ function fillDescriptorObj() {
         this.fName = generateRandomDescriptor(fNameMaleArr).toUpperCase();
     }
 
-    this.lName = generateRandomDescriptor(lNameMaleArr).toUpperCase();
+    this.lName = generateRandomDescriptor(lNameArr).toUpperCase();
     
 }
 
