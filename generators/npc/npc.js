@@ -71,7 +71,7 @@ function fillDescriptorObj() {
 
 function populateNpcField() {
     npcDescriptorObj.randomize();
-    npcDisplayField.innerHTML = "Name:  " + npcDescriptorObj.fName + " " + npcDescriptorObj.lName + "<br>" + "Race:  " + npcDescriptorObj.race + "<br>" + "Gender:  " + npcDescriptorObj.gender + "<br>" +
+    npcDisplayField.innerHTML = "Name:  " + npcDescriptorObj.fName + " - " + npcDescriptorObj.lName + "<br>" + "Race:  " + npcDescriptorObj.race + "<br>" + "Gender:  " + npcDescriptorObj.gender + "<br>" +
         "Height:  " + npcDescriptorObj.height + "<br>" + "Age:  " + npcDescriptorObj.age + "<br>" +
         "Clothes:  " + npcDescriptorObj.clothes + "<br>" + "Weight:  " + npcDescriptorObj.weight + "<br>" + 
         "Hair:  " + npcDescriptorObj.hair + "<br>" + "FacialHair:  " + npcDescriptorObj.facialHair;
