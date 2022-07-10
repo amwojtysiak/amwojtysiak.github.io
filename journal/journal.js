@@ -88,11 +88,11 @@ let camLabel = document.getElementById("selectLabelsCam");
 let parLabel = document.getElementById("selectLabelsPar");
 let chaLabel = document.getElementById("selectLabelsCha");
 
-backButton.addEventListener("click", () => window.open("./journal.html", "_self"));
+// backButton.addEventListener("click", () => window.open("./journal.html", "_self"));
 
-searchButton.addEventListener("click", toggleSelectionElements);
+// searchButton.addEventListener("click", toggleSelectionElements);
 
-selectButton.addEventListener("click", displaySelectedEntry);
+// selectButton.addEventListener("click", displaySelectedEntry);
 
 //Visual content selector
 
@@ -217,7 +217,7 @@ function choosePartShowChapters(chosenPart) {
 
 function chooseJournalSelection() {
     console.log("calling");
-    entryDisplay.style.display = "none"
+    // entryDisplay.style.display = "none"
     let chosenCampaign = showCampaignChoices();
     
     document.getElementById("conCamp" + chosenCampaign).addEventListener("click", () => {
@@ -276,10 +276,31 @@ function journal() {
         {
             campaign: 1,
             part: 2,
+            chapter: 12,
+            chapterTitle: "Caged Birds & Birds of Prey",
+            date: "07/08/22",
+            guests: 0,
+            location: "Road",
+            summary: "~SUMMARY COMING SOON~ <br> (Talk to your DM)"
+        },
+        {
+            campaign: 1,
+            part: 2,
+            chapter: 11,
+            chapterTitle: "Shadows of Kemwei: Whispers of the Past",
+            date: "06/24/22",
+            guests: 0,
+            location: "Road",
+            summary: "~SUMMARY COMING SOON~ <br> (Talk to your DM)"
+        },
+        {
+            campaign: 1,
+            part: 2,
             chapter: 10,
             chapterTitle: "MacMillan's Endless Hare Hunt",
             date: "06/17/22",
             guests: 0,
+            location: "Road",
             summary: "~SUMMARY COMING SOON~ <br> (Talk to your DM)"
         },
 
@@ -290,6 +311,7 @@ function journal() {
             chapterTitle: "The Hills of Granemore",
             date: "05/27/22",
             guests: 0,
+            location: "Road",
             summary: "~SUMMARY COMING SOON~ <br> (Talk to your DM)"
         },
 
@@ -300,6 +322,7 @@ function journal() {
             chapterTitle: "The World to Come",
             date: "03/18/22",
             guests: 0,
+            location: "Seascape Port",
             summary: "~SUMMARY COMING SOON~ <br> (Talk to your DM)"
         },
 
@@ -310,6 +333,7 @@ function journal() {
             chapterTitle: "Dawn March Part II",
             date: "03/06/22",
             guests: 0,
+            location: "Seascape Port",
             summary: "~SUMMARY COMING SOON~ <br> (Talk to your DM)"
         },
         
@@ -320,6 +344,7 @@ function journal() {
             chapterTitle: "Dawn March Part I",
             date: "03/04/22",
             guests: 0,
+            location: "Seascape Port",
             summary: "Darkness held its grip upon the land for the third straight day. The party made its way to the temple upon rousing from sleep. Bright and terrible bolts of blue and white lightning were the only light source to guide them in that early morning. Inside, the human cost of the devastation was laid bare: pews lined with sick and injured, every corner of cold stone covered with homeless, young and old, the Mannach wrangling ever growing numbers of orphaned children, lost and confused. Kamban and Byron both kneel before the gods. Kamban's prayers are secret and hidden away, unspoken. Byron prays not to the gods, but to his mother. Rhünedâr stood by, as Jantis was also there, praying feverishly, sweating. He arose before the other two, and so quietly spoke with Rhünedâr. He spoke of his terror and love for the people, before at last departing. <br><br>" +
             "As the party left the temple, the morning was theirs to do with as they wished. Byron, remembering the words of the goblins, led the party back to their encampment to inquire about the child one of them had mentioned. Upon arriving, the goblins met them with desperation rather than hostility. As they entered the small goblin village, they were chilled by a wailing that filled the tight caverns, and echoed down the dark corridors. The goblins brought them before a goblin woman, holding in her spindly fingers a human baby, white and stiff, as though chiseled from stone. Without thinking, Byron immediately placed a hand upon its body, and cast Cure Wounds. The magic course through its veins, but alas, the child was dead. The party departed regretfully, as the goblins mournfully buried the baby at sea. <br><br> " +
             "Upon returning to town, Kamban and Rhünedâr made for the Water of Life to pass the time.  Meanwhile, Byron went to Silvain Sambre's store, where he procured all the books he had about arcana, which happened to be only two. <br><br> " +
@@ -340,6 +365,7 @@ function journal() {
             chapterTitle: "Into The Cursed Black Maw Of The Sea",
             date: "02/25/22",
             guests: 0,
+            location: "Seascape Port",
             summary: "It was a chill wind that blew over the party, exhausted from the events of the morning. They lay against the Western gate, dark clouds spiraling and coiling overhead, as Byron plucked on his lute slowly and lowly. Before long they were passing back into town as folk were passing out of it, hope in restoration of an old way now failing.  They briefly met with Raine, who told them the brothers Jantis and Rory had gone out hunting for those who attacked the Manor. She also informed them that her and Rory's timeline of departure had been moved to that very week." + 
             "The party continued on to the docks, seeking the family of Oganta, in search of a ship. <br><br> They met with Aonghaus and his sons, Mandel and Walten. He agreed to lend them one of his fishing vessels, in exchange for a favor. A man left changed by war, the Oganta patriarch was convinced that the rival Fisheries family, the Marin's, were involved with the Rohyarzhe. The night before a ship of theirs had gone out, not to return. Oganta believed it to be a smuggling ship for Elven loyalists, and so tasked our party with finding this vessel and confirming his suspicion." + 
             "Taking his youngest son to guide them, the party set out on the high sea in search of the lost ship. <br><br> A sudden powerful storm assailed them, sending Rhünedâr overboard with the crash of a mighty wave. He was unable to swim and Kamban leapt in after him as Byron threw them a line, hauling them back aboard. " + 
@@ -356,6 +382,7 @@ function journal() {
             chapterTitle: "Shadows Buried Beneath The Prison",
             date: "02/04/22",
             guests: 0,
+            location: "Seascape Port",
             summary: "The morning was black, the rain battering the inn, and the wind assaulting the town like a vengeful spirit. Kambam and Rhünedâr awoke to notes beckoning them to meet in Byron's room. Meanwhile, as Byron himself awoke, a flash of lightning revealed a figure, hooded and cloaked, sitting in his midst. It was Ronan. Once the other two arrived, Ronan informed them of the ill happenings that kept him from their meeting. He had taken the fall for the party's dungeon incursion, and was now hunted. They informed him of what they found in the dungeon, and their hopes to infiltrate the lower dungeon. He directed them to a man named Abelard Tuck, and told them to report their findings to him at the home of Magda, the herbalist. <br><br>" +
                 "Abelard revealed to the party rumors of a cave system that leads into a secret dungeon, used in the Gozen Wu Gawa campaigns to torture and interrogate elves. He led them to the spot where the caves begin, and his wife is buried. The party chose to venture into the sea cave, where they encountered a band of Sea Goblins. After stealing some gold, Rhünedâr's aggression convinced them conflict wasn't worth it, and they scattered. After a time, they came to the end of the tunnel, discovering a secret door. <br><br>" +
                 "On the other side was revealed a large multi- level cavern that opened at the back to the sea. A ship was docked below, along with cages, and soldiers preparing it for sailing. The party sent Kambam in to investigate. He first discovered another prison with people in it, built into the stone above a black pool. He then infiltrated the ship, while Byron and Rhünedâr hid behind the crates. Scanning their manifests, Kambam quickly discovered that the soldiers, and by extension, Jantis himself, were selling the prisoners. The manifest revealed Andreé to be one of those sold, for a hefty sum. With this information in hand, the party entered the ship, and confronted the soldiers. After a quick and bloody battle, the last remaining soldier turned his magic hand to the caged prisoners, promising to end their lives if the party didn't retreat. <br><br>" + 
@@ -372,6 +399,7 @@ function journal() {
             chapterTitle: "Sins Of The Father, Secrets Of A Son",
             date: "01/14/22",
             guests: 0,
+            location: "Seascape Port",
             summary: "With smoke and storms swirling overhead, the party began making its way in search of Ronan, to update him on their findings in the black dungeon. Suddenly, Jantis came storming down the hill, flagging them down, his intentions unclear. Our nervous heroes decided to wait and see what he had to say. To their surprise, he brought before them a heartfelt apology, sincere gratitude for saving Rory and Raine and a small insight into the suffering of Seascape Port and his own personal struggles. After casting a bleak outlook on the future of the town, he advised the party to leave. <br><br>" + 
                 "As they left, Kambam felt what seemed to be an attempted pickpocket. It turned out to be a message from Ronan, bidding them meet him at the Fish Oil tavern in an hour. However, he never arrived, so after waiting an extra hour, the party left for the Ard Tierna's manor. Upon arriving, they were greeted by Raine, Rory and his father Tierna Dedrick. He greeted them, before departing the feast. The party spoke with Rory and Raine late into the night. Many drinks and courses in, Rory revealed that he and Raine, wary of Jantis's suspicious behavior, followed him at dawn one morning. He went down to the sea, and received something from a bird flitting over the waves. After persuading him, he offered up the additional information that whatever Jantis received, he had likely stowed it away in his room.<br><br>" + 
                 "After dinner, Byron pulled out the lute, and put on a rousing performance that had Rory and Raine dancing on the table, enthralled by the music. During the performance, Kambam snuck out and made his way into Jantis' room. Inside, on the desk, he discovered a letter with a time and a place,along with a small map to a nearby island. He copied the letter, and returned to dinner. <br><br>" + 
@@ -385,6 +413,7 @@ function journal() {
             chapterTitle: "A Gathering Of Storms & Strangers & Lost Rangers",
             date: "12/10/21",
             guests: 0,
+            location: "Seascape Port",
             summary: "After saving the lives of bride and groom and subduing the assailant, Alpin, our three adventurers were promptly taken into custody. The Captain of the guard, Tierna Jantis Trysil, a man equal parts overwhelmed by the storms and suspicious, questioned them at length, seemingly bent on proving their involvement. However, they were soon cleared by witness testimony, and now free men, headed for the Water of Life tavern for a drink. While sharing an ale, a hooded, shadowy figure arrived, and appeared to be sleeping on the bench. With the storms wreaking havoc upon the town, the mood was low, until Byron Blackford raised spirits with a rousing performance. As the night wore on and the Tavern emptied, the hooded man at last revealed himself. <br><br> His name was Ronan, one of the Diasuile Rangers," +
             "and he had for them a proposition. After witnessing their handiwork at the wedding, he hired the three men to infiltrate the prison, and locate his partner Andreé, a Tiefling woman with raven black hair and midnight purple skin. The party accepted the offer. The following morning they made their way to the prison, where they ran into Rory who had been denied entry to see Alpin. He thanked them and invited them to dinner that evening. Following this, they snuck into the lower dungeons. After battling a small group of Drowners, it quickly became clear that Andreé was not here, though in their investigation, they also discovered a hidden door, seemingly leading to a secret lower dungeon. The door was sealed shut however, and required a special key." +
             "Their exit from the dungeons was covered as the bell tower of the keep caught fire from an errant bolt of lightning, and the party helped extinguish it. So with smoke rising into the air, and leaving chaos in their wake, Byron, Rhünedâr and Kambam left in search of Ronan to deliver the bad news..."
@@ -397,6 +426,7 @@ function journal() {
             chapterTitle: "Mighty Dreams, Mighty Meetings",
             date: "12/04/21",
             guests: 0,
+            location: "Seascape Port",
             summary: "In those days, the land was frail like a fledgling. The powers of the world had been shaken, and an uneasy unification between ancient foes was struck. But old hatreds are not so easily cleansed, like a hemorrhage beneath the skin, they eat away at the new foundation of the world. And yet, in days of turmoil, triumph and transformation, it was in truth two small happenings, on a particular day in autumn, that would come to shape the future of the island. <br><br> The first was a nightmare. A nightmare so powerful, it ensnared the minds of all the sleeping, and held them rapt as the world perished in fire and bright, bright light. And when it was over, a thing arguably even more mighty occurred.  In fact, it may be argued to be one of the world's most powerful forces: the meeting of fated men. <br><br>" + 
             "The Bard Byron Blackford arrived in the town of Seascape Port, his services contracted to perform at the wedding of Tierna Rory Trysil, son of the Ard Tierna, and Raine. The town seemed beset by a curse of peculiar and erratic storms that came and went like the bluster of wind in spring. Kambam arrived shortly after, his purpose as secretive as the man himself, and quickly made his way to the Chapel. Across the long meadow, off the road by the sea, Rhünedâr the dwarf buried his father, with the aid of a kind orcish stranger. He was scheduled to be in town to present a commissioned sword to Rory the groom at his wedding. <br><br>" +
             "As our three strangers gathered at the event come evening, a black and withered tree of love bore rotten, jealous fruit. Alpin, the ward of Ard Tierna Trysil, and surrogate younger brother of Rory, attempted to kidnap the bride, Raine: the source of his tainted love. " +

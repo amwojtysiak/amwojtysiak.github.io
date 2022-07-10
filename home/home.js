@@ -1,6 +1,6 @@
 
 //Countdown Clock
-let mo = 7, dat = 08, hr = 20, mins = 0; 
+let mo = 7, dat = 15, hr = 20, mins = 0; 
 //Enter next chapter date above
 
 document.querySelector("#next-chapter-date").innerHTML = mo + "/" + dat + "/22" 
