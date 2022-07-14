@@ -137,7 +137,7 @@ table {
 
 
 
-html {
+/* html {
     background-image: url("../images/parchment_background.png");
     background-size: cover;
     background-attachment: scroll;
@@ -188,7 +188,7 @@ a {
     height: 100%;
     /* margin: 10px;
     padding: 3px; */
-    text-align: center;
+    /* text-align: center;
     font-size: 1.25em;
     font-weight: bolder;
     user-select: none;
@@ -221,7 +221,7 @@ footer {
     height: 100px;
     margin-top: 50px;
     border-top: 5px solid black;   
-}
+} */ 
 
 /* .container {
     background-color: white;
