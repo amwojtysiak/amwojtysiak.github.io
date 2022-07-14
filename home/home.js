@@ -63,7 +63,7 @@ function initializeClock(id="countdownClock", nextChapterDate) {
 
 initializeClock("countdownClock", nextChapterDate);
 
-console.log("now updated");
+console.log("now updated again");
 
 //async practice
 
