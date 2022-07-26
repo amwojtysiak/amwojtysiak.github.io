@@ -61,18 +61,79 @@ a {
     border-color: rgba(255, 255, 255, 0.0);
 }
 
+.dropdown-box {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: whitesmoke;
+    
+}
+
+.dropdown {
+    flex-direction: column;
+    position: relative;
+    height: 100%;
+}
+
 .menu-items:hover:not(.active) {
     border-color: rgba(255, 255, 255, 1.0);
 }
 
 .active.menu-items {
-    border-right: 2px;
-    border-left: 2px;
+    border: 2px solid white;
     border-top: 0;
     border-bottom: 0;
-    border-style: solid;
-    border-color: white;
 }
+
+.dropdown:hover:not(.active) {
+    border-color: rgba(255, 255, 255, 1.0);
+}
+
+
+.dropdown-content {
+    display: none;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-image: url("../../images/journal-cover-menu.jpg");
+    border: 5px solid black;
+    border-top: 0;
+    position: absolute;
+    width: 140%;
+    height: 8em;
+    min-width: 145px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 6;
+    cursor: pointer;
+    overflow: auto;
+    transform: translateY(60%);
+}
+
+.dropdown-items {
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    color: whitesmoke;
+    height: 25%;
+    width: 76%;
+    border: 2px solid rgba(255, 255, 255, 0.0);
+    border-top: 0;
+    border-bottom: 0;
+   
+}
+
+.dropdown-items:hover {
+    border-color: rgba(255, 255, 255, 1.0);
+}
+
+.dropdown:hover .dropdown-content {
+    display: flex;
+    
+}
+
 
 footer {
     background-image: url("../../images/journal-cover-menu.jpg");
