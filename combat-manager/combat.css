@@ -1,0 +1,50 @@
+.header {   
+    max-width: 100%;
+    height: 15em;
+    
+}
+
+.pageTitle {
+    font-size: 3em;
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.interaction-boxes {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.top-columns {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    height: 20em;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.display-box {
+    display: flex;
+    flex-direction: column;
+    width: 46%;
+    height: 95%;
+    border: 2px solid black;
+    justify-content: flex-start;
+    align-items: center;
+    
+}
+
+.bottom-box {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    height: 20em;
+    justify-content: space-around;
+    align-items: center;
+}
