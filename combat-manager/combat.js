@@ -12,7 +12,7 @@ const characters = {
         lName: "Blackford",
         health: byronHP,
         armorClass: byronAC,
-        turnNumber: 4,
+        turnNumber: 1,
         get turn() {return this.turnNumber},
         set nextTurn(val) {
             if (this.turnNumber == 1) this.turnNumber = Object.keys(characters).length + 1;
@@ -50,7 +50,7 @@ const characters = {
         lName: "",
         health: rhunedarHP,
         armorClass: rhunedarAC,
-        turnNumber: 1,
+        turnNumber: 3,
         get turn() {return this.turnNumber},
         set nextTurn(val) {
             if (this.turnNumber == 1) this.turnNumber = Object.keys(characters).length + 1;
@@ -69,7 +69,7 @@ const characters = {
         lName: "",
         health: ronanHP,
         armorClass: ronanAC,
-        turnNumber: 3,
+        turnNumber: 4,
         get turn() {return this.turnNumber},
         set nextTurn(val) {
             if (this.turnNumber == 1) this.turnNumber = Object.keys(characters).length + 1;

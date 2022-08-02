@@ -1,7 +1,11 @@
 
 //Countdown Clock
-let mo = 7, dat = 29, hr = 20, mins = 0; 
+let mo = 8, dat = 5, hr = 20, mins = 0; 
 //Enter next chapter date above
+//New Content Notification
+var newPart = 2, newChapter = 12;
+var notifyYear = "2022", notifyMonth = 08, notifyDate = 01;
+//Enter new content location  and date(YYYY, MM, DD) above
 
 document.querySelector("#next-chapter-date").innerHTML = mo + "/" + dat + "/22" 
 
@@ -13,12 +17,9 @@ nextChapterDate.setMinutes(mins);
 nextChapterDate.setSeconds(0);
 
 var currentDate = new Date();
-console.log(currentDate);
 
 let nextChapterMsec = Date.parse(nextChapterDate);
 let currentMsec = Date.parse(currentDate);
-console.log(nextChapterMsec);
-console.log(currentMsec);
 
 function getTimeRemaining(nextChapterDate){
     currentDate = new Date();
@@ -64,6 +65,20 @@ function initializeClock(id="countdownClock", nextChapterDate) {
 initializeClock("countdownClock", nextChapterDate);
 
 console.log("now updated again");
+
+var notificationStartDate = new Date(notifyYear + "-" + notifyMonth + "-" + notifyDate); 
+var notificationEndDate = notificationStartDate.setDate(notificationStartDate.getDate() + 5);
+var now = new Date();
+console.log(notificationStartDate);
+console.log(notificationEndDate)
+
+document.querySelector("#notification-part").innerHTML = newPart;
+document.querySelector("#notification-chapter").innerHTML = newChapter;
+
+if (now <= notificationEndDate) {
+    document.getElementById("new-content").style.display = "flex"; 
+}
+
 
 //async practice
 
