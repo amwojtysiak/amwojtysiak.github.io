@@ -3,7 +3,7 @@
 var byronHP = 21, byronAC = 13;
 var rhunedarHP = 35, rhunedarAC = 12;
 var gabrielHP = 18, gabrielAC = 13;
-var ronanHP = 20, ronanAC = 20;
+var ronanHP = 31, ronanAC = 13;
 //Modify Character HP
 
 const characters = {
