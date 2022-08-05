@@ -7,106 +7,138 @@ var ronanHP = 20, ronanAC = 20;
 //Modify Character HP
 
 const characters = {
-    Byron: {
-        fName: "Byron",
-        lName: "Blackford",
-        health: byronHP,
-        armorClass: byronAC,
-        turnNumber: 1,
-        get turn() {return this.turnNumber},
-        set nextTurn(val) {
-            if (this.turnNumber == 1) this.turnNumber = Object.keys(characters).length + 1;
-            this.turnNumber = this.turnNumber - val;
-        },
-        set addHP(val) {
-            this.health = this.health + val;
-        },
-        set takeDMG(val) {
-            this.health = this.health - val;
-        },
-        fullName: function(){this.fName + " " + this.lName}
-    },
-    Gabriel: {
-        fName: "Gabriel",
-        lName: "Kamban",
-        health: gabrielHP,
-        armorClass: gabrielAC,
-        turnNumber: 2,
-        get turn() {return this.turnNumber},
-        set nextTurn(val) {
-            if (this.turnNumber == 1) this.turnNumber = Object.keys(characters).length + 1;
-            this.turnNumber = this.turnNumber - val;
-        },
-        set addHP(val) {
-            this.health = this.health + val;
-        },
-        set takeDMG(val) {
-            this.health = this.health - val;
-        },
-        fullName: function(){this.fName + " " + this.lName}
-    },
-    Rhunedar: {
-        fName: "Rhunedar",
-        lName: "",
-        health: rhunedarHP,
-        armorClass: rhunedarAC,
-        turnNumber: 3,
-        get turn() {return this.turnNumber},
-        set nextTurn(val) {
-            if (this.turnNumber == 1) this.turnNumber = Object.keys(characters).length + 1;
-            this.turnNumber = this.turnNumber - val;
-        },
-        set addHP(val) {
-            this.health = this.health + val;
-        },
-        set takeDMG(val) {
-            this.health = this.health - val;
-        },
-        fullName: function(){this.fName + " " + this.lName}
-    },
-    Ronan: {
-        fName: "Ronan",
-        lName: "",
-        health: ronanHP,
-        armorClass: ronanAC,
-        turnNumber: 4,
-        get turn() {return this.turnNumber},
-        set nextTurn(val) {
-            if (this.turnNumber == 1) this.turnNumber = Object.keys(characters).length + 1;
-            this.turnNumber = this.turnNumber - val;
-        },
-        set addHP(val) {
-            this.health = this.health + val;
-        },
-        set takeDMG(val) {
-            this.health = this.health - val;
-        },
-        fullName: function() {this.fName + " " + this.lName}
-    }
+    // Byron: {
+    //     fName: "Byron",
+    //     lName: "Blackford",
+    //     health: byronHP,
+    //     armorClass: byronAC,
+    //     turnNumber: 1,
+    //     get turn() {return this.turnNumber},
+    //     set nextTurn(val) {
+    //         if (this.turnNumber == 1) this.turnNumber = Object.keys(characters).length + 1;
+    //         this.turnNumber = this.turnNumber - val;
+    //     },
+    //     set addHP(val) {
+    //         this.health = this.health + val;
+    //     },
+    //     set takeDMG(val) {
+    //         this.health = this.health - val;
+    //     },
+    //     fullName: function(){this.fName + " " + this.lName}
+    // },
+    // Gabriel: {
+    //     fName: "Gabriel",
+    //     lName: "Kamban",
+    //     health: gabrielHP,
+    //     armorClass: gabrielAC,
+    //     turnNumber: 2,
+    //     get turn() {return this.turnNumber},
+    //     set nextTurn(val) {
+    //         if (this.turnNumber == 1) this.turnNumber = Object.keys(characters).length + 1;
+    //         this.turnNumber = this.turnNumber - val;
+    //     },
+    //     set addHP(val) {
+    //         this.health = this.health + val;
+    //     },
+    //     set takeDMG(val) {
+    //         this.health = this.health - val;
+    //     },
+    //     fullName: function(){this.fName + " " + this.lName}
+    // },
+    // Rhunedar: {
+    //     fName: "Rhunedar",
+    //     lName: "",
+    //     health: rhunedarHP,
+    //     armorClass: rhunedarAC,
+    //     turnNumber: 3,
+    //     get turn() {return this.turnNumber},
+    //     set nextTurn(val) {
+    //         if (this.turnNumber == 1) this.turnNumber = Object.keys(characters).length + 1;
+    //         this.turnNumber = this.turnNumber - val;
+    //     },
+    //     set addHP(val) {
+    //         this.health = this.health + val;
+    //     },
+    //     set takeDMG(val) {
+    //         this.health = this.health - val;
+    //     },
+    //     fullName: function(){this.fName + " " + this.lName}
+    // },
+    // Ronan: {
+    //     fName: "Ronan",
+    //     lName: "",
+    //     health: ronanHP,
+    //     armorClass: ronanAC,
+    //     turnNumber: 4,
+    //     get turn() {return this.turnNumber},
+    //     set nextTurn(val) {
+    //         if (this.turnNumber == 1) this.turnNumber = Object.keys(characters).length + 1;
+    //         this.turnNumber = this.turnNumber - val;
+    //     },
+    //     set addHP(val) {
+    //         this.health = this.health + val;
+    //     },
+    //     set takeDMG(val) {
+    //         this.health = this.health - val;
+    //     },
+    //     fullName: function() {this.fName + " " + this.lName}
+    // }
 };
 
 var turnOrderObj = {};
 
-// console.log(characters.Ronan.nextTurn = 1);
-// console.log(characters.Ronan.turnNumber);
+
+//Character Object Constructor
+function CombatContributor(firstName, lastName, hp, ac, turnOrder) {
+    this.fName = firstName;
+    this.lName = lastName;
+    this.health = hp;
+    this.armorClass = ac;
+    this.turnNumber = turnOrder;
+    this.originalHealth = hp;
+}
+Object.defineProperty(CombatContributor.prototype, "turn", {
+    get : function () {return this.turnNumber}
+});
+Object.defineProperty(CombatContributor.prototype, "fullName", {
+    get : function () {return this.fName + " " + this.lName}
+});
+Object.defineProperty(CombatContributor.prototype, "setInitiative", {
+    set : function (val) {this.turnNumber = val}
+});
+Object.defineProperty(CombatContributor.prototype, "nextTurn", {
+    set : function (val) {
+        if (this.turnNumber == 1) this.turnNumber = Object.keys(characters).length + val;
+        this.turnNumber = this.turnNumber - val;
+    }
+});
+Object.defineProperty(CombatContributor.prototype, "addHP", {
+    set : function (val) {this.health = this.health + val}
+});
+Object.defineProperty(CombatContributor.prototype, "takeDMG", {
+    set : function (val) {this.health = this.health - val}
+});
+
 
 function arrangeTurnOrder (characters, turnOrderObj) {
+    // turnOrderObj = {};
     let characterTotal = Object.keys(characters).length;
-
+    
     let i = 1;
     while (i <= characterTotal) {
        
         let keysA = Object.keys(characters);
+        
         keysA.forEach((key, index) => {
             let orderNum = characters[key].turnNumber;
             if (orderNum == i) {
                 turnOrderObj["c" + i] = characters[key].fName;
-            }
+            };
         });
         i++;
     };
 
-
+    console.log(turnOrderObj)
     return turnOrderObj;
 }
 
@@ -146,9 +178,26 @@ function defaultCharacterList() {
     document.getElementById("cAC").innerHTML = characters[currentFirst].armorClass;
     // document.getElementById("cInitiative").innerHTML = characters[currentFirst].turnNumber;
 
-}
+    let keysA = Object.keys(characters);
+    let quarterhealth;    
 
-defaultCharacterList();
+    keysA.forEach((key, index) => {
+
+        if (characters[key].turnNumber == 1) {
+            quarterhealth = Math.floor(characters[key].originalHealth * .25)
+
+            if (characters[key].health <= quarterhealth) {
+                document.getElementById("health-stat").style.color = "red";
+                console.log("Low health");
+            } else {
+                document.getElementById("health-stat").style.color = "black";
+                console.log("High health");
+            }
+        }
+    });
+};
+
+document.getElementById("initialize-list").addEventListener('click', defaultCharacterList);
 
 document.getElementById("start-next-turn").addEventListener('click', nextTurn);
 document.getElementById("health-button").addEventListener('click', addHealth);
@@ -157,11 +206,13 @@ document.getElementById("damage-button").addEventListener('click', takeDamage);
 
 function nextTurn() {
     console.log("next turn");
+       
+    let keysA = Object.keys(characters);
+        
+    keysA.forEach((key, index) => {
+        characters[key].nextTurn = 1;
 
-    characters.Byron.nextTurn = 1;
-    characters.Gabriel.nextTurn = 1;
-    characters.Rhunedar.nextTurn = 1;
-    characters.Ronan.nextTurn = 1;
+    });
 
     defaultCharacterList();
 };
@@ -169,11 +220,13 @@ function nextTurn() {
 function takeDamage() {
     console.log("Took Damage");
 
-    if (characters.Byron.turnNumber == 1) characters.Byron.takeDMG = 1;
-    if (characters.Gabriel.turnNumber == 1) characters.Gabriel.takeDMG = 1;
-    if (characters.Rhunedar.turnNumber == 1) characters.Rhunedar.takeDMG = 1;
-    if (characters.Ronan.turnNumber == 1) characters.Ronan.takeDMG = 1;
-
+    let keysA = Object.keys(characters);
+        
+    keysA.forEach((key, index) => {
+        if (characters[key].turnNumber == 1) {
+            characters[key].takeDMG = 1;
+        };
+    });
 
     defaultCharacterList();
 };
@@ -181,10 +234,13 @@ function takeDamage() {
 function addHealth() {
     console.log("Added Health");
 
-    if (characters.Byron.turnNumber == 1) characters.Byron.addHP = 1;
-    if (characters.Gabriel.turnNumber == 1) characters.Gabriel.addHP = 1;
-    if (characters.Rhunedar.turnNumber == 1) characters.Rhunedar.addHP = 1;
-    if (characters.Ronan.turnNumber == 1) characters.Ronan.addHP = 1;
+    let keysA = Object.keys(characters);
+        
+    keysA.forEach((key, index) => {
+        if (characters[key].turnNumber == 1) {
+            characters[key].addHP = 1;
+        };
+    });
 
     defaultCharacterList();
 }
@@ -192,3 +248,38 @@ function addHealth() {
 // if (localStorage.characters === undefined) {
 
 // }
+
+//Form submit control
+document.getElementById('characterSubmitBtn').onclick = function (e) {
+    e.preventDefault();
+   
+    let characterInputs = document.querySelectorAll("input.charInfo");
+
+    let charNew = new CombatContributor(characterInputs[0].value, characterInputs[1].value, characterInputs[2].value, characterInputs[3].value, characterInputs[4].value);
+
+    characters[charNew.fName] = charNew;
+
+    console.log(characters);
+
+    document.getElementById("character-form").reset();
+};
+
+document.getElementById('partySubmitBtn').onclick = function (e) {
+    e.preventDefault();
+   
+    let partyInputs = document.querySelectorAll("input.partyInfo");
+
+    let charByron = new CombatContributor("Byron", "Blackford", byronHP, byronAC, partyInputs[0].value);
+    let charGabriel = new CombatContributor("Gabriel", "Kamban", gabrielHP, gabrielAC, partyInputs[1].value);
+    let charRhunedar = new CombatContributor("Rhunedar", "", rhunedarHP, rhunedarAC, partyInputs[2].value);
+    let charRonan = new CombatContributor("Ronan", "", rhunedarHP, rhunedarAC, partyInputs[3].value);
+
+    characters[charByron.fName] = charByron;
+    characters[charGabriel.fName] = charGabriel;
+    characters[charRhunedar.fName] = charRhunedar;
+    characters[charRonan.fName] = charRonan;
+
+    console.log(characters);
+
+    document.getElementById("party-form").reset();
+};

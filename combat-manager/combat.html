@@ -45,7 +45,7 @@
                     <div class="turn-card">
                         <div class="character-info"> First name: <span id="cFName"></span></div>
                         <div class="character-info"> Last Name: <span id="cLName"></span></div>
-                        <div class="character-info"> HP: <span id="cHP"></span></div>
+                        <div class="character-info" id="health-stat"> HP: <span id="cHP"></span></div>
                         <div class="character-info">Armor Class: <span id="cAC"></span></div>
                         <!-- <div class="character-info">Initiative: <span id="cInitiative"></span></div> -->
 
@@ -65,6 +65,7 @@
                         <div id="current-characters"></div>
                     </div>
                 </div>
+                <button id="initialize-list">Initialize</button>
             </div>
         </div>
 
@@ -72,6 +73,45 @@
             <div class="form-container">
                 <h2 class="form-title">Add a Character</h2>
                 <form class="character-submit" id="character-form">
+                    <label for="firstName">First Name:</label><br/>
+                    <input type="text" class="charInfo" name="firstName" required><br/>
+
+                    <label for="lastName">Last Name:</label><br/>
+                    <input type="text" class="charInfo" name="lastName" required><br/>
+
+                    <label for="hp">Health Points:</label><br/>
+                    <input type="number" class="charInfo" name="hp" required><br/>
+
+                    <label for="ac">Armor Class:</label><br/>
+                    <input type="number" class="charInfo" name="ac" required><br/>
+
+                    <label for="turnOrder">Turn Order #:</label><br/>
+                    <input type="number" class="charInfo" name="turnOrder" required><br/>
+
+                    <input type="submit" id="characterSubmitBtn" value="Submit">
+
+
+                </form>
+
+            </div>
+            <div class="form-container">
+                <h2 class="form-title">Add the Fellas Party</h2>
+                <form class="party-submit" id="party-form">
+                    
+                    <label for="turnOrder">Byron Turn Order #:</label><br/>
+                    <input type="number" class="partyInfo" name="ByronTurnOrder" required><br/>
+
+                    <label for="turnOrder">Gabriel Turn Order #:</label><br/>
+                    <input type="number" class="partyInfo" name="GabrielTurnOrder" required><br/>
+
+                    <label for="turnOrder">Rhunedar Turn Order #:</label><br/>
+                    <input type="number" class="partyInfo" name="RhunedarTurnOrder" required><br/>
+
+                    <label for="turnOrder">Ronan Turn Order #:</label><br/>
+                    <input type="number" class="partyInfo" name="RonanTurnOrder" required><br/>
+
+                    <input type="submit" id="partySubmitBtn" value="Submit">
+
 
                 </form>
 
