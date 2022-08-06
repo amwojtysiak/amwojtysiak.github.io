@@ -64,8 +64,9 @@
                     <div class="character-list">
                         <div id="current-characters"></div>
                     </div>
+                    <button id="initialize-list">Initialize List</button>
                 </div>
-                <button id="initialize-list">Initialize</button>
+                
             </div>
         </div>
 
@@ -73,7 +74,7 @@
             <div class="form-container">
                 <h2 class="form-title">Add a Character</h2>
                 <form class="character-submit" id="character-form">
-                    <label for="firstName">First Name:</label><br/>
+                    <label for="firstName">First Name: (Must be Unique)</label><br/>
                     <input type="text" class="charInfo" name="firstName" required><br/>
 
                     <label for="lastName">Last Name:</label><br/>
@@ -85,7 +86,7 @@
                     <label for="ac">Armor Class:</label><br/>
                     <input type="number" class="charInfo" name="ac" required><br/>
 
-                    <label for="turnOrder">Turn Order #:</label><br/>
+                    <label for="turnOrder">Turn Order #: (Must be Unique)</label><br/>
                     <input type="number" class="charInfo" name="turnOrder" required><br/>
 
                     <input type="submit" id="characterSubmitBtn" value="Submit">
@@ -121,6 +122,9 @@
             <div class="form-container">
                 <h2 class="form-title">Control Panel</h2>
                 
+                <h3>Added Characters: </h3>
+                <div id="characters-preliminary-list"></div>
+
                 <button id="save-button">Save Battle</button>
                 <button id="clear-button">Clear Saved Data</button>
 

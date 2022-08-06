@@ -252,6 +252,7 @@ document.getElementById('characterSubmitBtn').onclick = function (e) {
     console.log(characters);
 
     document.getElementById("character-form").reset();
+    makePrelimList();
 };
 
 document.getElementById('partySubmitBtn').onclick = function (e) {
@@ -272,4 +273,29 @@ document.getElementById('partySubmitBtn').onclick = function (e) {
     console.log(characters);
 
     document.getElementById("party-form").reset();
+    makePrelimList();
 };
+
+
+//Show added characters
+
+function makePrelimList() {
+    
+    if (Object.keys(characters).length) {
+        prelimCharacters = "";
+        let keysA = Object.keys(characters);
+        
+        keysA.forEach((key, index) => {
+            let name = characters[key].fullName;
+            let initiativeNum = characters[key].turn;
+
+            prelimCharacters += "<li> " + name + " - Initiative: " + initiativeNum + "</li>";
+        });
+    } else {
+        prelimCharacters = "<li> None Added </li>";
+    };
+
+    document.getElementById('characters-preliminary-list').innerHTML = `<ul id='prelim-char-list'> ${prelimCharacters} </ul>`;
+}
+
+makePrelimList();
