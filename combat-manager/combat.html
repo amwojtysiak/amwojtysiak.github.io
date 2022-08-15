@@ -82,7 +82,7 @@
 
             <div class="display-box right-box">
                 <div class="right-head">
-                    <h2>Turn Order List</h2>
+                    <h2>3. Turn Order List</h2>
                 </div>
                 <div class="right-body">
                     <div class="character-list">
@@ -94,34 +94,17 @@
             </div>
         </div>
 
+        <ol class="instructions-list">
+            <li>Add party members with correct turn number.</li>
+            <li>Add any additional characters/enemies.</li>
+            <li>Click initialize button to begin battle.</li>
+            <li>If leaving the page, save your battle; clear data to start a new battle.</li>
+        </ol>
+
         <div class="bottom-box">
-            <div class="form-container">
-                <h2 class="form-title">Add a Character</h2>
-                <form class="character-submit" id="character-form">
-                    <label for="firstName">First Name: (Must be Unique)</label><br/>
-                    <input type="text" class="charInfo" name="firstName" required><br/>
-
-                    <label for="lastName">Last Name:</label><br/>
-                    <input type="text" class="charInfo" name="lastName" required><br/>
-
-                    <label for="hp">Health Points:</label><br/>
-                    <input type="number" class="charInfo" name="hp" required><br/>
-
-                    <label for="ac">Armor Class:</label><br/>
-                    <input type="number" class="charInfo" name="ac" required><br/>
-
-                    <label for="turnOrder">Turn Order #: (Must be Unique)</label><br/>
-                    <input type="number" class="charInfo" name="turnOrder" required><br/>
-
-                    <input type="submit" id="characterSubmitBtn" value="Submit">
-
-
-                </form>
-
-            </div>
 
             <div class="form-container">
-                <h2 class="form-title">Add the Fellas Party</h2>
+                <h2 class="form-title">1. Add the Fellas Party</h2>
                 <form class="party-submit" id="party-form">
                     
                     <label for="turnOrder">Byron Turn Order #:</label><br/>
@@ -143,6 +126,7 @@
 
             </div>
 
+
             <div class="form-container">
                 <h2 class="form-title">Control Panel</h2>
                 
@@ -151,6 +135,31 @@
 
                 <button id="save-button">Save Battle</button>
                 <button id="clear-button">Clear Saved Data</button>
+
+            </div>
+
+            <div class="form-container">
+                <h2 class="form-title">2. Add a Character</h2>
+                <form class="character-submit" id="character-form">
+                    <label for="firstName">First Name: (Must be Unique)</label><br/>
+                    <input type="text" class="charInfo" name="firstName" required><br/>
+
+                    <label for="lastName">Last Name:</label><br/>
+                    <input type="text" class="charInfo" name="lastName" required><br/>
+
+                    <label for="hp">Health Points:</label><br/>
+                    <input type="number" class="charInfo" name="hp" required><br/>
+
+                    <label for="ac">Armor Class:</label><br/>
+                    <input type="number" class="charInfo" name="ac" required><br/>
+
+                    <label for="turnOrder">Turn Order #: (Must be Unique)</label><br/>
+                    <input type="number" class="charInfo" name="turnOrder" required><br/>
+
+                    <input type="submit" id="characterSubmitBtn" value="Submit">
+
+
+                </form>
 
             </div>
         </div>

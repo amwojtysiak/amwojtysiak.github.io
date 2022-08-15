@@ -72,3 +72,8 @@
     text-decoration: underline;
     
 }
+
+.instructions-list {
+    font-size: 1.25em;
+    border: 1px solid red;
+}
