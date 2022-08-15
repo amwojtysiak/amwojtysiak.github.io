@@ -43,17 +43,41 @@
                 </div>
                 <div class="left-body">
                     <div class="turn-card">
-                        <div class="character-info"> First name: <span id="cFName"></span></div>
-                        <div class="character-info"> Last Name: <span id="cLName"></span></div>
-                        <div class="character-info" id="health-stat"> HP: <span id="cHP"></span></div>
-                        <div class="character-info">Armor Class: <span id="cAC"></span></div>
-                        <!-- <div class="character-info">Initiative: <span id="cInitiative"></span></div> -->
-
+                        <div class="character-info-left"> First name: <span id="cFName"></span></div>
+                        <div class="character-info-left"> Last Name: <span id="cLName"></span></div>
+                        
+                        <div class="character-info-left" id="health-stat-left"> HP: <span id="cHP"></span></div>
+                        <div class="character-info-left">Armor Class: <span id="cAC"></span></div>
+                        <div class="character-info-left" style="visibility: hidden;">DECEASED</div>
+                        <br/>
                     </div>
                     <button id="start-next-turn">Next Turn</button>
+                    <h2 class="character-info-left" style="visibility: hidden;">SKIP</h2>
+                    <!-- <button id="health-button">Add Health</button>
+                    <button id="damage-button">Take Damage</button> -->
+                </div>
+            </div>
+
+            <div class="display-box middle-box">
+                <div class="middle-head">
+                    <h2>Health Manager</h2>
+                </div>
+                <div class="middle-body">
+                    <div class="turn-card">
+                        <div class="character-info-middle"> First name: <span id="healthFName"></span></div>
+                        <div class="character-info-middle"> Last Name: <span id="healthLName"></span></div>
+                        
+                        <div class="character-info-middle" id="health-stat-middle"> HP: <span id="healthHP"></span></div>
+                        <div class="character-info-middle">Armor Class: <span id="healthAC"></span></div>
+                        <div class="character-info-middle">Initiative: <span id="healthInitiative"></span></div>
+                        <div class="character-info-middle" style="visibility: hidden;">DECEASED</div>
+
+                    </div>
                     <button id="health-button">Add Health</button>
                     <button id="damage-button">Take Damage</button>
+                    <!-- <button id="incapacitate-button">Incapacitate</button> -->
                 </div>
+                
             </div>
 
             <div class="display-box right-box">

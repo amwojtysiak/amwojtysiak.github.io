@@ -113,7 +113,6 @@ Object.defineProperty(CombatContributor.prototype, "takeDMG", {
 
 
 function arrangeTurnOrder (characters, turnOrderObj) {
-    // turnOrderObj = {};
     let characterTotal = Object.keys(characters).length;
     
     let i = 1;
@@ -130,7 +129,7 @@ function arrangeTurnOrder (characters, turnOrderObj) {
         i++;
     };
 
-    console.log(turnOrderObj)
+
     return turnOrderObj;
 }
 
@@ -143,50 +142,38 @@ function defaultCharacterList() {
 
     namesArr.forEach((val, index, arr) => {
         let numberedVal;
-        if (index == 0) {
-            val += " <br> ";
-            numberedVal = `${index + 1}. `+ val;
+        
+            numberedVal = `<li id='listItem${val}' class='listHTMLItem' data-key='${val}'>` + val + '</li>';
             namesArrAdjusted.push(numberedVal);
-        } else if (index != arr.length - 1 && index != 0) {
-            val += " <br> " 
-            numberedVal = `${index + 1}. `+ val;
-            namesArrAdjusted.push(numberedVal);
-        } else if(index == arr.length - 1) {
-            numberedVal = `${index + 1}. `+ val;
-            namesArrAdjusted.push(numberedVal);
-        }
+        
     });
 
     listHTML = namesArrAdjusted.toString();
-    let listHTMLFinal = listHTML.replace(/,/g, "")
+    let listHTMLNoComma = listHTML.replace(/,/g, "");
+
+    let listHTMLFinal = `<ol id='prelim-char-list'> ${listHTMLNoComma} </ol>`;
     
     currentFirst = turnOrderObj.c1;
-
 
     document.getElementById("current-characters").innerHTML = listHTMLFinal;
     document.getElementById("cFName").innerHTML = characters[currentFirst].fName;
     document.getElementById("cLName").innerHTML = characters[currentFirst].lName;
     document.getElementById("cHP").innerHTML = characters[currentFirst].health;
     document.getElementById("cAC").innerHTML = characters[currentFirst].armorClass;
-    // document.getElementById("cInitiative").innerHTML = characters[currentFirst].turnNumber;
+
+    console.log(currentFirst);
+    assessHealth(currentFirst, "left");
 
     let keysA = Object.keys(characters);
-    let quarterhealth;    
+        
+        keysA.forEach((key, index) => {
+            let charHealthNum = characters[key].health;
+            if (charHealthNum <= 0) {
+                document.getElementById(`listItem${key}`).style.textDecoration = "line-through";
+            };
+        });
 
-    keysA.forEach((key, index) => {
-
-        if (characters[key].turnNumber == 1) {
-            quarterhealth = Math.floor(characters[key].originalHealth * .25)
-
-            if (characters[key].health <= quarterhealth) {
-                document.getElementById("health-stat").style.color = "red";
-                console.log("Low health");
-            } else {
-                document.getElementById("health-stat").style.color = "black";
-                console.log("High health");
-            }
-        }
-    });
+    makeCharListClickable();
 
 };
 
@@ -208,34 +195,110 @@ function nextTurn() {
     });
 
     defaultCharacterList();
+    updateCharacterHealth();
 };
 
 function takeDamage() {
-    console.log("Took Damage");
-
+    let currentHealthChar = document.getElementById("healthFName").innerHTML;
     let keysA = Object.keys(characters);
         
     keysA.forEach((key, index) => {
-        if (characters[key].turnNumber == 1) {
+        if (characters[key].fName == currentHealthChar) {
             characters[key].takeDMG = 1;
         };
     });
-    console.log(characters);
+
+    
+    updateCharacterHealth();
     defaultCharacterList();
 };
 
 function addHealth() {
-    console.log("Added Health");
-
+    let currentHealthChar = document.getElementById("healthFName").innerHTML;
     let keysA = Object.keys(characters);
         
     keysA.forEach((key, index) => {
-        if (characters[key].turnNumber == 1) {
+        if (characters[key].fName == currentHealthChar) {
             characters[key].addHP = 1;
         };
     });
 
+    
+    updateCharacterHealth();
     defaultCharacterList();
+}
+
+function makeCharListClickable() {
+    let keysA = Object.keys(characters);
+        
+    keysA.forEach((key, index) => {
+        document.getElementById(`listItem${key}`).onclick = function (e) {
+            manageCharacterHealth(e);
+        }
+    });
+}
+
+// Displays clicked character's stats in Health Manager
+function manageCharacterHealth(e) {
+    let targetChar = e.target.getAttribute('data-key');
+
+    document.getElementById("healthFName").innerHTML = characters[targetChar].fName;
+    document.getElementById("healthLName").innerHTML = characters[targetChar].lName;
+    document.getElementById("healthHP").innerHTML = characters[targetChar].health;
+    document.getElementById("healthAC").innerHTML = characters[targetChar].armorClass;
+    document.getElementById("healthInitiative").innerHTML = characters[targetChar].turnNumber;
+
+    
+    assessHealth(targetChar, "middle");
+}
+
+// Updates health display after adding HP or taking DMG
+function updateCharacterHealth() {
+    let targetChar = document.getElementById("healthFName").innerHTML;
+
+    document.getElementById("healthFName").innerHTML = characters[targetChar].fName;
+    document.getElementById("healthLName").innerHTML = characters[targetChar].lName;
+    document.getElementById("healthHP").innerHTML = characters[targetChar].health;
+    document.getElementById("healthAC").innerHTML = characters[targetChar].armorClass;
+    document.getElementById("healthInitiative").innerHTML = characters[targetChar].turnNumber;
+
+
+    assessHealth(targetChar, "middle");
+}
+
+//Controls Display effects based on Health amount
+function assessHealth(characterControl, healthStatLocation) {
+    let keysA = Object.keys(characters);
+    let quarterhealth;    
+
+    keysA.forEach((key, index) => {
+
+        if (characters[key].fName == characterControl) {
+            quarterhealth = Math.floor(characters[key].originalHealth * .25)
+
+            if (characters[key].health <= 0) {
+                document.querySelectorAll(`.character-info-${healthStatLocation}`).forEach(function (value){
+                    value.style.color = "red";
+                    if (value.style.visibility == 'hidden') value.style.visibility = "visible";
+                }); 
+            } else if (characters[key].health > 0 ) {
+                document.querySelectorAll(`.character-info-${healthStatLocation}`).forEach(function (value){
+                    value.style.color = "black";
+                    if (value.style.visibility == 'visible') value.style.visibility = "hidden"; 
+                }); 
+            }
+
+            if (characters[key].health <= quarterhealth) {
+                document.getElementById(`health-stat-${healthStatLocation}`).style.color = "red";
+                console.log("low health");
+            } else {
+                document.getElementById(`health-stat-${healthStatLocation}`).style.color = "black";
+                console.log("high health");
+            };
+            
+            
+        }
+    });
 }
 
 
@@ -248,8 +311,6 @@ document.getElementById('characterSubmitBtn').onclick = function (e) {
     let charNew = new CombatContributor(characterInputs[0].value, characterInputs[1].value, characterInputs[2].value, characterInputs[3].value, characterInputs[4].value);
 
     characters[charNew.fName] = charNew;
-
-    console.log(characters);
 
     document.getElementById("character-form").reset();
     makePrelimList();
@@ -269,8 +330,6 @@ document.getElementById('partySubmitBtn').onclick = function (e) {
     characters[charGabriel.fName] = charGabriel;
     characters[charRhunedar.fName] = charRhunedar;
     characters[charRonan.fName] = charRonan;
-
-    console.log(characters);
 
     document.getElementById("party-form").reset();
     makePrelimList();

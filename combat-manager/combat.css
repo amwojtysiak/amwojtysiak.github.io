@@ -35,7 +35,7 @@
     flex-direction: column;
     width: 46%;
     height: 95%;
-    min-height: 20em;
+    min-height: 22em;
     border: 2px solid black;
     justify-content: flex-start;
     align-items: center;
@@ -58,3 +58,17 @@
     margin-bottom: 20px;
 }
 
+#current-characters {
+    cursor: pointer;
+}
+
+.listHTMLItem {
+    cursor: pointer;
+    font-size: 1.25em;
+
+}
+
+.listHTMLItem:hover {
+    text-decoration: underline;
+    
+}
