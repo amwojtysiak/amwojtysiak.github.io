@@ -1,6 +1,6 @@
 
 //Countdown Clock
-let mo = 8, dat = 5, hr = 20, mins = 0; 
+let mo = 8, dat = 19, hr = 20, mins = 0; 
 //Enter next chapter date above
 //New Content Notification
 var newPart = 2, newChapter = 12;
