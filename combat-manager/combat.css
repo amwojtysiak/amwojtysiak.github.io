@@ -77,3 +77,42 @@
     font-size: 1.25em;
     border: 1px solid red;
 }
+
+#initialize-list {
+    border-color: forestgreen;
+    border-width: 4px;
+    background-color: lightgreen;
+    font-weight: bold;
+}
+
+#health-button {
+    border-color: forestgreen;
+    border-width: 4px;
+    background-color: lightgreen;
+    font-weight: bold;
+}
+
+#damage-button {
+    border-color: red;
+    border-width: 4px;
+    background-color: lightcoral;
+    font-weight: bold;
+}
+
+#save-button {
+    border-color: forestgreen;
+    border-width: 2px;
+    /* background-color: lightgreen; */
+    font-weight: bold;
+}
+
+#clear-button {
+    border-color: red;
+    border-width: 2px;
+    /* background-color: lightcoral; */
+    font-weight: bold;
+}
+
+button {
+    cursor: pointer;
+}
