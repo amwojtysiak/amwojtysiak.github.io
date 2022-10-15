@@ -15,23 +15,124 @@
     justify-content: center;
 }
 
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .map-container {
     display: flex;
-    width: 100%;
-    /* height: 65em; */
+    /* width: 100%;
+    height: 60%; */
+    
     justify-content: center;
     align-items: center;
     /* background-color: #071846; */
-}
-
-.map-image {
+    position: relative;
+    height: 1563px;
+    min-height: 1250px;
+    width: 1173px;
+    min-width: 938px;
+    overflow: scroll;
     border-width: 50px 100px;
     border-style: solid;
     border-color: #071846;
+}
+
+.map-image {
+    /* border-width: 50px 100px;
+    border-style: solid;
+    border-color: #071846; */
     display: flex;
-    border-radius: 18px;
-    height: 80%;
-    width: 75%;
+    /* border-radius: 18px; */
+    height: 100%;
+    width: 100%;
+    
+}
+
+.vassaNathair {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    top: 46.5%;
+    left: 48%;
+    /* transform: translate(-583%, 56%); */
+    width:auto;
+    
+}
+
+#seascape {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    top: 70%;
+    left: 34%;
+    /* transform: translate(-583%, 56%); */
+    width: auto;
+    height: auto;
+}
+
+#luanpeir {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    top: 37.25%;
+    left: 81%;
+    /* transform: translate(-583%, 56%); */
+    width:auto;
+}
+
+#dahlduhn {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    top: 64.25%;
+    left: 40%;
+    /* transform: translate(-583%, 56%); */
+    width:auto;
+    
+}
+
+#kemwei {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    top: 81.25%;
+    left: 37%;
+    /* transform: translate(-583%, 56%); */
+    width:auto;
+}
+
+.honedao {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    top: 70.25%;
+    left: 19%;
+    /* transform: translate(-583%, 56%); */
+    width:auto;
+}
+
+.map-point {
+    /* width: 25%; */
+    font-size: 4em;
+    height: 50%;
+    text-decoration: none !important;
+}
+
+.map-point-text {
+    /* width: 75%; */
+    font-size: 18px;
+    height: 50%;
+    
 }
 
 /* html {
