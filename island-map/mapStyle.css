@@ -22,6 +22,10 @@
     align-items: center;
 }
 
+.control-panel {
+    margin: 2em 1em;
+}
+
 .map-container {
     display: flex;
     /* width: 100%;
@@ -32,9 +36,9 @@
     /* background-color: #071846; */
     position: relative;
     height: 1563px;
-    min-height: 1250px;
+    min-height: 1563px;
     width: 1173px;
-    min-width: 938px;
+    min-width: 1173px;
     overflow: scroll;
     border-width: 50px 100px;
     border-style: solid;
@@ -84,7 +88,7 @@
     top: 37.25%;
     left: 81%;
     /* transform: translate(-583%, 56%); */
-    width:auto;
+    width: auto;
 }
 
 #dahlduhn {
@@ -95,7 +99,7 @@
     top: 64.25%;
     left: 40%;
     /* transform: translate(-583%, 56%); */
-    width:auto;
+    width: auto;
     
 }
 
@@ -104,8 +108,8 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    top: 81.25%;
-    left: 37%;
+    top: 88.25%;
+    left: 40%;
     /* transform: translate(-583%, 56%); */
     width:auto;
 }
