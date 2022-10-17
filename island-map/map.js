@@ -3,6 +3,15 @@ var islandMap = document.querySelector(".map-container"),
     mapPointText = document.getElementsByClassName("map-point-text");
 
 
+const islandInfo = {
+    dahlduhn: ["Dahlduhn Village", "A small dwarven village northwest of Seascape Port. It's primary exports are tools and weapons made by the dwarven smiths in the town. Not much is known about the culture and political standing of the dwarves who populate Dahlduhn Village. It is notable only for being the birthplace of the dwarf Rhünedâr."],
+    honedao: ["Shichi Honedao", "Description Coming Soon.."],
+    kemwei: ["Kemwei Forest", "Description Coming Soon.."],
+    luanpeir: ["Luanpeir", "Description Coming Soon.."],
+    seascape: ["Seascape Port", "Description Coming Soon.."],
+    vassaNathair: ["Inheritor City of Vassa Nathair", "Description Coming Soon.."]
+}
+
 function zoomIn() {
     
     var currWidth = islandMap.clientWidth;
@@ -52,3 +61,44 @@ function zoomOut() {
     //mapPointText.style.fontSize = 12 + "px";
     console.log("zoomout");
 }
+
+const modal = document.querySelector(".city-modal");
+const trigger = document.querySelector(".trigger");
+const closeButton = document.querySelector(".close-button");
+const modalTitle = document.querySelector(".city-name-modal");
+const modalText = document.querySelector(".city-description-modal");
+
+
+function toggleModal(event) {
+    
+    if (!modal.classList.contains("show-modal")) {
+        let locName = event.target.getAttribute("value");
+        let storageObj = islandInfo[locName];
+   
+        modalTitle.innerHTML = storageObj[0];
+        modalText.innerHTML = storageObj[1];
+    }
+    
+    modal.classList.toggle("show-modal");
+}
+
+function windowOnClick(event) {  
+
+    if (event.target === modal) {
+        toggleModal();
+    }
+}
+
+for (let i = 0; i < mapPoint.length; i++) {
+        
+    mapPoint[i].addEventListener("click", toggleModal);
+};
+
+for (let i = 0; i < mapPointText.length; i++) {
+    
+    mapPointText[i].addEventListener("click", toggleModal);
+};
+
+//trigger.addEventListener("click", toggleModal);
+closeButton.addEventListener("click", toggleModal);
+window.addEventListener("click", windowOnClick);
