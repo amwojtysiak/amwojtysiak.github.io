@@ -4,7 +4,7 @@ let mo = 10, dat = 21, hr = 20, mins = 15;
 //Enter next chapter date above
 //New Content Notification
 var newPart = 2, newChapter = 12;
-var notifyYear = "2022", notifyMonth = 08, notifyDate = 01;
+var notifyYear = "2022", notifyMonth = 10, notifyDate = 26;
 //Enter new content location  and date(YYYY, MM, DD) above
 
 document.querySelector("#next-chapter-date").innerHTML = mo + "/" + dat + "/22" 
@@ -72,8 +72,10 @@ var now = new Date();
 console.log(notificationStartDate);
 console.log(notificationEndDate)
 
-document.querySelector("#notification-part").innerHTML = newPart;
-document.querySelector("#notification-chapter").innerHTML = newChapter;
+if (document.querySelector("#notification-part")) {
+    document.querySelector("#notification-part").innerHTML = newPart;
+    document.querySelector("#notification-chapter").innerHTML = newChapter;
+}
 
 if (now <= notificationEndDate) {
     document.getElementById("new-content").style.display = "flex"; 
