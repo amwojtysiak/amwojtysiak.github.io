@@ -276,11 +276,31 @@ function journal() {
         {
             campaign: 1,
             part: 2,
+            chapter: 14,
+            chapterTitle: "",
+            date: "10/14/22",
+            guests: 0,
+            location: "Kemwei Villages",
+            summary: "~SUMMARY COMING SOON~ <br> (Talk to your DM)"
+        },
+        {
+            campaign: 1,
+            part: 2,
+            chapter: 13,
+            chapterTitle: "",
+            date: "08/06/22",
+            guests: 0,
+            location: "Kemwei Forest",
+            summary: "~SUMMARY COMING SOON~ <br> (Talk to your DM)"
+        },
+        {
+            campaign: 1,
+            part: 2,
             chapter: 12,
             chapterTitle: "Caged Birds & Birds of Prey",
             date: "07/08/22",
             guests: 0,
-            location: "Road",
+            location: "Kemwei Forest",
             summary: "The party, beaten black and blue, marched along to the haunting Elven melody, beneath the watchful yellow eyes of Miko. Before long, sacks were wrapped around their heads plunging the already Black Forest into an even deeper darkness, obscuring all sense of direction. At long last, the sacks were finally removed, revealing the party to be standing upon a series of high platforms, built into the thick branches of the tall trees. The canopy loomed ominously above as they were thrust into cages built of polished timber, backed to the platform's edge. The fall was monumental, the forest floor a black abyssal pit from this height. <br><br>" + 
             "Miko, after a taunting conversation left with the intent to bring back food. Two guards, dressed in their eclectic garb, had been left to guard the platform. Ronan, still in rough shape, quickly made it clear that he had no intention to stay, and was planning to break out tonight. After some debate, it was decided. Spying debris outside the cage, Byron attempted to use his mage hands to grab something Gabriel could use as a lock pick. However, before he could grab it, it was plucked from the ground by a young Elven boy, maybe 8 to 10 years old. <br><br>" + 
             "The strange boy was quiet, speaking not a word, though seemingly in possession of an understanding of the language. Byron then exchanged a song in return for the pin, a song the boy seemed to love. They snatched the pin  just as Miko came striding across the bridge with their food. It was then she revealed the boy's name to be Martin, and that he was her son. The boy being named after his grandfather, and being an age matching when last they were together, were details not lost on Byron, and panic began to swell within his soul. <br><br>" +

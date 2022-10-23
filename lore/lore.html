@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Island Map </title>
+    <link rel="stylesheet" href="../common/styles/menu-style.css">
+    <link rel="stylesheet" href="./loreStyle.css">
+</head>
+<body>
+    <div class="header">
+        <img src="../images/npcBanner.png" style="object-fit: cover; height: 100%; width: 100%;">
+    </div>
+    
+    <div class="menu">
+        <div class="menu-align">
+            <a class="menu-items" id="go-to-home" title="Home" href="../index.html">Home</a>
+            <div class="dropdown menu-items">
+                <a class="dropdown-box" title="DM Tools" href="javascript:void(0)">DM Tools</a>
+                <div class="dropdown-content">
+                    <a class="dropdown-items" id="go-to-npcgen" title="NPC Generator" href="../generators/npc/npcGenerator.html">NPC Generator</a>
+                    <a class="dropdown-items" id="go-to-lootgen" title="Loot Generator" href="../generators/loot/lootGenerator.html">Loot Generator</a>
+                    <a class="dropdown-items" id="go-to-combat-manager" title="Combat Manager" href="../combat-manager/combat.html">Combat Manager</a>
+                </div>
+            </div>
+            <!-- <a class="menu-items" id="go-to-lootgen" title="Loot Generator" href="../generators/loot/lootGenerator.html">Loot Generator</a>
+            <a class="menu-items" id="go-to-npcgen" title="NPC Generator" href="../generators/npc/npcGenerator.html">NPC Generator</a> -->
+            <a class="menu-items" id="go-to-islandmap" title="Island Map" href="./map.html">Island Map</a>
+            <a class="menu-items" id="go-to-journal" title="Journal" href="../journal/journal.html">Journal</a>
+            <a class="active menu-items" id="go-to-lore" title="Lore" href="./lore.html">Lore</a>
+            <a class="menu-items" id="go-to-art" title="Artwork" href="../artwork-page/artwork.html">Artwork</a>
+        </div>
+    </div> 
+
+    <div class="main-container">
+        <div class="section-title">
+            <h1> The Lore of Innishfjalmor </h1>
+        </div>
+
+        <!-- <div class="control-panel">
+            
+        </div> -->
+
+        <div class="glossary-container">
+            <div class="glossary-head">
+                <div class="left-tabs">
+
+                </div>
+                <div class="right-tabs">
+                    <div class="topic-tab" id="locations-tab">Locations</div>
+                    <div class="topic-tab" id="characters-tab">Characters</div>
+                </div>
+            </div>
+
+            <div class="glossary-page-locations">
+                <!-- <div class="term-box">
+                    <div class="word-name">
+                        <h2 class="term">Term</h2>
+                    </div>
+                    <div class="word-description">
+                        <p class="term-description">Description</p>
+                    </div>
+                </div> -->
+            </div>
+
+            <div class="title-page">
+                <div class="gloss-header">
+                    <h1>Glossary</h1>
+                </div>
+                <div class="gloss-subHead">
+                    <h3>~ An Appendix of Terms Found in the World of Innishfjalmor ~</h3>
+                </div>
+                <div class="gloss-subHead">
+                    <button class="open-gloss"> Open </button>
+                </div>
+
+            </div>
+
+            <div class="glossary-footer">
+                
+            </div>
+        </div>
+
+        
+    </div>
+    
+    
+
+    
+    <footer>
+
+    </footer>
+
+
+    <script src= ./lore.js></script>
+</body>
+</html>

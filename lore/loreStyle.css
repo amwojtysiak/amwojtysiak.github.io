@@ -1,0 +1,139 @@
+.pageTitle {
+    font-family: "papyrus";
+}
+
+button {
+    cursor: pointer;
+}
+
+.header {   
+    max-width: 100%;
+    height: 15em;
+}
+
+.section-title {
+    display: flex;
+    font-size: 2em;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.glossary-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 80%
+}
+
+.glossary-head {
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 5em;
+    width: 100%;
+    /* background-color: navy; */
+    margin-bottom: 1em;
+    /* visibility: hidden; */
+}
+
+.left-tabs {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    width: 50%;
+    height: 100%;
+}
+
+.right-tabs {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    width: 50%;
+    height: 100%;
+}
+
+.topic-tab {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 75%;
+    border: 3px solid black;
+    border-radius: 22px;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.topic-tab:hover {
+    background: rgb(234, 230, 207);
+}
+
+.glossary-page-locations {
+    /* visibility: hidden; */
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: auto;
+    width: 100%;
+}
+
+.term-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+    border-radius: 7px;
+}
+
+.word-name {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 25%;
+}
+
+.term {
+    margin: 0;
+}
+
+.term-description {
+    margin: 0;
+}
+
+.word-description {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 70%;
+}
+
+.title-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.gloss-header {
+    text-decoration: underline;
+}
