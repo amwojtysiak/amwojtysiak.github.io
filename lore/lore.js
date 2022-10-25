@@ -1,6 +1,31 @@
 document.querySelector('.open-gloss').addEventListener("click", openGlossary);
-document.querySelector('#locations-tab').addEventListener("click", () => {displayTopic('locations')});
-document.querySelector('#characters-tab').addEventListener("click", () => {displayTopic('characters')});
+var glossHead = document.querySelector('.glossary-head');
+var subTopCultures = document.querySelector('.sub-topics-cultures');
+var subTopicTabs = document.getElementsByClassName("sub-topic-tab");
+var topicTabs = document.getElementsByClassName("topic-tab");
+document.querySelector('#human-tab').addEventListener("click", (event) => {displayTopic('cultures', event, 'human')});
+document.querySelector('#elf-tab').addEventListener("click", (event) => {displayTopic('cultures', event, 'elf')});
+document.querySelector('#dwarf-tab').addEventListener("click", (event) => {displayTopic('cultures', event, 'dwarf')});
+document.querySelector('#misc-tab').addEventListener("click", (event) => {displayTopic('cultures', event, 'misc')});
+document.querySelector('#locations-tab').addEventListener("click", (event) => {displayTopic('locations', event)});
+document.querySelector('#characters-tab').addEventListener("click", (event) => {displayTopic('characters', event)});
+document.querySelector('#beasts-tab').addEventListener("click", (event) => {displayTopic('beasts', event)});
+document.querySelector('#cultures-tab').addEventListener("click", (event) => {
+    let activeSub = "human";
+    for (let topic of subTopicTabs) {
+        //topic.setAttribute("class", "sub-topic-tab");   used to start with human every time
+        if (topic.classList.contains("active-tab")) {
+            activeSub = topic.getAttribute("value");
+        }
+    };
+    //document.querySelector('#human-tab').setAttribute("class", "sub-topic-tab active-tab");  used to start with human every time
+    displayTopic('cultures', event, activeSub);
+    //subTopCultures.style.display = "flex";
+    subTopCultures.style.visibility = "visible";
+    glossHead.style.height = "10em";
+
+
+});
 
 
 function openGlossary() {
@@ -10,38 +35,31 @@ function openGlossary() {
     let glossPage = document.querySelector('.glossary-page-locations');
     glossPage.style.display = "flex";
 
-    let glossHead = document.querySelector('.glossary-head');
     glossHead.style.display = "flex";
 
-    displayTopic('locations');
+    displayTopic('locations', event);
 }
 
-// function displayLocations() {
-//     let locations = Appendix().locations;
-//     let glossLoc = document.querySelector(".glossary-page-locations")
-
-//     for (let loc in locations) {
-//         let name = locations[loc].name;
-//         let info = locations[loc].info;
-
-//         glossLoc.innerHTML +=
-//             "<div class='term-box'>" +
-//                 "<div class='word-name'>" +
-//                         "<h2 class='term'>"+name+" -</h2>" +
-//                 "</div>" +
-//                 "<div class='word-description'>" +
-//                         "<p class='term-description'>"+info+"</p>" +
-//                 "</div>" +
-//             "</div> <br/> <br/>";
-        
-//     }
-// }
-
-function displayTopic(topic) {
-    let topicObj = Appendix()[topic];
+function displayTopic(topic, event, subTopic) {
+    let topicObj;
+    subTopic ? topicObj = Appendix()[topic][subTopic] : topicObj = Appendix()[topic];
     let glossLoc = document.querySelector(".glossary-page-locations");
     glossLoc.innerHTML = "";
 
+    if (event.target.classList.contains("topic-tab")) {
+        for (let topic of topicTabs) {
+            topic.setAttribute("class", "topic-tab");
+        };
+        event.target.setAttribute("class", "topic-tab active-tab");
+    }
+
+    if (event.target.classList.contains("sub-topic-tab")) {
+        for (let topic of subTopicTabs) {
+            topic.setAttribute("class", "sub-topic-tab");
+        };
+        event.target.setAttribute("class", "sub-topic-tab active-tab");
+    }
+    
     for (let item in topicObj) {
         let name = topicObj[item].name;
         let info = topicObj[item].info;
@@ -56,6 +74,11 @@ function displayTopic(topic) {
                 "</div>" +
             "</div> <br/> <br/>";
         
+    }
+    if (!subTopic) {
+        //subTopCultures.style.display = "none";
+        subTopCultures.style.visibility = "hidden";
+        //glossHead.style.height = "5em";
     }
 }
 
@@ -113,10 +136,53 @@ function Appendix() {
             },
             rhunedar: {
                 name: "Rhünedâr",
-                info: "A dwarf from dahlduhn village. He is a barbarian class and favors a warhammer."
+                info: "A dwarf from Dahlduhn village. He is a barbarian class and favors a warhammer."
             },
 
         },
+        // culturalTerm: {
+        //     name: " ",
+        //     info: " "
+        // },
+        cultures: {
+            human: {
+                monock: {
+                    name: "Monock",
+                    info: "An order of warrior monks dedicated to the human gods."
+                },
+            },
+            elf: {
+                royarje: {
+                    name: "Royarje",
+                    info: "Elven nobles appointed by the emporer to rule a town, village, or city."
+                },
+            },
+            dwarf: {
+                hrothgar: {
+                    name: "Hrothgar",
+                    info: "The dwarven creator-god who formed the earth and the dwarven people."
+                },
+            },
+            misc: {
+                macmillan: {
+                    name: "Ole MacMillan",
+                    info: "A mysterious figure who leads a mythical hare-hunt over the moors of Granemoor. He is said to lure young men out to join his endless hunt with enchanted music."
+                },
+            },
+
+            
+        },
+        // character: {
+        //     name: " ",
+        //     info: " "
+        // },
+        beasts: {
+            stormSerpent: {
+                name: "Storm Serpent",
+                info: "A water dragon who controls the weather of a large area, freqeuntly causing violent and unpredictable storms. The party fought and killed one that was causing horrible storms in the bay of Seascape Port."
+            },
+
+        }
     };
 
     return appendix;

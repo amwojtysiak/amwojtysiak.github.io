@@ -35,7 +35,7 @@
 
     <div class="main-container">
         <div class="section-title">
-            <h1> The Lore of Innishfjalmor </h1>
+            <h1 class="section-title-text"> The Lore of Innishfjalmor </h1>
         </div>
 
         <!-- <div class="control-panel">
@@ -44,12 +44,25 @@
 
         <div class="glossary-container">
             <div class="glossary-head">
-                <div class="left-tabs">
-
+                <div class="topics">
+                    <div class="left-tabs">
+                        <div class="topic-tab" id="beasts-tab">Beasts</div>
+                        <div class="topic-tab" id="cultures-tab">Cultural Terms</div>
+                    </div>
+                    <div class="right-tabs">
+                        <div class="topic-tab active-tab" id="locations-tab">Locations</div>
+                        <div class="topic-tab" id="characters-tab">Characters</div>
+                    </div>
                 </div>
-                <div class="right-tabs">
-                    <div class="topic-tab" id="locations-tab">Locations</div>
-                    <div class="topic-tab" id="characters-tab">Characters</div>
+                <div class="sub-topics-cultures">
+                    <div class="left-tabs">
+                        <div class="sub-topic-tab active-tab" id="human-tab" value="human">Humans,<br/>Orcs, & Tieflings</div>
+                        <div class="sub-topic-tab" id="elf-tab" value="elf">Elves</div>
+                    </div>
+                    <div class="right-tabs">
+                        <div class="sub-topic-tab" id="dwarf-tab" value="dwarf">Dwarves</div>
+                        <div class="sub-topic-tab" id="misc-tab" value="misc">Miscellaneous</div>
+                    </div>
                 </div>
             </div>
 

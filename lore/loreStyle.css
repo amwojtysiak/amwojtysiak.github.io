@@ -18,6 +18,10 @@ button {
     justify-content: center;
 }
 
+.section-title-text {
+    margin: .4em;
+}
+
 .main-container {
     display: flex;
     flex-direction: column;
@@ -36,14 +40,37 @@ button {
 
 .glossary-head {
     display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 10em;
+    width: 100%;
+    margin-bottom: 1em;
+    /* visibility: hidden; */
+}
+
+.topics {
+    display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     height: 5em;
     width: 100%;
-    /* background-color: navy; */
+    margin-bottom: .5em;
+    font-size: 1.5em;
+}
+
+.sub-topics-cultures {
+    /* display: none; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 5em;
+    width: 80%;
     margin-bottom: 1em;
-    /* visibility: hidden; */
+    font-size: 1.0em;
+    visibility: hidden;
 }
 
 .left-tabs {
@@ -73,12 +100,47 @@ button {
     height: 75%;
     border: 3px solid black;
     border-radius: 22px;
-    font-size: 1.5em;
     cursor: pointer;
+    padding: 3px;
+}
+
+.sub-topic-tab {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 75%;
+    border: 3px solid black;
+    border-radius: 22px;
+    cursor: pointer;
+    padding: 3px;
+}
+
+#human-tab {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .topic-tab:hover {
     background: rgb(234, 230, 207);
+    
+}
+
+.sub-topic-tab:hover {
+    background: rgb(234, 230, 207);
+    
+}
+
+.active-tab {
+    background: rgb(234, 230, 207);
+}
+
+.active-tab:hover {
+    border-color: slategray;
 }
 
 .glossary-page-locations {
