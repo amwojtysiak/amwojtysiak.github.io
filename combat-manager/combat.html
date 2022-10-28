@@ -95,9 +95,10 @@
         </div>
 
         <ol class="instructions-list">
-            <li>Add party members with correct turn number.</li>
+            <li>Add party members with rolled initiative numbers(after rollies for ties*).</li>
+            <li>Ties can be handled automatically by inputting the tied number into the system like normal </li>
             <li>Add any additional characters/enemies.</li>
-            <li>Click initialize button to begin battle.</li>
+            <li>Click initialize button to begin battle AFTER ADDING ALL CHARACTERS.</li>
             <li>If leaving the page, save your battle; clear data to start a new battle.</li>
         </ol>
 
@@ -107,16 +108,16 @@
                 <h2 class="form-title">1. Add the Fellas Party</h2>
                 <form class="party-submit" id="party-form">
                     
-                    <label for="turnOrder">Byron Turn Order #:</label><br/>
+                    <label for="turnOrder">Byron Initiative Roll:</label><br/>
                     <input type="number" class="partyInfo" name="ByronTurnOrder" required><br/>
 
-                    <label for="turnOrder">Gabriel Turn Order #:</label><br/>
+                    <label for="turnOrder">Gabriel Initiative Roll:</label><br/>
                     <input type="number" class="partyInfo" name="GabrielTurnOrder" required><br/>
 
-                    <label for="turnOrder">Rhunedar Turn Order #:</label><br/>
+                    <label for="turnOrder">Rhunedar Initiative Roll:</label><br/>
                     <input type="number" class="partyInfo" name="RhunedarTurnOrder" required><br/>
 
-                    <label for="turnOrder">Ronan Turn Order #:</label><br/>
+                    <label for="turnOrder">Ronan Initiative Roll:</label><br/>
                     <input type="number" class="partyInfo" name="RonanTurnOrder" required><br/>
 
                     <input type="submit" id="partySubmitBtn" value="Submit">
@@ -141,7 +142,7 @@
                     <label for="ac">Armor Class:</label><br/>
                     <input type="number" class="charInfo" name="ac" required><br/>
 
-                    <label for="turnOrder">Turn Order #: (Must be Unique)</label><br/>
+                    <label for="turnOrder">Initiative Roll: (Must be Unique)</label><br/>
                     <input type="number" class="charInfo" name="turnOrder" required><br/>
 
                     <input type="submit" id="characterSubmitBtn" value="Submit">

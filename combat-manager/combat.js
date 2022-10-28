@@ -112,25 +112,49 @@ Object.defineProperty(CombatContributor.prototype, "takeDMG", {
 });
 
 
-function arrangeTurnOrder (characters, turnOrderObj) {
-    let characterTotal = Object.keys(characters).length;
-    
-    let i = 1;
-    while (i <= characterTotal) {
-       
-        let keysA = Object.keys(characters);
-        
-        keysA.forEach((key, index) => {
-            let orderNum = characters[key].turnNumber;
-            if (orderNum == i) {
-                turnOrderObj["c" + i] = characters[key].fName;
-            };
+function arrangeTurnOrder(characters, turnOrderObj) {
+    let initiativeArr = [];
+
+    for (let char in characters) {
+        initiativeArr.push({
+            name: characters[char].fName,
+            init: characters[char].turnNumber
         });
-        i++;
-    };
+    }
 
+    initiativeArr = handleInitTies(initiativeArr); //handle tie fxn
+    
+    initiativeArr = initiativeArr.sort((a, b) => a.init - b.init);
+    console.log(initiativeArr);
+    for (let i=1; i<=initiativeArr.length; i++) {
+        let orderNum = initiativeArr[i-1];
+        turnOrderObj["c" + i] = orderNum.name;
+        characters[orderNum.name].turnNumber = i;
+    }
 
+    console.log(turnOrderObj);
     return turnOrderObj;
+}
+
+function handleInitTies(initArr) {
+    let initNums = [];
+    
+    for (let i=0; i<initArr.length; i++) {
+        initNums = [];
+        for (let n=0; n<initArr.length; n++) {
+            if (n != i) initNums.push(Math.floor(Number(initArr[n].init))); 
+        };
+        let match = initNums.includes(Number(initArr[i].init));
+        
+        if (match) {
+            let randomDecimal = Math.random();
+            initArr[i].init = Number(initArr[i].init) + Number(randomDecimal);
+        } else {
+            initArr[i].init = Number(initArr[i].init);
+        }
+    }
+
+    return initArr;
 }
 
 
