@@ -199,3 +199,24 @@ button {
 .gloss-header {
     text-decoration: underline;
 }
+
+.open-gloss {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 10em;
+    height: 3em;
+    border: 3px solid black;
+    background-color: none;
+    border-radius: 22px;
+    cursor: pointer;
+    font-family: "papyrus";
+    font-size: 1em;
+    font-weight: bolder;
+    
+}
+
+.open-gloss:hover {
+    background: rgb(234, 230, 207); 
+}

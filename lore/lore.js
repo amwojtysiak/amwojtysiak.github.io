@@ -155,6 +155,10 @@ function Appendix() {
                     name: "Mannach",
                     info: "An order of warrior monks dedicated to the human gods."
                 },
+                fianmannach: {
+                    name: "Fianmannach",
+                    info: "Coming Soon.."
+                },
                 soldiersToTheSea: {
                     name: "Soldiers to the Sea",
                     info: "A popular folk song about war. A lament for fallen men, and a metaphor for the journey to the sea representing a soldier's acceptance and embracing of his death."
