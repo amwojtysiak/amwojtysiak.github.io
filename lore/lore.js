@@ -95,9 +95,17 @@ function Appendix() {
                 name: "Dahlduhn Village",
                 info: "A small dwarven village northwest of Seascape Port. It's primary exports are tools and weapons made by the dwarven smiths in the town. Not much is known about the culture and political standing of the dwarves who populate Dahlduhn Village. It is notable only for being the birthplace of the dwarf Rhünedâr."
             },
+            granemore: {
+                name: "Granemore",
+                info: "Description Coming Soon.."
+            },
             honedao: {
                 name: "Shichi Honedao",
                 info: "Description Coming Soon.."
+            },
+            innisfjalmor: {
+                name: "Innisfjalmor",
+                info: "The name given the island by its human inhabitants. It translates to 'Isle of Fell Dragons'. This is the island on which the campaign begins."
             },
             kemwei: {
                 name: "Kemwei Forest",
@@ -107,12 +115,12 @@ function Appendix() {
                 name: "Luanpeir",
                 info: "Description Coming Soon.."
             },
-            seascape: {
-                name: "Seascape Port",
-                info: "Description Coming Soon.."
-            },
             vassaNathair: {
                 name: "Inheritor City of Vassa Nathair",
+                info: "The capital city of the Human, Tiefling, and Orc territories on Innisfjalmor."
+            },
+            seascape: {
+                name: "Seascape Port",
                 info: "Description Coming Soon.."
             },
         },
@@ -140,21 +148,26 @@ function Appendix() {
             },
 
         },
-        // culturalTerm: {
-        //     name: " ",
-        //     info: " "
-        // },
+         
         cultures: {
             human: {
-                monock: {
-                    name: "Monock",
+                mannach: {
+                    name: "Mannach",
                     info: "An order of warrior monks dedicated to the human gods."
+                },
+                soldiersToTheSea: {
+                    name: "Soldiers to the Sea",
+                    info: "A popular folk song about war. A lament for fallen men, and a metaphor for the journey to the sea representing a soldier's acceptance and embracing of his death."
                 },
             },
             elf: {
-                royarje: {
-                    name: "Royarje",
-                    info: "Elven nobles appointed by the emporer to rule a town, village, or city."
+                kojimeling: {
+                    name: "Kojimeling",
+                    info: "The name given to the island by its Elven inhabitants. In Old Elvish, it translates to “Island of First Elves."
+                },
+                rohyarzhe: {
+                    name: "Rohyarzhe",
+                    info: "Not representative of any single organization, this name is used colloquially to refer to any Elven group large or small, that stands athwart the new world, and seeks a return to days of Elvish independence."
                 },
             },
             dwarf: {
@@ -162,11 +175,19 @@ function Appendix() {
                     name: "Hrothgar",
                     info: "The dwarven creator-god who formed the earth and the dwarven people."
                 },
+                durgarn: {
+                    name: "Durgarn",
+                    info: "Rhünedâr's pony. His name means 'dragon' in dwarvish."
+                },
             },
             misc: {
                 macmillan: {
                     name: "Ole MacMillan",
                     info: "A mysterious figure who leads a mythical hare-hunt over the moors of Granemoor. He is said to lure young men out to join his endless hunt with enchanted music."
+                },
+                dustSweets: {
+                    name: "Dust Sweets",
+                    info: "A powerful narcotic and drug of choice on the island. It's developed by grinding to dust the bones of Tuasith or Aos Dannan, concentrating them with heat and pressure, and mixing it with the right amount of the Higanbana flower."
                 },
             },
 
@@ -181,9 +202,48 @@ function Appendix() {
                 name: "Storm Serpent",
                 info: "A water dragon who controls the weather of a large area, freqeuntly causing violent and unpredictable storms. The party fought and killed one that was causing horrible storms in the bay of Seascape Port."
             },
+            fellDragons: {
+                name: "Fell Dragons",
+                info: "Description Coming Soon.."
+            },
 
         }
     };
 
+    sortAlphabetically(appendix);
+
+
     return appendix;
+}
+
+function sortAlphabetically(appendix) {
+    let topicsArr = Object.keys(appendix);
+    
+    topicsArr.forEach((topic, index) => {
+        if (topic + "" == "cultures") {
+            let subTopicsArr = Object.keys(appendix[topic]);
+
+            subTopicsArr.forEach((subTopic, index) => {
+
+                let sortedSubTopic = Object.keys(appendix[topic][subTopic])
+                    .sort()
+                    .reduce((acc, key) => ({
+                        ...acc, [key]: appendix[topic][subTopic][key]
+                    }), {})
+
+                appendix[topic][subTopic] = sortedSubTopic;
+            });
+
+
+        } else {
+            let sortedTopic = Object.keys(appendix[topic])
+                .sort()
+                .reduce((acc, key) => ({
+                    ...acc, [key]: appendix[topic][key]
+                }), {})
+
+            appendix[topic] = sortedTopic;
+        }
+    });
+    
 }
