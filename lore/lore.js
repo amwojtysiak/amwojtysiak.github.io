@@ -82,6 +82,143 @@ function displayTopic(topic, event, subTopic) {
     }
 }
 
+
+//SEARCH FUNCTION
+const useResultLimit = true;
+
+var searchInput = document.querySelector('.input');
+var clearButton = document.querySelector('#clear-button');
+var list = document.querySelector('#list');
+var searchName = document.querySelector('#search-name');
+var searchInfo = document.querySelector('#search-info');
+var resultsDefinition = document.querySelector('.results-definition');
+
+searchInput.addEventListener("input", (e) => {
+    let value = e.target.value
+
+    if (value.trim()){
+        value = value.trim().toLowerCase();
+
+        // let locationsArr = [];
+
+        // Object.keys(Appendix().locations).forEach((key, index) => {
+        //    let entry = Appendix().locations[key];
+        //    locationsArr.push(entry);
+        // })
+        let resultsArr = getArrOfAppendixEntriesObjs(Appendix())
+        // console.log(locationsArr);
+        clearList();
+        setList(resultsArr.filter(term => {
+            
+            return term.name.toLowerCase().includes(value);
+        }), useResultLimit)
+
+    } else {
+        clearList();
+    }
+
+});
+
+clearButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    clearList();
+});
+
+function setList(results, useResultLimit) {
+    if (useResultLimit && results.length > 10) {
+        results = results.slice(0, 10);
+    };
+
+    for (let term of results) {
+        const resultItem = document.createElement('li');
+        let text;
+        resultItem.classList.add('result-item');
+        resultItem.setAttribute('value', term.name + '|' + term.info);
+
+        // if (results.length === 1 ){
+        //     text = document.createTextNode(term.name + ': ' + term.info);
+
+        // } else {
+            text = document.createTextNode(term.name);
+
+        // }
+
+
+        resultItem.append(text);
+        list.append(resultItem);
+
+        resultItem.addEventListener('click', (e) => {
+            renderSelectedTerm(e);
+        });
+    }
+
+    if (results.length === 0 ){
+        noResults();
+    };
+}
+
+function noResults(){
+    const error = document.createElement('li');
+    error.classList.add('error-message');
+
+    const text = document.createTextNode('No results found. Sorry!');
+    error.append(text);
+    list.append(error);
+}
+
+function clearList(e) {
+    list.innerHTML = "";
+    resultsDefinition.style.display = "none";
+}
+
+function renderSelectedTerm(e) {
+    let nameFromSplit, infoFromSplit;
+    if (e.target) {
+        let termAtr = e.target.getAttribute('value');
+        let termArr = termAtr.split('|');
+        nameFromSplit = termArr[0];
+        infoFromSplit = termArr[1];        
+    };
+
+    searchName.innerHTML = nameFromSplit;
+    searchInfo.innerHTML = infoFromSplit;
+    resultsDefinition.style.display = "flex";
+
+}
+
+function getArrOfAppendixEntriesObjs(appendix) {
+    let entriesArr = [];
+
+    let topicsArr = Object.keys(appendix);
+    
+    topicsArr.forEach((topic, index) => {
+        if (topic + "" == "cultures") {
+            let subTopicsArr = Object.keys(appendix[topic]);
+
+            subTopicsArr.forEach((subTopic, index) => {
+
+                Object.keys(appendix[topic][subTopic]).forEach((key, index) => {
+                    let entry = Appendix()[topic][subTopic][key];
+                    entriesArr.push(entry);
+                 })
+                    
+            });
+
+
+        } else {
+            Object.keys(appendix[topic]).forEach((key, index) => {
+                let entry = Appendix()[topic][key];
+                entriesArr.push(entry);
+            })
+        }
+    });
+
+    console.log("ENTRIESARR",entriesArr);
+    return entriesArr;
+}
+
+
+
 function Appendix() {
     const appendix = {
 
