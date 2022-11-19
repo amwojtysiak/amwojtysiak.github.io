@@ -84,17 +84,23 @@ function displayTopic(topic, event, subTopic) {
 
 
 //SEARCH FUNCTION
-const useResultLimit = true;
+var useResultLimit = true;
+var searchValStored = '';
 
 var searchInput = document.querySelector('.input');
+var searchText = document.querySelector('#search');
 var clearButton = document.querySelector('#clear-button');
 var list = document.querySelector('#list');
 var searchName = document.querySelector('#search-name');
 var searchInfo = document.querySelector('#search-info');
+var showAllButton = document.querySelector('.show-all');
 var resultsDefinition = document.querySelector('.results-definition');
 
+
+
 searchInput.addEventListener("input", (e) => {
-    let value = e.target.value
+    let value = e.target.value;
+    searchValStored = value;
 
     if (value.trim()){
         value = value.trim().toLowerCase();
@@ -108,11 +114,14 @@ searchInput.addEventListener("input", (e) => {
         let resultsArr = getArrOfAppendixEntriesObjs(Appendix())
         // console.log(locationsArr);
         clearList();
-        setList(resultsArr.filter(term => {
+        let resultNum = setList(resultsArr.filter(term => {
             
             return term.name.toLowerCase().includes(value);
         }), useResultLimit)
 
+        if (resultNum > 10) {
+            showAllButton.style.visibility = 'visible';
+        }
     } else {
         clearList();
     }
@@ -122,27 +131,27 @@ searchInput.addEventListener("input", (e) => {
 clearButton.addEventListener("click", (e) => {
     e.preventDefault();
     clearList();
+    searchValStored = ''; 
+    showAllButton.style.visibility = 'hidden';
+    toggleResultsLimit();
+       
 });
 
 function setList(results, useResultLimit) {
+    var abbrevResults;
     if (useResultLimit && results.length > 10) {
-        results = results.slice(0, 10);
-    };
+       abbrevResults = results.slice(0, 10);
+    } else {
+        abbrevResults = results;
+    }
 
-    for (let term of results) {
+    for (let term of abbrevResults) {
         const resultItem = document.createElement('li');
         let text;
         resultItem.classList.add('result-item');
         resultItem.setAttribute('value', term.name + '|' + term.info);
 
-        // if (results.length === 1 ){
-        //     text = document.createTextNode(term.name + ': ' + term.info);
-
-        // } else {
-            text = document.createTextNode(term.name);
-
-        // }
-
+        text = document.createTextNode(term.name);
 
         resultItem.append(text);
         list.append(resultItem);
@@ -155,6 +164,43 @@ function setList(results, useResultLimit) {
     if (results.length === 0 ){
         noResults();
     };
+
+    return results.length;
+}
+
+showAllButton.addEventListener('click', toggleResultsLimit);
+
+function toggleResultsLimit() {
+
+    //toggle shaded background color
+    //toggle words (show all terms => shorten term list)
+    
+
+    if (useResultLimit) {
+        useResultLimit = false;
+        showAllButton.innerHTML = "Shrink Terms List";
+        showAllButton.classList.toggle("full-list");
+
+    } else {
+        useResultLimit = true;
+        showAllButton.innerHTML = "Show All Terms";
+        showAllButton.classList.toggle("full-list");
+    }
+
+    valFromStored = searchValStored;
+
+    if (valFromStored.trim()){
+        value = valFromStored.trim().toLowerCase();
+
+
+        let resultsArr = getArrOfAppendixEntriesObjs(Appendix());
+        
+        clearList();
+        setList(resultsArr.filter(term => {
+
+            return term.name.toLowerCase().includes(value);
+        }), useResultLimit);
+    }
 }
 
 function noResults(){

@@ -246,6 +246,7 @@ button {
     align-items: center;
     width: 100%;
     height: auto;
+    /* translate: 24%; */
 }
 
 #clear-button {
@@ -295,8 +296,8 @@ button {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
-    width: 75%;
+    align-items: flex-start;
+    width: 49%;
     height: auto;
 }
 
@@ -312,4 +313,33 @@ button {
 .result-item:hover {
     text-decoration: underline;
     cursor: pointer;
+}
+
+.show-all {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    height: 3em;
+    border: 3px solid black;
+    background-color: none;
+    border-radius: 22px;
+    cursor: pointer;
+    font-family: "papyrus";
+    font-size: .8em;
+    font-weight: bolder;
+    visibility: hidden;
+}
+
+.full-list {
+    background: rgb(234, 230, 207);
+}
+
+.full-list:hover {
+    border-color: slategray;
+}
+
+.show-all:hover {
+    background: rgb(234, 230, 207); 
 }
