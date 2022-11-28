@@ -112,7 +112,7 @@ Object.defineProperty(CombatContributor.prototype, "takeDMG", {
 });
 
 
-function arrangeTurnOrder(characters, turnOrderObj) {
+function arrangeTurnOrder(characters, turnOrderObj, isFirstArrangement) {
     let initiativeArr = [];
 
     for (let char in characters) {
@@ -123,9 +123,11 @@ function arrangeTurnOrder(characters, turnOrderObj) {
     }
 
     initiativeArr = handleInitTies(initiativeArr); //handle tie fxn
-    
-    initiativeArr = initiativeArr.sort((a, b) => a.init - b.init);
-    console.log(initiativeArr);
+    if (isFirstArrangement) {
+        initiativeArr = initiativeArr.sort((a, b) => b.init - a.init);
+    } else {
+        initiativeArr = initiativeArr.sort((a, b) => a.init - b.init); // was a.init - b.init which reversed orders
+    }
     for (let i=1; i<=initiativeArr.length; i++) {
         let orderNum = initiativeArr[i-1];
         turnOrderObj["c" + i] = orderNum.name;
@@ -135,6 +137,33 @@ function arrangeTurnOrder(characters, turnOrderObj) {
     console.log(turnOrderObj);
     return turnOrderObj;
 }
+//TESTING
+// function arrangeTurnOrderFirst(characters, turnOrderObj) {
+//     let initiativeArr = [];
+// 
+
+//     for (let char in characters) {
+//         initiativeArr.push({
+//             name: characters[char].fName,
+//             init: characters[char].turnNumber
+//         });
+//     }
+
+// 
+//     initiativeArr = handleInitTies(initiativeArr); //handle tie fxn
+// 
+//     initiativeArr = initiativeArr.sort((a, b) => b.init - a.init); // was a.init - b.init which reversed orders
+// 
+//     for (let i=1; i<=initiativeArr.length; i++) {
+//         let orderNum = initiativeArr[i-1];
+//         turnOrderObj["c" + i] = orderNum.name;
+//         characters[orderNum.name].turnNumber = i;
+//     }
+
+//     console.log(turnOrderObj);
+//     return turnOrderObj;
+// }
+//TESTING
 
 function handleInitTies(initArr) {
     let initNums = [];
@@ -159,7 +188,7 @@ function handleInitTies(initArr) {
 
 
 function defaultCharacterList() {
-    orderObj = arrangeTurnOrder(characters, turnOrderObj);
+    let orderObj = arrangeTurnOrder(characters, turnOrderObj);
     let listHTML;
     let namesArr = Object.values(orderObj);
     let namesArrAdjusted = [];
@@ -201,7 +230,10 @@ function defaultCharacterList() {
 
 };
 
-document.getElementById("initialize-list").addEventListener('click', defaultCharacterList);
+document.getElementById("initialize-list").addEventListener('click', () => {
+    arrangeTurnOrder(characters, turnOrderObj, true);
+    defaultCharacterList();
+});
 
 document.getElementById("start-next-turn").addEventListener('click', nextTurn);
 document.getElementById("health-button").addEventListener('click', addHealth);
