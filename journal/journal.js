@@ -272,7 +272,26 @@ let journalObjTemplate = {
 
 function journal() {
     let journalArray = [
-       
+        {
+            campaign: 1,
+            part: 2,
+            chapter: 16,
+            chapterTitle: "Child of my Enemy, Why Have You Come",
+            date: "02/19/23",
+            guests: 0,
+            location: "Kemwei Villages",
+            summary: "~SUMMARY COMING SOON~ <br> (Talk to your DM)"
+        },
+        {
+            campaign: 1,
+            part: 2,
+            chapter: 15,
+            chapterTitle: "Falling Leaves from Dying Trees",
+            date: "11/27/23",
+            guests: 0,
+            location: "Kemwei Villages",
+            summary: "~SUMMARY COMING SOON~ <br> (Talk to your DM)"
+        },
         {
             campaign: 1,
             part: 2,
