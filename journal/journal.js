@@ -272,6 +272,17 @@ let journalObjTemplate = {
 
 function journal() {
     let journalArray = [
+        
+        {
+            campaign: 1,
+            part: 2,
+            chapter: 17,
+            chapterTitle: "The Breath of the Rinzu",
+            date: "02/26/23",
+            guests: 0,
+            location: "Kemwei Villages",
+            summary: "~SUMMARY COMING SOON~ <br> (Talk to your DM)"
+        },
         {
             campaign: 1,
             part: 2,
@@ -279,7 +290,7 @@ function journal() {
             chapterTitle: "Child of my Enemy, Why Have You Come",
             date: "02/19/23",
             guests: 0,
-            location: "Kemwei Villages",
+            location: "Kemwei Forest",
             summary: "~SUMMARY COMING SOON~ <br> (Talk to your DM)"
         },
         {
