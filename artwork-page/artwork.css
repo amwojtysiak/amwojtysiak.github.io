@@ -63,6 +63,7 @@
 
 .description-text {
     width: 60%;
+    margin-top: .25em;
 }
 
 .art-box {
@@ -78,4 +79,13 @@
     max-width: 100%;
     /* border: 5px solid #425b76; */
     border-radius: 100px;
+}
+
+.artist-credit {
+    margin-bottom: .2em;
+    margin-top: .3em;
+}
+
+a.outside-link {
+    color: blue;
 }
