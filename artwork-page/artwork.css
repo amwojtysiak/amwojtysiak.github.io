@@ -57,6 +57,7 @@
 }
 
 .description-title {
+    text-align: center;
     font-size: 1.8em;
 }
 
@@ -74,6 +75,7 @@
 
 .art-piece {
     height: 100%;
+    max-width: 100%;
     /* border: 5px solid #425b76; */
     border-radius: 100px;
 }
