@@ -124,4 +124,7 @@ button {
     .bottom-box {
         flex-direction: column;
     }    
+    button {
+        margin: .5em;
+    }
 }
