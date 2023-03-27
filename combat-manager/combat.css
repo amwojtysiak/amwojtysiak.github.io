@@ -116,3 +116,12 @@
 button {
     cursor: pointer;
 }
+
+@media screen and (max-width: 600px) {
+    .top-columns {
+        flex-wrap: wrap;
+    }
+    .bottom-box {
+        flex-direction: column;
+    }    
+}

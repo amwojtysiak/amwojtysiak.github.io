@@ -16,6 +16,12 @@ a {
     color: black;
 }
 
+.header img{
+    object-fit: cover; 
+    height: 100%; 
+    width: 100%;
+}
+
 .menu {
     display: flex;
     justify-content: center;
@@ -145,3 +151,27 @@ footer {
     margin-top: 50px;
     border-top: 5px solid black;   
 }
+
+@media screen and (max-width: 600px) {
+    body {
+        font-size: .75em;
+    }
+    .header {
+        display: none;
+        height: 0px;
+    }
+
+    .menu-align {
+        height: 100%;
+    }
+
+    .menu-items {
+        /* font-size: 1em; */
+    }
+
+    footer {
+        position: relative;
+        bottom: 0;
+        margin-top: 25%;
+    }
+  }

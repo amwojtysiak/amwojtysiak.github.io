@@ -306,6 +306,10 @@ function Appendix() {
                 name: "Seascape Port",
                 info: "Description Coming Soon.."
             },
+            rinzu: {
+                name: "Rinzu",
+                info: 'A dark and evil part of the forests of Kemwei, it spawns evil creatures and sends forth the "Breath of the Rinzu". It is held in check by a magical barrier just north of Kemwei village, which is said to be maintained and defended by the guardian spirit Senzhou.'
+            },
         },
         // character: {
         //     name: " ",
@@ -392,6 +396,10 @@ function Appendix() {
             fellDragons: {
                 name: "Fell Dragons",
                 info: "Description Coming Soon.."
+            },
+            nekomada: {
+                name: "Nekomada",
+                info: "Cat-like creatures that emerge from the Rinzu, they are seemingly intelligent and highly sadistic, taking great pride in torturing their victims physically and emotionally."
             },
 
         }
