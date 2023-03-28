@@ -1,10 +1,10 @@
 
 //Countdown Clock
-let mo = 03, dat = 26, hr = 19, mins = 30; 
+let mo = 04, dat = 02, hr = 19, mins = 30; 
 //Enter next chapter date above
 //New Content Notification
-var newPart = 2, newChapter = 12;
-var notifyYear = "2022", notifyMonth = 10, notifyDate = 26;
+var newPart = 2, newChapter = 18;
+var notifyYear = "2023", notifyMonth = 03, notifyDate = 28;
 //Enter new content location  and date(YYYY, MM, DD) above
 
 document.querySelector("#next-chapter-date").innerHTML = mo + "/" + dat + "/22" 

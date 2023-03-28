@@ -276,6 +276,21 @@ function journal() {
         {
             campaign: 1,
             part: 2,
+            chapter: 18,
+            chapterTitle: "",
+            date: "03/26/23",
+            guests: 0,
+            location: "Kemwei Villages",
+            summary: "The party finally began to come alive again following the battle with the Rinzu beasts, and had some decisions to make. They debated on whether to stay in town and organize defenses or head back to the barrier to try and restore it before the next wave of monsters. After unsuccessfully attempting to reach Sun Teriem, they opted to return to the barrier with Chulainn. On their way out of town they met Toyo who was searching in a panic for his son Iro and Dao Teriem. He questioned the party since they had befriended Iro, but they had not seen him, or Jang Teriem who was also missing. Toyo left, and the Rangers headed to the barrier site north of the village. Along the way they found a Nekomada torturing a lone elf, but his wounds were too serious, and after they killed the creature Byron used his knife to grant the man's wishes and end his suffering. <br><br>" + 
+            "When they got to the magical barrier they discovered it had mysteriously returned to its former state and was once again holding the Rinzu at bay. The party, and Rhünedâr in particular, began to question Chulainn about his motives, becoming suspicious of the young elf. He told them about some of where he got his information about the Rinzu, and mentioned that he and his mother were not trusted in the village because they were outsiders. He recounted the story about witnessing the Upheval in Honnedao, and how that night a man came to see his mother. She remains alive but he said she is confused now, and the party decided they ought to speak to her later. <br><br>" +
+            "About this time, Byron barely perceived movement on the other side of the magical barrier and realized that the Rinzu guardian was beckoning to him, and he became compelled to obey after staring into its lamp-like eyes. He crossed the barrier and was snatched by roots of the Rinzu, and experienced another vision as he crossed that horrified him. The rest of the party leapt to save him, and each experienced visions of their own that depicted the other party members as puppets under the control of the Rinzu guardian as they crossed the barrier. They managed to wrest him back to the safe side of the barrier, and decided to return to the village, while Rhünedâr kept a close eye on Byron, who seemed disturbed by the experience. Ronan expressed his worries about their current trajectory to Gabriel, as the only other man of experience in the group, and they vowed to proceed with great caution and keep an eye on their friends. <br><br>" +
+            "As they got close to the village, they once again met Toyo who told them that Iro and Dao had been found safely, but urged them to accompany him to see the fate of Jang Teriem. <br><br>" +
+            "He led them to a local shrine to Senshou, where the beheld the kneeling form of Jang next to a blood-filled pool of water. Jang's throat had been cut by a thick weapon, and his expression betrayed a sense of surprised acceptance of his fate. They found little else nearby, except for a shard of magical crystal in the pool that seemed to contain a fiery essence. Chulainn and Byron discerned it was a highly potent magical artifact, but none knew what it was from. Ronan held it for safe-keeping, and Toyo seemed highly distracted and pensive about the death of his rival Jang. <br><br>" +
+            "Upon returning to the village, Toyo confronted Sun Teriem about burying Jang and the other dead, and she consented to have them buried in the grotto. The party participated in the ceremony to inter them in the hollow of trees found in a hidden forest in a grotto encircled by massive roots. They were left feeling more confused than ever about the direction they ought to take as they surveyed the results of the battle, and witnessed the growing rift between the old ways of Kemwei represented by Toyo and the winds of change represented by Sun Teriem."
+        },
+        {
+            campaign: 1,
+            part: 2,
             chapter: 17,
             chapterTitle: "The Breath of the Rinzu",
             date: "02/26/23",
