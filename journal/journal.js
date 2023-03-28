@@ -277,7 +277,7 @@ function journal() {
             campaign: 1,
             part: 2,
             chapter: 18,
-            chapterTitle: "",
+            chapterTitle: "The Many Paths of the Forest",
             date: "03/26/23",
             guests: 0,
             location: "Kemwei Villages",
