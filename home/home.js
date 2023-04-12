@@ -7,6 +7,15 @@ var newPart = 2, newChapter = 18;
 var notifyYear = "2023", notifyMonth = 03, notifyDate = 28;
 //Enter new content location  and date(YYYY, MM, DD) above
 
+//Add spell Favorites indexes here
+var spellFavorites = [
+    "bane",
+    "charm-person",
+    "cure-wounds",
+    "invisibility",
+    "thunderwave"
+];
+
 document.querySelector("#next-chapter-date").innerHTML = mo + "/" + dat + "/22" 
 
 const nextChapterDate = new Date();
@@ -81,6 +90,68 @@ if (now <= notificationEndDate) {
     document.getElementById("new-content").style.display = "flex"; 
 }
 
+let spellBox = document.querySelector(".spellName");
+let spellButton = document.querySelector("#spell-button");
+let favBox = document.querySelector(".fav-spells");
+let favTitle = document.querySelector(".fav-title");
 
-//async practice
+spellButton.addEventListener("click", getSpellNames);
+// getSpellNames();
+
+//API TESTING
+function getSpellNames() {
+    let api = `https://www.dnd5eapi.co/api/spells`;
+
+    fetch(api)
+    .then(function(response) {
+        let data = response.json();
+        return data;
+    })
+    .then(function(data) {
+        data.results.forEach(spell => {
+            if (spellFavorites.includes(spell.index)) {
+                favBox.innerHTML += 
+                `<div class="spellFav spellItem" data-index="${spell.index}" data-url="${spell.url}" > ${spell.name}</div>`;
+            }
+            
+            
+            spellBox.innerHTML += 
+            `<div class="spellItem" data-index="${spell.index}" data-url="${spell.url}" > ${spell.name}</div>`;
+            // <br> <div class="spellDesc spellDetail-${spell.index}"></div><br></br>
+        });
+    })
+    .then(function() {
+        favBox.style.display = "flex";
+        favTitle.style.display = "flex";
+
+        let spellList = document.querySelectorAll(".spellItem");
+        console.log(spellList.length)
+        spellList.forEach(spell => {
+            let url = spell.getAttribute("data-url");
+            let index = spell.getAttribute("data-index");
+
+            spell.addEventListener("click", function() {
+                getSpellDetail(index, url)
+            })
+        })
+    })
+}
+
+function getSpellDetail(spellIndex, spellUrl) {
+    
+    let api = `https://www.dnd5eapi.co${spellUrl}`;
+    fetch(api)
+    .then(function(response) {
+        let data = response.json();
+        return data;
+    })
+    .then(function(data) {
+        console.log(data)
+        // let descDiv = document.querySelector(`.spellDetail-${spellIndex}`);
+        let descDiv = document.querySelector(`.spellDetail`);
+        descDiv.style.display = "block";
+        descDiv.innerHTML = data.desc + "<br/>" + data.higher_level;
+    })
+}
+
 
