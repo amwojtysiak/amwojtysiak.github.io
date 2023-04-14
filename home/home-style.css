@@ -1,19 +1,54 @@
 .character-pic {
-    width: 185px;
-    height: 240px;
-    float: right;
-    margin-right: 40%;
-    border: 10px solid black;
+    max-width: 100%;
+    max-height: 100%;
+    border: 3px solid black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-/* a {
-    text-decoration: none;
-    color: black;
-} */
+.page-title {
+    text-align: center;
+}
 
-table {
-    width: 100%;
-   
+.chars-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    /* height: 85%; */
+    width: 95%
+}
+
+.char-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 35em;
+    width: 30%
+}
+
+.img-box {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    max-width: 100%;
+    height: 60%;
+    /* border: 3px solid black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+}
+
+.char-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%
+}
+
+.char-details {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%
 }
 
 /* html {
