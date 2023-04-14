@@ -94,8 +94,18 @@ let spellBox = document.querySelector(".spellName");
 let spellButton = document.querySelector("#spell-button");
 let favBox = document.querySelector(".fav-spells");
 let favTitle = document.querySelector(".fav-title");
+let closeBtn = document.querySelector(".close-button");
+let descDiv = document.querySelector(`.spellDetail`);
+let textDiv = document.querySelector(`.detail-text`);
 
+closeBtn.addEventListener("click", closeDetailBox);
 spellButton.addEventListener("click", getSpellNames);
+
+function closeDetailBox() {
+    descDiv.style.display = "none";
+}
+
+
 // getSpellNames();
 
 //API TESTING
@@ -148,8 +158,8 @@ function getSpellDetail(spellIndex, spellUrl) {
     .then(function(data) {
         console.log(data)
         // let descDiv = document.querySelector(`.spellDetail-${spellIndex}`);
-        let descDiv = document.querySelector(`.spellDetail`);
-        let textDiv = document.querySelector(`.detail-text`);
+        // let descDiv = document.querySelector(`.spellDetail`);
+        // let textDiv = document.querySelector(`.detail-text`);
         descDiv.style.display = "flex";
         textDiv.innerHTML = data.desc + "<br/>" + data.higher_level;
     })
