@@ -237,6 +237,35 @@ h3 {
     margin-left: 3em;
 }
 
+@media screen and (max-width: 600px) {
+    #spell-button {
+        margin-right: 1em;
+    }
+
+    .fav-title {
+        width: 15%;
+        
+        height: 100%;
+        padding: 5px;
+    }
+    
+    .spell-top-box {
+        height: 7em;
+        width: 98%;
+    }
+
+    .spellName {
+        
+        max-height: 260em;
+    }
+
+    .spellDetail {
+       
+        margin: 1em 1em;
+        
+    }
+}
+
 
 
 
