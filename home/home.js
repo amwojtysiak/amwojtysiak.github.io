@@ -149,8 +149,9 @@ function getSpellDetail(spellIndex, spellUrl) {
         console.log(data)
         // let descDiv = document.querySelector(`.spellDetail-${spellIndex}`);
         let descDiv = document.querySelector(`.spellDetail`);
-        descDiv.style.display = "block";
-        descDiv.innerHTML = data.desc + "<br/>" + data.higher_level;
+        let textDiv = document.querySelector(`.detail-text`);
+        descDiv.style.display = "flex";
+        textDiv.innerHTML = data.desc + "<br/>" + data.higher_level;
     })
 }
 

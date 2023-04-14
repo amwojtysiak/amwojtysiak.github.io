@@ -215,6 +215,9 @@ h3 {
 
 .spellDetail {
     display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin: 2em 3em;
     border: 3px solid black;
     border-radius: 22px;
@@ -237,9 +240,29 @@ h3 {
     margin-left: 3em;
 }
 
+.close-button {
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 6px;
+    padding: .25em;
+    color: red;
+    width: 5%;
+    cursor: pointer;
+}
+
 @media screen and (max-width: 600px) {
     #spell-button {
         margin-right: 1em;
+    }
+
+    .close-button {
+        text-align: center;
+        border: 1px solid black;
+        border-radius: 6px;
+        padding: .25em;
+        color: red;
+        width: 5%;
+        
     }
 
     .fav-title {
@@ -256,7 +279,7 @@ h3 {
 
     .spellName {
         
-        max-height: 260em;
+        max-height: 280em;
     }
 
     .spellDetail {
