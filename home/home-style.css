@@ -292,6 +292,26 @@ h3 {
 }
 
 @media screen and (max-width: 600px) {
+    #header-intro {
+        display: none;
+    }
+
+    #campaign-num {
+        font-size: 1.5em;
+    }
+
+    #dm {
+        font-size: 1em;
+    }
+
+    .header {
+        height: 13em;
+    }
+
+    .head-text{
+        justify-content: space-around;
+    }
+    
     #spell-button {
         margin-right: 1em;
     }
