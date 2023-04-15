@@ -205,9 +205,15 @@ h3 {
     width: 98%;
 }
 
-#spell-button {
+#hide-spell-button {
+    display: none;
+}
+
+.spell-button {
     margin-right: 3em;
 }
+
+
 
 .fav-title {
     display: none;

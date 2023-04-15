@@ -92,6 +92,7 @@ if (now <= notificationEndDate) {
 
 let spellBox = document.querySelector(".spellName");
 let spellButton = document.querySelector("#spell-button");
+let hideSpellButton = document.querySelector("#hide-spell-button");
 let favBox = document.querySelector(".fav-spells");
 let favTitle = document.querySelector(".fav-title");
 let closeBtn = document.querySelector(".close-button");
@@ -100,9 +101,20 @@ let textDiv = document.querySelector(`.detail-text`);
 
 closeBtn.addEventListener("click", closeDetailBox);
 spellButton.addEventListener("click", getSpellNames);
+hideSpellButton.addEventListener("click", hideSpells);
 
 function closeDetailBox() {
     descDiv.style.display = "none";
+}
+
+function hideSpells() {
+    spellBox.style.display = "none";
+    favBox.style.display = "none";
+    favTitle.style.display = "none";
+    hideSpellButton.style.display = "none";
+    spellButton.style.display = "block";
+    spellBox.innerHTML = "";
+    favBox.innerHTML = "";
 }
 
 
@@ -124,15 +136,16 @@ function getSpellNames() {
                 `<div class="spellFav spellItem" data-index="${spell.index}" data-url="${spell.url}" > ${spell.name}</div>`;
             }
             
-            
             spellBox.innerHTML += 
             `<div class="spellItem" data-index="${spell.index}" data-url="${spell.url}" > ${spell.name}</div>`;
-            // <br> <div class="spellDesc spellDetail-${spell.index}"></div><br></br>
         });
     })
     .then(function() {
         favBox.style.display = "flex";
         favTitle.style.display = "flex";
+        hideSpellButton.style.display = "block";
+        spellButton.style.display = "none";
+        spellBox.style.display = "flex";
 
         let spellList = document.querySelectorAll(".spellItem");
         console.log(spellList.length)
