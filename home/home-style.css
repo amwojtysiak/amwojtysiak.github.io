@@ -164,8 +164,56 @@
     margin: 0;
 }
 
-#content-beginning {
-    margin-top: 5%;
+.current-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 10%; */
+    margin: 1em 0em;
+    
+}
+
+.current-cam-format {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* height: 10%; */
+    width: 80%;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+
+}
+
+.current-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 5em;
+}
+
+.details-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 30%;
+    height: 100%;
+}
+
+.detail-top {
+    width: 80%;
+    border-bottom: 1px solid black;
+    text-align: center;
+    font-size: 1em;
+}
+
+.detail-bottom {
+    width: 100%;
+    text-align: center;
+    font-size: 1.6em;
 }
 
 #current-adventures {
@@ -174,6 +222,10 @@
 
 #clock-lead-in {
     text-decoration: underline black;
+}
+
+#countdownClock {
+    margin: 1.5em 0em;
 }
 
 #new-content {

@@ -1,7 +1,9 @@
 
 //Countdown Clock
-let mo = 04, dat = 02, hr = 19, mins = 30; 
+let mo = 04, dat = 30, hr = 19, mins = 30, yr= 23; 
 //Enter next chapter date above
+//Current Location
+let currentLocation = "Kemwei Forest";
 //New Content Notification
 var newPart = 2, newChapter = 18;
 var notifyYear = "2023", notifyMonth = 03, notifyDate = 28;
@@ -16,7 +18,8 @@ var spellFavorites = [
     "thunderwave"
 ];
 
-document.querySelector("#next-chapter-date").innerHTML = mo + "/" + dat + "/22" 
+document.querySelector("#current-location").innerHTML = currentLocation;
+document.querySelector("#next-chapter-date").innerHTML = mo + "/" + dat + "/" + yr;
 
 const nextChapterDate = new Date();
 nextChapterDate.setMonth(mo - 1);
