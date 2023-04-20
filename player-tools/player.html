@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Player Tools </title>
+    <link rel="stylesheet" href="../common/styles/menu-style.css">
+    <link rel="stylesheet" href="./playerStyle.css">
+</head>
+<body>
+    <div class="header">
+        <img src="../images/casting_witch.png" style="object-fit: cover; height: 100%; width: 100%;">
+    </div>
+    
+    <div class="menu">
+        <div class="menu-align">
+            <a class="menu-items" id="go-to-home" title="Home" href="../index.html">Home</a>
+            <div class="dropdown menu-items">
+                <a class="dropdown-box" title="DM Tools" href="javascript:void(0)">DM Tools</a>
+                <div class="dropdown-content">
+                    <a class="dropdown-items" id="go-to-npcgen" title="NPC Generator" href="../generators/npc/npcGenerator.html">NPC Generator</a>
+                    <a class="dropdown-items" id="go-to-lootgen" title="Loot Generator" href="../generators/loot/lootGenerator.html">Loot Generator</a>
+                    <a class="dropdown-items" id="go-to-combat-manager" title="Combat Manager" href="../combat-manager/combat.html">Combat Manager</a>
+                </div>
+            </div>
+            <a class="active menu-items" id="go-to-playerTools" title="Player Tools" href="./player.html">Player Tools</a>
+            <a class="menu-items" id="go-to-islandmap" title="Island Map" href="../island-map/map.html">Island Map</a>
+            <div class="dropdown menu-items">
+                <a class="dropdown-box" title="Texts" href="javascript:void(0)">Texts</a>
+                <div class="dropdown-content">
+                    <a class="dropdown-items" id="go-to-journal" title="Journal" href="../journal/journal.html">Journal</a>
+                    <a class="dropdown-items" id="go-to-lore" title="Lore" href="../lore/lore.html">Lore</a>
+                </div>
+            </div>
+            <a class="menu-items" id="go-to-art" title="Artwork" href="../artwork-page/artwork.html">Artwork</a>
+        </div>
+    </div> 
+
+    <div class="main-container">
+        <div class="section-title">
+            <h1> Player Tools </h1>
+        </div>
+
+        <div class="section-title-format">
+            <div class="line-deco"></div>
+            <h2 class="spell-title">Spell Reference</h2>
+            <div class="line-deco"></div>
+        </div>
+
+        <div class="spell-top-box">
+            <button id="spell-button" class="spell-button">Use Spell Book</button>
+            <button id="hide-spell-button" class="spell-button">Hide Spell Book</button>
+            <div class="fav-title">Favorites:</div>
+            <div class="fav-spells"></div>
+        </div>
+        <br/>
+        <div class="spellDetail">
+            <div class="detail-text"></div>
+            <div class="close-button">X</div>
+        </div>
+        
+        <div class="spellName"></div>
+        
+    </div>
+    
+    <!-- <button class="trigger">Click here to trigger the modal!</button> -->
+
+    
+    <footer>
+
+    </footer>
+
+
+    <script src= ./player.js></script>
+</body>
+</html>

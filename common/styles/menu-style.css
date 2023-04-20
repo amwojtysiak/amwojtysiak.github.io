@@ -16,10 +16,20 @@ a {
     color: black;
 }
 
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: blanchedalmond;
+    /* background-image: linear-gradient(#19547b, #ffd89b); */
+    background-image: linear-gradient(#3C3B3F, blanchedalmond);
+}
+
 .header img{
     object-fit: cover; 
     height: 100%; 
     width: 100%;
+    max-width: 1027px;
 }
 
 .menu {
@@ -165,14 +175,14 @@ footer {
         height: 100%;
     }
 
-    .menu-items {
-        /* font-size: 1em; */
-    }
+    /* .menu-items {
+        
+    } */
 
     footer {
         position: relative;
         bottom: 0;
         margin-top: 25%;
-        width: 100%
+        width: 100%;
     }
 }

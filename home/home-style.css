@@ -133,6 +133,7 @@
     width: 100%;
     margin: 0;
     font-size: 1.5em;
+    color: whitesmoke;
 }
 
 #campaign-num {
@@ -144,6 +145,7 @@
     text-align: center;
     font-size: 2.5em;
     margin: 0;
+    /* color: whitesmoke; */
 }
 
 #dm {
@@ -256,100 +258,7 @@ h3 {
     margin: 0;
 }
 
-.spell-top-box {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    height: 5em;
-    width: 98%;
-}
 
-#hide-spell-button {
-    display: none;
-}
-
-.spell-button {
-    margin-right: 3em;
-}
-
-
-
-.fav-title {
-    display: none;
-    justify-content: space-between;
-    align-items: center;
-    width: 10%;
-    border: 3px solid goldenrod;
-    border-right: 0;
-    height: 100%;
-    padding: 5px;
-}
-
-.fav-spells {
-    display: none;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: flex-start;
-    height: 100%;
-    width: 70%;
-    border: 3px solid goldenrod;
-    border-left: 0;
-    padding: 5px;
-}
-
-.spellFav {
-    
-    height: 2em;
-    text-align: center;
-}
-
-.spellName {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    max-height: 100em;
-}
-
-.spellDetail {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 2em 3em;
-    border: 3px solid black;
-    border-radius: 22px;
-    padding: 1em;
-    position: sticky;
-    top: 70px;
-    z-index: 5;
-    background-color: antiquewhite;
-    opacity: 1;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-.spellItem {
-    font-weight: bolder;
-    text-decoration: underline black;
-    cursor: pointer;
-}
-
-.spellDesc {
-    margin-left: 3em;
-}
-
-.close-button {
-    text-align: center;
-    border: 2px solid black;
-    border-radius: 6px;
-    padding: .25em;
-    color: red;
-    width: 5%;
-    cursor: pointer;
-}
 
 @media screen and (max-width: 600px) {
     #header-intro {
@@ -398,151 +307,9 @@ h3 {
         justify-content: space-around;
     }
     
-    #spell-button {
-        margin-right: 1em;
-    }
-
-    .close-button {
-        text-align: center;
-        border: 1px solid black;
-        border-radius: 6px;
-        padding: .25em;
-        color: red;
-        width: 5%;
-        
-    }
-
-    .fav-title {
-        width: 15%;
-        
-        height: 100%;
-        padding: 5px;
-    }
-    
-    .spell-top-box {
-        height: 7em;
-        width: 98%;
-    }
-
-    .spellName {
-        
-        max-height: 280em;
-    }
-
-    .spellDetail {
-       
-        margin: 1em 1em;
-        
-    }
 }
 
 
 
 
 
-/* html {
-    background-image: url("../images/parchment_background.png");
-    background-size: cover;
-    background-attachment: scroll;
-    font-family: "papyrus";
-    font-weight: bolder;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-}
-
-a {
-    text-decoration: none;
-    color: black;
-}
-
-.menu {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url("../images/journal-cover-menu.jpg");
-    border-bottom: 5px solid black;
-    border-top: 5px solid black;
-    height: 60px;
-    left: 0;
-    right: 0;
-    margin: 0px;
-    position: sticky;
-    top: 0;
-    z-index: 5;
-}
-
-.menu-align {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 98%;
-    height: 70%;
-}
-
-.menu-items {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: whitesmoke;
-    width: 12%;
-    height: 100%;
-    /* margin: 10px;
-    padding: 3px; */
-    /* text-align: center;
-    font-size: 1.25em;
-    font-weight: bolder;
-    user-select: none;
-    cursor: pointer;
-
-    border-right: 2px;
-    border-left: 2px;
-    border-top: 0;
-    border-bottom: 0;
-    border-style: solid;
-    border-color: rgba(255, 255, 255, 0.0);
-}
-
-.menu-items:hover:not(.active) {
-    border-color: rgba(255, 255, 255, 1.0);
-}
-
-.active.menu-items {
-    border-right: 2px;
-    border-left: 2px;
-    border-top: 0;
-    border-bottom: 0;
-    border-style: solid;
-    border-color: white;
-}
-
-footer {
-    background-image: url("../images/journal-cover-menu.jpg");
-    width: 100%;
-    height: 100px;
-    margin-top: 50px;
-    border-top: 5px solid black;   
-} */ 
-
-/* .container {
-    background-color: white;
-    margin: 10px;
-
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    align-items: stretch;
-}
-
-.container-item {
-    background-color: green;
-    width: 90px;
-    height: 60px;
-    border: 5px solid black;
-    margin: 10px;
-    text-align: center;
-}
