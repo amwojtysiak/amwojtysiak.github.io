@@ -22,7 +22,9 @@ a {
     align-items: center;
     background-color: blanchedalmond;
     /* background-image: linear-gradient(#19547b, #ffd89b); */
-    background-image: linear-gradient(#3C3B3F, blanchedalmond);
+    /* background-image: linear-gradient(#3C3B3F, blanchedalmond); */
+   /* background-image: linear-gradient(#FFEFBA, #FFFFFF); */
+   background-image: linear-gradient(#895f2c, blanchedalmond);
 }
 
 .header img{
