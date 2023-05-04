@@ -1,6 +1,6 @@
 
 //Countdown Clock
-let mo = 04, dat = 30, hr = 19, mins = 30, yr= 23; 
+let mo = 05, dat = 07, hr = 19, mins = 30, yr= 23; 
 //Enter next chapter date above
 //Current Location
 let currentLocation = "Kemwei Forest";
